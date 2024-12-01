@@ -117,7 +117,7 @@ Partial Class appointment
         Label2.AutoSize = True
         Label2.BackColor = Color.Transparent
         Label2.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(104, 158)
+        Label2.Location = New Point(112, 158)
         Label2.Name = "Label2"
         Label2.Size = New Size(166, 32)
         Label2.TabIndex = 20
@@ -137,7 +137,7 @@ Partial Class appointment
         RoundedButton3.FlatStyle = FlatStyle.Flat
         RoundedButton3.Font = New Font("Segoe UI", 10F)
         RoundedButton3.ForeColor = Color.Black
-        RoundedButton3.Location = New Point(48, 253)
+        RoundedButton3.Location = New Point(56, 253)
         RoundedButton3.Name = "RoundedButton3"
         RoundedButton3.Size = New Size(92, 35)
         RoundedButton3.TabIndex = 52
@@ -147,7 +147,7 @@ Partial Class appointment
         ' 
         ' DateTimePicker1
         ' 
-        DateTimePicker1.Location = New Point(35, 209)
+        DateTimePicker1.Location = New Point(43, 209)
         DateTimePicker1.Name = "DateTimePicker1"
         DateTimePicker1.Size = New Size(313, 23)
         DateTimePicker1.TabIndex = 53
@@ -166,7 +166,7 @@ Partial Class appointment
         RoundedButton1.FlatStyle = FlatStyle.Flat
         RoundedButton1.Font = New Font("Segoe UI", 10F)
         RoundedButton1.ForeColor = Color.Black
-        RoundedButton1.Location = New Point(146, 253)
+        RoundedButton1.Location = New Point(154, 253)
         RoundedButton1.Name = "RoundedButton1"
         RoundedButton1.Size = New Size(92, 35)
         RoundedButton1.TabIndex = 54
@@ -188,7 +188,7 @@ Partial Class appointment
         RoundedButton2.FlatStyle = FlatStyle.Flat
         RoundedButton2.Font = New Font("Segoe UI", 10F)
         RoundedButton2.ForeColor = Color.Black
-        RoundedButton2.Location = New Point(246, 253)
+        RoundedButton2.Location = New Point(254, 253)
         RoundedButton2.Name = "RoundedButton2"
         RoundedButton2.Size = New Size(92, 35)
         RoundedButton2.TabIndex = 56
@@ -210,7 +210,7 @@ Partial Class appointment
         RoundedButton4.FlatStyle = FlatStyle.Flat
         RoundedButton4.Font = New Font("Segoe UI", 10F)
         RoundedButton4.ForeColor = Color.Black
-        RoundedButton4.Location = New Point(246, 294)
+        RoundedButton4.Location = New Point(254, 294)
         RoundedButton4.Name = "RoundedButton4"
         RoundedButton4.Size = New Size(92, 35)
         RoundedButton4.TabIndex = 59
@@ -232,7 +232,7 @@ Partial Class appointment
         RoundedButton5.FlatStyle = FlatStyle.Flat
         RoundedButton5.Font = New Font("Segoe UI", 10F)
         RoundedButton5.ForeColor = Color.Black
-        RoundedButton5.Location = New Point(146, 294)
+        RoundedButton5.Location = New Point(154, 294)
         RoundedButton5.Name = "RoundedButton5"
         RoundedButton5.Size = New Size(92, 35)
         RoundedButton5.TabIndex = 58
@@ -254,7 +254,7 @@ Partial Class appointment
         RoundedButton6.FlatStyle = FlatStyle.Flat
         RoundedButton6.Font = New Font("Segoe UI", 10F)
         RoundedButton6.ForeColor = Color.Black
-        RoundedButton6.Location = New Point(48, 294)
+        RoundedButton6.Location = New Point(56, 294)
         RoundedButton6.Name = "RoundedButton6"
         RoundedButton6.Size = New Size(92, 35)
         RoundedButton6.TabIndex = 57
@@ -276,7 +276,7 @@ Partial Class appointment
         RoundedButton7.FlatStyle = FlatStyle.Flat
         RoundedButton7.Font = New Font("Segoe UI", 10F)
         RoundedButton7.ForeColor = Color.Black
-        RoundedButton7.Location = New Point(246, 335)
+        RoundedButton7.Location = New Point(254, 335)
         RoundedButton7.Name = "RoundedButton7"
         RoundedButton7.Size = New Size(92, 35)
         RoundedButton7.TabIndex = 62
@@ -298,7 +298,7 @@ Partial Class appointment
         RoundedButton8.FlatStyle = FlatStyle.Flat
         RoundedButton8.Font = New Font("Segoe UI", 10F)
         RoundedButton8.ForeColor = Color.Black
-        RoundedButton8.Location = New Point(146, 335)
+        RoundedButton8.Location = New Point(154, 335)
         RoundedButton8.Name = "RoundedButton8"
         RoundedButton8.Size = New Size(92, 35)
         RoundedButton8.TabIndex = 61
@@ -320,7 +320,7 @@ Partial Class appointment
         RoundedButton9.FlatStyle = FlatStyle.Flat
         RoundedButton9.Font = New Font("Segoe UI", 10F)
         RoundedButton9.ForeColor = Color.Black
-        RoundedButton9.Location = New Point(48, 335)
+        RoundedButton9.Location = New Point(56, 335)
         RoundedButton9.Name = "RoundedButton9"
         RoundedButton9.Size = New Size(92, 35)
         RoundedButton9.TabIndex = 60
@@ -342,7 +342,7 @@ Partial Class appointment
         RoundedButton10.FlatStyle = FlatStyle.Flat
         RoundedButton10.Font = New Font("Segoe UI", 10F)
         RoundedButton10.ForeColor = Color.Black
-        RoundedButton10.Location = New Point(246, 376)
+        RoundedButton10.Location = New Point(254, 376)
         RoundedButton10.Name = "RoundedButton10"
         RoundedButton10.Size = New Size(92, 35)
         RoundedButton10.TabIndex = 65
@@ -364,7 +364,7 @@ Partial Class appointment
         RoundedButton11.FlatStyle = FlatStyle.Flat
         RoundedButton11.Font = New Font("Segoe UI", 10F)
         RoundedButton11.ForeColor = Color.Black
-        RoundedButton11.Location = New Point(146, 376)
+        RoundedButton11.Location = New Point(154, 376)
         RoundedButton11.Name = "RoundedButton11"
         RoundedButton11.Size = New Size(92, 35)
         RoundedButton11.TabIndex = 64
@@ -386,7 +386,7 @@ Partial Class appointment
         RoundedButton12.FlatStyle = FlatStyle.Flat
         RoundedButton12.Font = New Font("Segoe UI", 10F)
         RoundedButton12.ForeColor = Color.Black
-        RoundedButton12.Location = New Point(48, 376)
+        RoundedButton12.Location = New Point(56, 376)
         RoundedButton12.Name = "RoundedButton12"
         RoundedButton12.Size = New Size(92, 35)
         RoundedButton12.TabIndex = 63
@@ -408,7 +408,7 @@ Partial Class appointment
         RoundedButton13.FlatStyle = FlatStyle.Flat
         RoundedButton13.Font = New Font("Segoe UI", 10F)
         RoundedButton13.ForeColor = Color.Black
-        RoundedButton13.Location = New Point(246, 417)
+        RoundedButton13.Location = New Point(254, 417)
         RoundedButton13.Name = "RoundedButton13"
         RoundedButton13.Size = New Size(92, 35)
         RoundedButton13.TabIndex = 68
@@ -430,7 +430,7 @@ Partial Class appointment
         RoundedButton14.FlatStyle = FlatStyle.Flat
         RoundedButton14.Font = New Font("Segoe UI", 10F)
         RoundedButton14.ForeColor = Color.Black
-        RoundedButton14.Location = New Point(146, 417)
+        RoundedButton14.Location = New Point(154, 417)
         RoundedButton14.Name = "RoundedButton14"
         RoundedButton14.Size = New Size(92, 35)
         RoundedButton14.TabIndex = 67
@@ -452,7 +452,7 @@ Partial Class appointment
         RoundedButton15.FlatStyle = FlatStyle.Flat
         RoundedButton15.Font = New Font("Segoe UI", 10F)
         RoundedButton15.ForeColor = Color.Black
-        RoundedButton15.Location = New Point(48, 417)
+        RoundedButton15.Location = New Point(56, 417)
         RoundedButton15.Name = "RoundedButton15"
         RoundedButton15.Size = New Size(92, 35)
         RoundedButton15.TabIndex = 66
@@ -465,7 +465,7 @@ Partial Class appointment
         Label3.AutoSize = True
         Label3.BackColor = Color.Transparent
         Label3.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(30, 472)
+        Label3.Location = New Point(38, 472)
         Label3.Name = "Label3"
         Label3.Size = New Size(51, 21)
         Label3.TabIndex = 69
@@ -473,7 +473,7 @@ Partial Class appointment
         ' 
         ' RoundedTextBox1
         ' 
-        RoundedTextBox1.Location = New Point(30, 496)
+        RoundedTextBox1.Location = New Point(38, 496)
         RoundedTextBox1.Multiline = True
         RoundedTextBox1.Name = "RoundedTextBox1"
         RoundedTextBox1.Size = New Size(315, 85)
@@ -493,7 +493,7 @@ Partial Class appointment
         RoundedButton16.FlatStyle = FlatStyle.Flat
         RoundedButton16.Font = New Font("Segoe UI", 10F)
         RoundedButton16.ForeColor = Color.Black
-        RoundedButton16.Location = New Point(18, 629)
+        RoundedButton16.Location = New Point(26, 629)
         RoundedButton16.Name = "RoundedButton16"
         RoundedButton16.Size = New Size(345, 52)
         RoundedButton16.TabIndex = 71
@@ -507,7 +507,7 @@ Partial Class appointment
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(384, 711)
+        ClientSize = New Size(400, 750)
         Controls.Add(RoundedButton16)
         Controls.Add(RoundedTextBox1)
         Controls.Add(Label3)
@@ -533,6 +533,7 @@ Partial Class appointment
         DoubleBuffered = True
         FormBorderStyle = FormBorderStyle.None
         Name = "appointment"
+        StartPosition = FormStartPosition.CenterScreen
         Text = " "
         Panel2.ResumeLayout(False)
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
