@@ -34,8 +34,8 @@ Partial Class SymptomsPage
         Label1 = New Label()
         Label2 = New Label()
         RoundedPanel1 = New RoundedPanel()
-        Label4 = New Label()
         PictureBox5 = New PictureBox()
+        Label4 = New Label()
         RoundedPanel3 = New RoundedPanel()
         PictureBox6 = New PictureBox()
         Label5 = New Label()
@@ -224,16 +224,6 @@ Partial Class SymptomsPage
         RoundedPanel1.Size = New Size(165, 29)
         RoundedPanel1.TabIndex = 18
         ' 
-        ' Label4
-        ' 
-        Label4.AutoSize = True
-        Label4.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label4.Location = New Point(18, 6)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(69, 15)
-        Label4.TabIndex = 0
-        Label4.Text = " Sore throat"
-        ' 
         ' PictureBox5
         ' 
         PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), Image)
@@ -243,6 +233,16 @@ Partial Class SymptomsPage
         PictureBox5.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox5.TabIndex = 19
         PictureBox5.TabStop = False
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label4.Location = New Point(18, 6)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(69, 15)
+        Label4.TabIndex = 0
+        Label4.Text = " Sore throat"
         ' 
         ' RoundedPanel3
         ' 

@@ -53,7 +53,7 @@ Partial Class PatientMenuPage
         RoundedButton1.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         RoundedButton1.ForeColor = Color.Black
         RoundedButton1.Image = CType(resources.GetObject("RoundedButton1.Image"), Image)
-        RoundedButton1.Location = New Point(42, 395)
+        RoundedButton1.Location = New Point(42, 399)
         RoundedButton1.Name = "RoundedButton1"
         RoundedButton1.Size = New Size(136, 118)
         RoundedButton1.TabIndex = 18
@@ -75,7 +75,7 @@ Partial Class PatientMenuPage
         RoundedButton2.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         RoundedButton2.ForeColor = Color.Black
         RoundedButton2.Image = CType(resources.GetObject("RoundedButton2.Image"), Image)
-        RoundedButton2.Location = New Point(211, 395)
+        RoundedButton2.Location = New Point(211, 399)
         RoundedButton2.Name = "RoundedButton2"
         RoundedButton2.Size = New Size(136, 118)
         RoundedButton2.TabIndex = 17
@@ -89,7 +89,7 @@ Partial Class PatientMenuPage
         Label2.AutoSize = True
         Label2.BackColor = Color.Transparent
         Label2.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(91, 332)
+        Label2.Location = New Point(99, 336)
         Label2.Name = "Label2"
         Label2.Size = New Size(213, 42)
         Label2.TabIndex = 16
@@ -100,7 +100,7 @@ Partial Class PatientMenuPage
         ' 
         PictureBox4.BackColor = Color.Transparent
         PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
-        PictureBox4.Location = New Point(26, 165)
+        PictureBox4.Location = New Point(34, 169)
         PictureBox4.Name = "PictureBox4"
         PictureBox4.Size = New Size(336, 192)
         PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
@@ -111,7 +111,7 @@ Partial Class PatientMenuPage
         ' 
         PictureBox2.BackColor = Color.Transparent
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(-1, 22)
+        PictureBox2.Location = New Point(7, 26)
         PictureBox2.Name = "PictureBox2"
         PictureBox2.Size = New Size(387, 300)
         PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
@@ -125,9 +125,9 @@ Partial Class PatientMenuPage
         Panel1.Controls.Add(Label1)
         Panel1.Controls.Add(PictureBox1)
         Panel1.Controls.Add(PictureBox3)
-        Panel1.Location = New Point(-8, -4)
+        Panel1.Location = New Point(-15, 0)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(401, 68)
+        Panel1.Size = New Size(422, 68)
         Panel1.TabIndex = 19
         ' 
         ' Label1
@@ -177,7 +177,7 @@ Partial Class PatientMenuPage
         RoundedButton4.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         RoundedButton4.ForeColor = Color.Black
         RoundedButton4.Image = CType(resources.GetObject("RoundedButton4.Image"), Image)
-        RoundedButton4.Location = New Point(127, 533)
+        RoundedButton4.Location = New Point(127, 537)
         RoundedButton4.Name = "RoundedButton4"
         RoundedButton4.Size = New Size(136, 118)
         RoundedButton4.TabIndex = 20
@@ -192,7 +192,7 @@ Partial Class PatientMenuPage
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(384, 711)
+        ClientSize = New Size(400, 750)
         Controls.Add(RoundedButton4)
         Controls.Add(Panel1)
         Controls.Add(RoundedButton1)

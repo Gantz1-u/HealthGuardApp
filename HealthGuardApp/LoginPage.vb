@@ -6,8 +6,7 @@ Public Class LoginPage
 
     ' Link to navigate to another form (e.g., registration form)
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        Dim registrationForm As New Form1()
-        registrationForm.Show()
+        Form1.Show()
         Me.Hide()
     End Sub
 
@@ -23,8 +22,8 @@ Public Class LoginPage
             Exit Sub
         End If
 
-        ' Query to check credentials
-        Dim query As String = "SELECT * FROM accounts WHERE EmailUsername = @EmailUsername AND Password = @Password"
+        ' Query to check credentials and retrieve the user's role
+        Dim query As String = "SELECT Role FROM accounts WHERE EmailUsername = @EmailUsername AND Password = @Password"
 
         Try
             Dim connection As MySqlConnection = DB.Open()
@@ -38,12 +37,26 @@ Public Class LoginPage
                 ' Check if the user exists
                 If reader.HasRows Then
                     reader.Read()
-                    Dim userDisplayName As String = reader("EmailUsername").ToString() ' Adjust based on your database column
-                    MessageBox.Show($"Welcome, {userDisplayName}!", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Dim userRole As String = reader("Role").ToString().Trim() ' Trim whitespace
 
-                    ' Proceed to the next form
-                    Dim menuPage As New NurseMenuPage()
-                    menuPage.Show()
+                    ' Debug: Show the role in a message box
+                    MessageBox.Show($"Role retrieved: {userRole}", "Debug", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                    ' Open the corresponding menu based on the user's role
+                    Select Case userRole.ToLower() ' Ensure case-insensitivity
+                        Case "patient"
+                            Dim patientMenu As New PatientMenuPage()
+                            patientMenu.Show()
+                        Case "nurse"
+                            Dim nurseMenu As New NurseMenuPage()
+                            nurseMenu.Show()
+                        Case "doctor"
+                            Dim doctorMenu As New DoctorMenuPage()
+                            doctorMenu.Show()
+                        Case Else
+                            MessageBox.Show("Role not recognized.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End Select
+
                     Me.Hide()
                 Else
                     MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -57,6 +70,7 @@ Public Class LoginPage
             DB.Close()
         End Try
     End Sub
+
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         ' Toggle password visibility
@@ -72,5 +86,3 @@ Public Class LoginPage
         passwordVisible = Not passwordVisible
     End Sub
 End Class
-
-

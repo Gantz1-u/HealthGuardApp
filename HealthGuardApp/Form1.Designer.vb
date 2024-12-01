@@ -32,8 +32,8 @@ Partial Class Form1
         RoundedButton2 = New CustomControls.RJControls.RoundedButton()
         RoundedButton3 = New CustomControls.RJControls.RoundedButton()
         Label4 = New Label()
-        Label5 = New Label()
         LinkLabel1 = New LinkLabel()
+        Label5 = New Label()
         Panel1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -163,21 +163,11 @@ Partial Class Form1
         Label4.AutoSize = True
         Label4.BackColor = Color.Transparent
         Label4.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label4.Location = New Point(125, 586)
+        Label4.Location = New Point(125, 580)
         Label4.Name = "Label4"
         Label4.Size = New Size(148, 15)
         Label4.TabIndex = 7
         Label4.Text = "Please select your user role"
-        ' 
-        ' Label5
-        ' 
-        Label5.AutoSize = True
-        Label5.BackColor = Color.Transparent
-        Label5.Location = New Point(106, 643)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(142, 15)
-        Label5.TabIndex = 8
-        Label5.Text = "Doesn't have an account?"
         ' 
         ' LinkLabel1
         ' 
@@ -185,12 +175,22 @@ Partial Class Form1
         LinkLabel1.AutoSize = True
         LinkLabel1.BackColor = Color.Transparent
         LinkLabel1.Cursor = Cursors.Hand
-        LinkLabel1.Location = New Point(245, 643)
+        LinkLabel1.Location = New Point(250, 635)
         LinkLabel1.Name = "LinkLabel1"
-        LinkLabel1.Size = New Size(49, 15)
-        LinkLabel1.TabIndex = 9
+        LinkLabel1.Size = New Size(37, 15)
+        LinkLabel1.TabIndex = 24
         LinkLabel1.TabStop = True
-        LinkLabel1.Text = "Register"
+        LinkLabel1.Text = "Login"
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.BackColor = Color.Transparent
+        Label5.Location = New Point(111, 635)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(142, 15)
+        Label5.TabIndex = 23
+        Label5.Text = "Already have an account?"
         ' 
         ' Form1
         ' 
@@ -230,7 +230,7 @@ Partial Class Form1
     Friend WithEvents RoundedButton2 As CustomControls.RJControls.RoundedButton
     Friend WithEvents RoundedButton3 As CustomControls.RJControls.RoundedButton
     Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
     Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents Label5 As Label
 
 End Class

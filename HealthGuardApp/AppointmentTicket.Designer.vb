@@ -29,13 +29,13 @@ Partial Class AppointmentTicket
         PictureBox4 = New PictureBox()
         PictureBox2 = New PictureBox()
         RoundedPanel1 = New RoundedPanel()
+        Label5 = New Label()
+        Label4 = New Label()
+        Label2 = New Label()
+        Label1 = New Label()
         RoundedButton3 = New CustomControls.RJControls.RoundedButton()
         RoundedButton1 = New CustomControls.RJControls.RoundedButton()
         RoundedButton2 = New CustomControls.RJControls.RoundedButton()
-        Label1 = New Label()
-        Label2 = New Label()
-        Label4 = New Label()
-        Label5 = New Label()
         Panel1.SuspendLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
@@ -113,6 +113,46 @@ Partial Class AppointmentTicket
         RoundedPanel1.Size = New Size(345, 170)
         RoundedPanel1.TabIndex = 19
         ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label5.Location = New Point(13, 97)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(42, 17)
+        Label5.TabIndex = 3
+        Label5.Text = "Note:"
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label4.Location = New Point(12, 68)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(130, 17)
+        Label4.TabIndex = 2
+        Label4.Text = "Healthcare Provider"
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label2.Location = New Point(12, 41)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(39, 17)
+        Label2.TabIndex = 1
+        Label2.Text = "Time"
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Location = New Point(12, 15)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(37, 17)
+        Label1.TabIndex = 0
+        Label1.Text = "Date"
+        ' 
         ' RoundedButton3
         ' 
         RoundedButton3.BackColor = SystemColors.ButtonHighlight
@@ -178,46 +218,6 @@ Partial Class AppointmentTicket
         RoundedButton2.Text = "Home"
         RoundedButton2.TextColor = Color.Black
         RoundedButton2.UseVisualStyleBackColor = False
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(12, 15)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(37, 17)
-        Label1.TabIndex = 0
-        Label1.Text = "Date"
-        ' 
-        ' Label2
-        ' 
-        Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(12, 41)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(39, 17)
-        Label2.TabIndex = 1
-        Label2.Text = "Time"
-        ' 
-        ' Label4
-        ' 
-        Label4.AutoSize = True
-        Label4.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label4.Location = New Point(12, 68)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(130, 17)
-        Label4.TabIndex = 2
-        Label4.Text = "Healthcare Provider"
-        ' 
-        ' Label5
-        ' 
-        Label5.AutoSize = True
-        Label5.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label5.Location = New Point(13, 97)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(42, 17)
-        Label5.TabIndex = 3
-        Label5.Text = "Note:"
         ' 
         ' AppointmentTicket
         ' 

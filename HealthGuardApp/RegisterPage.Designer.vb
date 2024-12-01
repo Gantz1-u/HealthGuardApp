@@ -72,7 +72,7 @@ Partial Class RegisterPage
         RoundedButton3.FlatStyle = FlatStyle.Flat
         RoundedButton3.Font = New Font("Segoe UI", 10F)
         RoundedButton3.ForeColor = Color.Black
-        RoundedButton3.Location = New Point(27, 644)
+        RoundedButton3.Location = New Point(34, 682)
         RoundedButton3.Name = "RoundedButton3"
         RoundedButton3.Size = New Size(331, 52)
         RoundedButton3.TabIndex = 23
@@ -86,7 +86,7 @@ Partial Class RegisterPage
         LinkLabel1.AutoSize = True
         LinkLabel1.BackColor = Color.Transparent
         LinkLabel1.Cursor = Cursors.Hand
-        LinkLabel1.Location = New Point(242, 616)
+        LinkLabel1.Location = New Point(249, 654)
         LinkLabel1.Name = "LinkLabel1"
         LinkLabel1.Size = New Size(37, 15)
         LinkLabel1.TabIndex = 22
@@ -97,7 +97,7 @@ Partial Class RegisterPage
         ' 
         Label5.AutoSize = True
         Label5.BackColor = Color.Transparent
-        Label5.Location = New Point(103, 616)
+        Label5.Location = New Point(110, 654)
         Label5.Name = "Label5"
         Label5.Size = New Size(142, 15)
         Label5.TabIndex = 21
@@ -109,7 +109,7 @@ Partial Class RegisterPage
         Label1.BackColor = Color.Transparent
         Label1.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = Color.SteelBlue
-        Label1.Location = New Point(121, 158)
+        Label1.Location = New Point(128, 196)
         Label1.Name = "Label1"
         Label1.Size = New Size(141, 21)
         Label1.TabIndex = 18
@@ -119,7 +119,7 @@ Partial Class RegisterPage
         ' 
         Panel1.BackColor = Color.Transparent
         Panel1.Controls.Add(PictureBox1)
-        Panel1.Location = New Point(36, 11)
+        Panel1.Location = New Point(43, 49)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(289, 176)
         Panel1.TabIndex = 17
@@ -141,7 +141,7 @@ Partial Class RegisterPage
         RoundedPanel2.BackColor = SystemColors.Window
         RoundedPanel2.Controls.Add(RoundedTextBox3)
         RoundedPanel2.CornerRadius = 20
-        RoundedPanel2.Location = New Point(27, 249)
+        RoundedPanel2.Location = New Point(34, 287)
         RoundedPanel2.Name = "RoundedPanel2"
         RoundedPanel2.Size = New Size(331, 48)
         RoundedPanel2.TabIndex = 25
@@ -160,7 +160,7 @@ Partial Class RegisterPage
         RoundedPanel1.BackColor = SystemColors.Window
         RoundedPanel1.Controls.Add(RoundedTextBox1)
         RoundedPanel1.CornerRadius = 20
-        RoundedPanel1.Location = New Point(27, 195)
+        RoundedPanel1.Location = New Point(34, 233)
         RoundedPanel1.Name = "RoundedPanel1"
         RoundedPanel1.Size = New Size(331, 48)
         RoundedPanel1.TabIndex = 24
@@ -179,7 +179,7 @@ Partial Class RegisterPage
         RoundedPanel3.BackColor = SystemColors.Window
         RoundedPanel3.Controls.Add(RoundedTextBox2)
         RoundedPanel3.CornerRadius = 20
-        RoundedPanel3.Location = New Point(27, 303)
+        RoundedPanel3.Location = New Point(34, 341)
         RoundedPanel3.Name = "RoundedPanel3"
         RoundedPanel3.Size = New Size(331, 48)
         RoundedPanel3.TabIndex = 26
@@ -198,7 +198,7 @@ Partial Class RegisterPage
         RoundedPanel4.BackColor = SystemColors.Window
         RoundedPanel4.Controls.Add(RoundedTextBox4)
         RoundedPanel4.CornerRadius = 20
-        RoundedPanel4.Location = New Point(27, 411)
+        RoundedPanel4.Location = New Point(34, 449)
         RoundedPanel4.Name = "RoundedPanel4"
         RoundedPanel4.Size = New Size(331, 48)
         RoundedPanel4.TabIndex = 28
@@ -217,7 +217,7 @@ Partial Class RegisterPage
         RoundedPanel5.BackColor = SystemColors.Window
         RoundedPanel5.Controls.Add(RoundedTextBox5)
         RoundedPanel5.CornerRadius = 20
-        RoundedPanel5.Location = New Point(27, 357)
+        RoundedPanel5.Location = New Point(34, 395)
         RoundedPanel5.Name = "RoundedPanel5"
         RoundedPanel5.Size = New Size(331, 48)
         RoundedPanel5.TabIndex = 27
@@ -237,7 +237,7 @@ Partial Class RegisterPage
         RoundedPanel6.Controls.Add(RoundedTextBox6)
         RoundedPanel6.Controls.Add(PictureBox6)
         RoundedPanel6.CornerRadius = 20
-        RoundedPanel6.Location = New Point(27, 465)
+        RoundedPanel6.Location = New Point(34, 503)
         RoundedPanel6.Name = "RoundedPanel6"
         RoundedPanel6.Size = New Size(331, 48)
         RoundedPanel6.TabIndex = 29
@@ -269,7 +269,7 @@ Partial Class RegisterPage
         RoundedPanel7.Controls.Add(RoundedTextBox7)
         RoundedPanel7.Controls.Add(PictureBox2)
         RoundedPanel7.CornerRadius = 20
-        RoundedPanel7.Location = New Point(27, 519)
+        RoundedPanel7.Location = New Point(34, 557)
         RoundedPanel7.Name = "RoundedPanel7"
         RoundedPanel7.Size = New Size(331, 48)
         RoundedPanel7.TabIndex = 30
@@ -301,7 +301,7 @@ Partial Class RegisterPage
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(384, 711)
+        ClientSize = New Size(400, 750)
         Controls.Add(RoundedPanel7)
         Controls.Add(RoundedPanel6)
         Controls.Add(RoundedPanel4)
