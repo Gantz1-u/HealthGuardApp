@@ -27,7 +27,6 @@ Partial Class LoginPage
         PictureBox1 = New PictureBox()
         Label1 = New Label()
         RoundedTextBox1 = New RoundedTextBox()
-        Label2 = New Label()
         LinkLabel1 = New LinkLabel()
         Label5 = New Label()
         RoundedButton3 = New CustomControls.RJControls.RoundedButton()
@@ -46,9 +45,10 @@ Partial Class LoginPage
         ' 
         Panel1.BackColor = Color.Transparent
         Panel1.Controls.Add(PictureBox1)
-        Panel1.Location = New Point(45, 172)
+        Panel1.Location = New Point(60, 227)
+        Panel1.Margin = New Padding(4, 5, 4, 5)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(289, 176)
+        Panel1.Size = New Size(413, 293)
         Panel1.TabIndex = 1
         ' 
         ' PictureBox1
@@ -57,8 +57,9 @@ Partial Class LoginPage
         PictureBox1.Dock = DockStyle.Fill
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
         PictureBox1.Location = New Point(0, 0)
+        PictureBox1.Margin = New Padding(4, 5, 4, 5)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(289, 176)
+        PictureBox1.Size = New Size(413, 293)
         PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
@@ -69,32 +70,22 @@ Partial Class LoginPage
         Label1.BackColor = Color.Transparent
         Label1.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = Color.SteelBlue
-        Label1.Location = New Point(123, 351)
+        Label1.Location = New Point(172, 525)
+        Label1.Margin = New Padding(4, 0, 4, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(170, 21)
+        Label1.Size = New Size(253, 32)
         Label1.TabIndex = 2
         Label1.Text = "Login to your account"
         ' 
         ' RoundedTextBox1
         ' 
-        RoundedTextBox1.Location = New Point(9, 13)
+        RoundedTextBox1.Location = New Point(13, 22)
+        RoundedTextBox1.Margin = New Padding(4, 5, 4, 5)
         RoundedTextBox1.Multiline = True
         RoundedTextBox1.Name = "RoundedTextBox1"
         RoundedTextBox1.PlaceholderText = "Phone Number, Username or Email"
-        RoundedTextBox1.Size = New Size(289, 22)
+        RoundedTextBox1.Size = New Size(411, 34)
         RoundedTextBox1.TabIndex = 3
-        ' 
-        ' Label2
-        ' 
-        Label2.AutoSize = True
-        Label2.BackColor = Color.Transparent
-        Label2.Cursor = Cursors.Hand
-        Label2.ForeColor = Color.SteelBlue
-        Label2.Location = New Point(155, 510)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(100, 15)
-        Label2.TabIndex = 5
-        Label2.Text = "Forgot Password?"
         ' 
         ' LinkLabel1
         ' 
@@ -102,9 +93,10 @@ Partial Class LoginPage
         LinkLabel1.AutoSize = True
         LinkLabel1.BackColor = Color.Transparent
         LinkLabel1.Cursor = Cursors.Hand
-        LinkLabel1.Location = New Point(251, 604)
+        LinkLabel1.Location = New Point(355, 947)
+        LinkLabel1.Margin = New Padding(4, 0, 4, 0)
         LinkLabel1.Name = "LinkLabel1"
-        LinkLabel1.Size = New Size(53, 15)
+        LinkLabel1.Size = New Size(82, 25)
         LinkLabel1.TabIndex = 11
         LinkLabel1.TabStop = True
         LinkLabel1.Text = "User role"
@@ -113,9 +105,10 @@ Partial Class LoginPage
         ' 
         Label5.AutoSize = True
         Label5.BackColor = Color.Transparent
-        Label5.Location = New Point(112, 604)
+        Label5.Location = New Point(156, 947)
+        Label5.Margin = New Padding(4, 0, 4, 0)
         Label5.Name = "Label5"
-        Label5.Size = New Size(142, 15)
+        Label5.Size = New Size(214, 25)
         Label5.TabIndex = 10
         Label5.Text = "Doesn't have an account?"
         ' 
@@ -133,9 +126,10 @@ Partial Class LoginPage
         RoundedButton3.FlatStyle = FlatStyle.Flat
         RoundedButton3.Font = New Font("Segoe UI", 10F)
         RoundedButton3.ForeColor = Color.Black
-        RoundedButton3.Location = New Point(36, 632)
+        RoundedButton3.Location = New Point(47, 993)
+        RoundedButton3.Margin = New Padding(4, 5, 4, 5)
         RoundedButton3.Name = "RoundedButton3"
-        RoundedButton3.Size = New Size(331, 52)
+        RoundedButton3.Size = New Size(473, 87)
         RoundedButton3.TabIndex = 12
         RoundedButton3.Text = "Login"
         RoundedButton3.TextColor = Color.Black
@@ -146,9 +140,10 @@ Partial Class LoginPage
         PictureBox2.BackColor = SystemColors.Window
         PictureBox2.Cursor = Cursors.Hand
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(292, 17)
+        PictureBox2.Location = New Point(417, 28)
+        PictureBox2.Margin = New Padding(4, 5, 4, 5)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(19, 16)
+        PictureBox2.Size = New Size(27, 27)
         PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox2.TabIndex = 16
         PictureBox2.TabStop = False
@@ -158,9 +153,10 @@ Partial Class LoginPage
         RoundedPanel1.BackColor = SystemColors.Window
         RoundedPanel1.Controls.Add(RoundedTextBox1)
         RoundedPanel1.CornerRadius = 20
-        RoundedPanel1.Location = New Point(36, 398)
+        RoundedPanel1.Location = New Point(47, 603)
+        RoundedPanel1.Margin = New Padding(4, 5, 4, 5)
         RoundedPanel1.Name = "RoundedPanel1"
-        RoundedPanel1.Size = New Size(331, 48)
+        RoundedPanel1.Size = New Size(473, 80)
         RoundedPanel1.TabIndex = 17
         ' 
         ' RoundedPanel2
@@ -169,38 +165,40 @@ Partial Class LoginPage
         RoundedPanel2.Controls.Add(RoundedTextBox3)
         RoundedPanel2.Controls.Add(PictureBox2)
         RoundedPanel2.CornerRadius = 20
-        RoundedPanel2.Location = New Point(36, 452)
+        RoundedPanel2.Location = New Point(47, 693)
+        RoundedPanel2.Margin = New Padding(4, 5, 4, 5)
         RoundedPanel2.Name = "RoundedPanel2"
-        RoundedPanel2.Size = New Size(331, 48)
+        RoundedPanel2.Size = New Size(473, 80)
         RoundedPanel2.TabIndex = 18
         ' 
         ' RoundedTextBox3
         ' 
-        RoundedTextBox3.Location = New Point(9, 14)
+        RoundedTextBox3.Location = New Point(13, 23)
+        RoundedTextBox3.Margin = New Padding(4, 5, 4, 5)
         RoundedTextBox3.Multiline = True
         RoundedTextBox3.Name = "RoundedTextBox3"
         RoundedTextBox3.PasswordChar = "*"c
         RoundedTextBox3.PlaceholderText = "Password"
-        RoundedTextBox3.Size = New Size(276, 22)
+        RoundedTextBox3.Size = New Size(393, 34)
         RoundedTextBox3.TabIndex = 3
         ' 
         ' LoginPage
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(400, 750)
+        ClientSize = New Size(571, 1106)
         Controls.Add(RoundedPanel2)
         Controls.Add(RoundedPanel1)
         Controls.Add(RoundedButton3)
         Controls.Add(LinkLabel1)
         Controls.Add(Label5)
-        Controls.Add(Label2)
         Controls.Add(Label1)
         Controls.Add(Panel1)
         DoubleBuffered = True
         FormBorderStyle = FormBorderStyle.None
+        Margin = New Padding(4, 5, 4, 5)
         Name = "LoginPage"
         StartPosition = FormStartPosition.CenterScreen
         Text = "LoginPage"
@@ -219,7 +217,6 @@ Partial Class LoginPage
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents RoundedTextBox1 As RoundedTextBox
-    Friend WithEvents Label2 As Label
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents Label5 As Label
     Friend WithEvents RoundedButton3 As CustomControls.RJControls.RoundedButton
