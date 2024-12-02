@@ -28,15 +28,24 @@ Partial Class PaatientData
         PictureBox1 = New PictureBox()
         PictureBox3 = New PictureBox()
         RoundedPanel1 = New RoundedPanel()
-        Label11 = New Label()
-        Label8 = New Label()
-        Label9 = New Label()
-        Label10 = New Label()
-        Label7 = New Label()
-        Label6 = New Label()
-        Label5 = New Label()
-        Label4 = New Label()
+        Label19 = New Label()
         Label3 = New Label()
+        Label18 = New Label()
+        Label4 = New Label()
+        Label17 = New Label()
+        Label5 = New Label()
+        Label16 = New Label()
+        Label6 = New Label()
+        Label15 = New Label()
+        Label7 = New Label()
+        Label14 = New Label()
+        Label10 = New Label()
+        Label13 = New Label()
+        Label9 = New Label()
+        Label12 = New Label()
+        Label8 = New Label()
+        Label2 = New Label()
+        Label11 = New Label()
         PictureBox4 = New PictureBox()
         Panel1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
@@ -60,7 +69,7 @@ Partial Class PaatientData
         ' Label1
         ' 
         Label1.BackColor = Color.Transparent
-        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.Location = New Point(22, 42)
         Label1.Name = "Label1"
         Label1.Size = New Size(47, 16)
@@ -93,110 +102,209 @@ Partial Class PaatientData
         ' 
         ' RoundedPanel1
         ' 
-        RoundedPanel1.Controls.Add(Label11)
-        RoundedPanel1.Controls.Add(Label8)
-        RoundedPanel1.Controls.Add(Label9)
-        RoundedPanel1.Controls.Add(Label10)
-        RoundedPanel1.Controls.Add(Label7)
-        RoundedPanel1.Controls.Add(Label6)
-        RoundedPanel1.Controls.Add(Label5)
-        RoundedPanel1.Controls.Add(Label4)
+        RoundedPanel1.Controls.Add(Label19)
         RoundedPanel1.Controls.Add(Label3)
+        RoundedPanel1.Controls.Add(Label18)
+        RoundedPanel1.Controls.Add(Label4)
+        RoundedPanel1.Controls.Add(Label17)
+        RoundedPanel1.Controls.Add(Label5)
+        RoundedPanel1.Controls.Add(Label16)
+        RoundedPanel1.Controls.Add(Label6)
+        RoundedPanel1.Controls.Add(Label15)
+        RoundedPanel1.Controls.Add(Label7)
+        RoundedPanel1.Controls.Add(Label14)
+        RoundedPanel1.Controls.Add(Label10)
+        RoundedPanel1.Controls.Add(Label13)
+        RoundedPanel1.Controls.Add(Label9)
+        RoundedPanel1.Controls.Add(Label12)
+        RoundedPanel1.Controls.Add(Label8)
+        RoundedPanel1.Controls.Add(Label2)
+        RoundedPanel1.Controls.Add(Label11)
         RoundedPanel1.CornerRadius = 20
         RoundedPanel1.Location = New Point(18, 142)
         RoundedPanel1.Name = "RoundedPanel1"
         RoundedPanel1.Size = New Size(362, 564)
         RoundedPanel1.TabIndex = 7
         ' 
-        ' Label11
+        ' Label19
         ' 
-        Label11.AutoSize = True
-        Label11.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label11.Location = New Point(32, 499)
-        Label11.Name = "Label11"
-        Label11.Size = New Size(39, 17)
-        Label11.TabIndex = 28
-        Label11.Text = "Email"
-        ' 
-        ' Label8
-        ' 
-        Label8.AutoSize = True
-        Label8.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label8.Location = New Point(31, 426)
-        Label8.Name = "Label8"
-        Label8.Size = New Size(96, 17)
-        Label8.TabIndex = 24
-        Label8.Text = "Phone Number"
-        ' 
-        ' Label9
-        ' 
-        Label9.AutoSize = True
-        Label9.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label9.Location = New Point(31, 355)
-        Label9.Name = "Label9"
-        Label9.Size = New Size(103, 17)
-        Label9.TabIndex = 23
-        Label9.Text = "Parent/Guardian"
-        ' 
-        ' Label10
-        ' 
-        Label10.AutoSize = True
-        Label10.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label10.Location = New Point(31, 285)
-        Label10.Name = "Label10"
-        Label10.Size = New Size(56, 17)
-        Label10.TabIndex = 22
-        Label10.Text = "Address"
-        ' 
-        ' Label7
-        ' 
-        Label7.AutoSize = True
-        Label7.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label7.Location = New Point(244, 219)
-        Label7.Name = "Label7"
-        Label7.Size = New Size(28, 17)
-        Label7.TabIndex = 21
-        Label7.Text = "Sex"
-        ' 
-        ' Label6
-        ' 
-        Label6.AutoSize = True
-        Label6.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label6.Location = New Point(32, 219)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(65, 17)
-        Label6.TabIndex = 19
-        Label6.Text = "Birth Date"
-        ' 
-        ' Label5
-        ' 
-        Label5.AutoSize = True
-        Label5.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label5.Location = New Point(31, 150)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(70, 17)
-        Label5.TabIndex = 15
-        Label5.Text = "Last Name"
-        ' 
-        ' Label4
-        ' 
-        Label4.AutoSize = True
-        Label4.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label4.Location = New Point(31, 81)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(88, 17)
-        Label4.TabIndex = 14
-        Label4.Text = "Middle Name"
+        Label19.AutoSize = True
+        Label19.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label19.Location = New Point(231, 252)
+        Label19.Name = "Label19"
+        Label19.Size = New Size(37, 17)
+        Label19.TabIndex = 55
+        Label19.Text = "Male"
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(31, 14)
+        Label3.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold)
+        Label3.Location = New Point(18, 16)
         Label3.Name = "Label3"
-        Label3.Size = New Size(71, 17)
-        Label3.TabIndex = 13
+        Label3.Size = New Size(75, 17)
+        Label3.TabIndex = 38
         Label3.Text = "First Name"
+        ' 
+        ' Label18
+        ' 
+        Label18.AutoSize = True
+        Label18.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label18.Location = New Point(22, 531)
+        Label18.Name = "Label18"
+        Label18.Size = New Size(131, 17)
+        Label18.TabIndex = 54
+        Label18.Text = "juan.cruz@gmail.com"
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold)
+        Label4.Location = New Point(18, 83)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(91, 17)
+        Label4.TabIndex = 39
+        Label4.Text = "Middle Name"
+        ' 
+        ' Label17
+        ' 
+        Label17.AutoSize = True
+        Label17.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label17.Location = New Point(22, 459)
+        Label17.Name = "Label17"
+        Label17.Size = New Size(85, 17)
+        Label17.TabIndex = 53
+        Label17.Text = "09171234567"
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold)
+        Label5.Location = New Point(18, 152)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(73, 17)
+        Label5.TabIndex = 40
+        Label5.Text = "Last Name"
+        ' 
+        ' Label16
+        ' 
+        Label16.AutoSize = True
+        Label16.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label16.Location = New Point(22, 387)
+        Label16.Name = "Label16"
+        Label16.Size = New Size(102, 17)
+        Label16.TabIndex = 52
+        Label16.Text = "Maria Dela Cruz"
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold)
+        Label6.Location = New Point(19, 221)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(71, 17)
+        Label6.TabIndex = 41
+        Label6.Text = "Birth Date"
+        ' 
+        ' Label15
+        ' 
+        Label15.AutoSize = True
+        Label15.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label15.Location = New Point(22, 317)
+        Label15.Name = "Label15"
+        Label15.Size = New Size(102, 17)
+        Label15.TabIndex = 51
+        Label15.Text = "123 Main St, QC"
+        ' 
+        ' Label7
+        ' 
+        Label7.AutoSize = True
+        Label7.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold)
+        Label7.Location = New Point(231, 221)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(29, 17)
+        Label7.TabIndex = 42
+        Label7.Text = "Sex"
+        ' 
+        ' Label14
+        ' 
+        Label14.AutoSize = True
+        Label14.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label14.Location = New Point(22, 252)
+        Label14.Name = "Label14"
+        Label14.Size = New Size(74, 17)
+        Label14.TabIndex = 50
+        Label14.Text = "2005-01-04"
+        ' 
+        ' Label10
+        ' 
+        Label10.AutoSize = True
+        Label10.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold)
+        Label10.Location = New Point(18, 287)
+        Label10.Name = "Label10"
+        Label10.Size = New Size(57, 17)
+        Label10.TabIndex = 43
+        Label10.Text = "Address"
+        ' 
+        ' Label13
+        ' 
+        Label13.AutoSize = True
+        Label13.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label13.Location = New Point(22, 183)
+        Label13.Name = "Label13"
+        Label13.Size = New Size(34, 17)
+        Label13.TabIndex = 49
+        Label13.Text = "Cruz"
+        ' 
+        ' Label9
+        ' 
+        Label9.AutoSize = True
+        Label9.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold)
+        Label9.Location = New Point(18, 357)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(110, 17)
+        Label9.TabIndex = 44
+        Label9.Text = "Parent/Guardian"
+        ' 
+        ' Label12
+        ' 
+        Label12.AutoSize = True
+        Label12.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label12.Location = New Point(22, 116)
+        Label12.Name = "Label12"
+        Label12.Size = New Size(34, 17)
+        Label12.TabIndex = 48
+        Label12.Text = "Dela"
+        ' 
+        ' Label8
+        ' 
+        Label8.AutoSize = True
+        Label8.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold)
+        Label8.Location = New Point(18, 428)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(101, 17)
+        Label8.TabIndex = 45
+        Label8.Text = "Phone Number"
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label2.Location = New Point(22, 43)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(34, 17)
+        Label2.TabIndex = 47
+        Label2.Text = "Juan"
+        ' 
+        ' Label11
+        ' 
+        Label11.AutoSize = True
+        Label11.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold)
+        Label11.Location = New Point(19, 501)
+        Label11.Name = "Label11"
+        Label11.Size = New Size(42, 17)
+        Label11.TabIndex = 46
+        Label11.Text = "Email"
         ' 
         ' PictureBox4
         ' 
@@ -212,7 +320,7 @@ Partial Class PaatientData
         ' 
         ' PaatientData
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
@@ -240,13 +348,22 @@ Partial Class PaatientData
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents RoundedPanel1 As RoundedPanel
     Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
+    Friend WithEvents Label19 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label9 As Label
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label14 As Label
     Friend WithEvents Label10 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label11 As Label
 End Class

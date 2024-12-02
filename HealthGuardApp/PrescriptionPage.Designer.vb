@@ -28,6 +28,8 @@ Partial Class PrescriptionPage
         PictureBox3 = New PictureBox()
         PictureBox4 = New PictureBox()
         RoundedPanel1 = New RoundedPanel()
+        Label6 = New Label()
+        RoundedPanel2 = New RoundedPanel()
         Label5 = New Label()
         PictureBox1 = New PictureBox()
         Label2 = New Label()
@@ -35,8 +37,7 @@ Partial Class PrescriptionPage
         Label4 = New Label()
         RoundedButton1 = New CustomControls.RJControls.RoundedButton()
         PictureBox2 = New PictureBox()
-        RoundedPanel2 = New RoundedPanel()
-        Label6 = New Label()
+        Label7 = New Label()
         Panel1.SuspendLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
@@ -106,6 +107,26 @@ Partial Class PrescriptionPage
         RoundedPanel1.Name = "RoundedPanel1"
         RoundedPanel1.Size = New Size(364, 166)
         RoundedPanel1.TabIndex = 10
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.BackColor = Color.MediumSlateBlue
+        Label6.ForeColor = SystemColors.ButtonHighlight
+        Label6.Location = New Point(260, 18)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(74, 15)
+        Label6.TabIndex = 13
+        Label6.Text = "High Priority"
+        ' 
+        ' RoundedPanel2
+        ' 
+        RoundedPanel2.BackColor = Color.MediumSlateBlue
+        RoundedPanel2.CornerRadius = 20
+        RoundedPanel2.Location = New Point(241, 15)
+        RoundedPanel2.Name = "RoundedPanel2"
+        RoundedPanel2.Size = New Size(112, 22)
+        RoundedPanel2.TabIndex = 12
         ' 
         ' Label5
         ' 
@@ -185,25 +206,16 @@ Partial Class PrescriptionPage
         PictureBox2.TabIndex = 11
         PictureBox2.TabStop = False
         ' 
-        ' RoundedPanel2
+        ' Label7
         ' 
-        RoundedPanel2.BackColor = Color.MediumSlateBlue
-        RoundedPanel2.CornerRadius = 20
-        RoundedPanel2.Location = New Point(241, 15)
-        RoundedPanel2.Name = "RoundedPanel2"
-        RoundedPanel2.Size = New Size(112, 22)
-        RoundedPanel2.TabIndex = 12
-        ' 
-        ' Label6
-        ' 
-        Label6.AutoSize = True
-        Label6.BackColor = Color.MediumSlateBlue
-        Label6.ForeColor = SystemColors.ButtonHighlight
-        Label6.Location = New Point(260, 18)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(74, 15)
-        Label6.TabIndex = 13
-        Label6.Text = "High Priority"
+        Label7.AutoSize = True
+        Label7.BackColor = Color.Transparent
+        Label7.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label7.Location = New Point(122, 123)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(153, 32)
+        Label7.TabIndex = 12
+        Label7.Text = "Prescription"
         ' 
         ' PrescriptionPage
         ' 
@@ -212,6 +224,7 @@ Partial Class PrescriptionPage
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(400, 750)
+        Controls.Add(Label7)
         Controls.Add(PictureBox2)
         Controls.Add(RoundedPanel1)
         Controls.Add(Panel1)
@@ -228,6 +241,7 @@ Partial Class PrescriptionPage
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents Panel1 As Panel
@@ -244,4 +258,5 @@ Partial Class PrescriptionPage
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label6 As Label
     Friend WithEvents RoundedPanel2 As RoundedPanel
+    Friend WithEvents Label7 As Label
 End Class

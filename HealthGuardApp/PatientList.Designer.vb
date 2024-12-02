@@ -135,11 +135,11 @@ Partial Class PatientList
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI", 13F)
-        Label3.Location = New Point(167, 30)
+        Label3.Location = New Point(189, 30)
         Label3.Name = "Label3"
-        Label3.Size = New Size(63, 25)
+        Label3.Size = New Size(47, 25)
         Label3.TabIndex = 9
-        Label3.Text = "Label3"
+        Label3.Text = "Cruz"
         ' 
         ' Label2
         ' 
@@ -147,9 +147,9 @@ Partial Class PatientList
         Label2.Font = New Font("Segoe UI", 13F)
         Label2.Location = New Point(108, 30)
         Label2.Name = "Label2"
-        Label2.Size = New Size(63, 25)
+        Label2.Size = New Size(87, 25)
         Label2.TabIndex = 8
-        Label2.Text = "Label2"
+        Label2.Text = "Juan Dela"
         ' 
         ' CirclePictureBox1
         ' 

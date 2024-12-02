@@ -8,4 +8,9 @@
         SymptomsPage.Show()
         Me.Hide()
     End Sub
+
+    Private Sub RoundedButton2_Click(sender As Object, e As EventArgs) Handles RoundedButton2.Click
+        AppointmentTicket.Show()
+        Me.Hide()
+    End Sub
 End Class

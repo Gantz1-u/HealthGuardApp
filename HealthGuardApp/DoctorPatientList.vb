@@ -5,7 +5,11 @@
     End Sub
 
     Private Sub CirclePictureBox1_Click(sender As Object, e As EventArgs) Handles CirclePictureBox1.Click
-        DoctorPatientData.Show()
+        DoctorPatientData.Show
         Me.Hide()
+    End Sub
+
+    Private Sub CirclePictureBox2_Click(sender As Object, e As EventArgs) Handles CirclePictureBox2.Click
+
     End Sub
 End Class

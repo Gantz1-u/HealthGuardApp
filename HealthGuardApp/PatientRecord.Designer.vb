@@ -29,6 +29,8 @@ Partial Class PatientRecord
         PictureBox4 = New PictureBox()
         PictureBox2 = New PictureBox()
         RoundedPanel1 = New RoundedPanel()
+        Label23 = New Label()
+        Label22 = New Label()
         Label21 = New Label()
         Label20 = New Label()
         Label19 = New Label()
@@ -123,6 +125,8 @@ Partial Class PatientRecord
         ' RoundedPanel1
         ' 
         RoundedPanel1.BackColor = SystemColors.ButtonHighlight
+        RoundedPanel1.Controls.Add(Label23)
+        RoundedPanel1.Controls.Add(Label22)
         RoundedPanel1.Controls.Add(Label21)
         RoundedPanel1.Controls.Add(Label20)
         RoundedPanel1.Controls.Add(Label19)
@@ -152,14 +156,34 @@ Partial Class PatientRecord
         RoundedPanel1.Size = New Size(360, 543)
         RoundedPanel1.TabIndex = 60
         ' 
+        ' Label23
+        ' 
+        Label23.AutoSize = True
+        Label23.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label23.Location = New Point(159, 58)
+        Label23.Name = "Label23"
+        Label23.Size = New Size(43, 20)
+        Label23.TabIndex = 82
+        Label23.Text = "Male"
+        ' 
+        ' Label22
+        ' 
+        Label22.AutoSize = True
+        Label22.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label22.Location = New Point(86, 58)
+        Label22.Name = "Label22"
+        Label22.Size = New Size(23, 20)
+        Label22.TabIndex = 81
+        Label22.Text = "19"
+        ' 
         ' Label21
         ' 
         Label21.AutoSize = True
-        Label21.Location = New Point(74, 507)
+        Label21.Location = New Point(79, 507)
         Label21.Name = "Label21"
-        Label21.Size = New Size(47, 15)
+        Label21.Size = New Size(91, 15)
         Label21.TabIndex = 80
-        Label21.Text = "Label21"
+        Label21.Text = "123 Main St, QC"
         ' 
         ' Label20
         ' 
@@ -174,56 +198,56 @@ Partial Class PatientRecord
         ' Label19
         ' 
         Label19.AutoSize = True
-        Label19.Location = New Point(74, 438)
+        Label19.Location = New Point(79, 438)
         Label19.Name = "Label19"
-        Label19.Size = New Size(47, 15)
+        Label19.Size = New Size(123, 15)
         Label19.TabIndex = 78
-        Label19.Text = "Label19"
+        Label19.Text = "juan.cruz@gmail.com"
         ' 
         ' Label18
         ' 
         Label18.AutoSize = True
-        Label18.Location = New Point(74, 373)
+        Label18.Location = New Point(79, 375)
         Label18.Name = "Label18"
-        Label18.Size = New Size(47, 15)
+        Label18.Size = New Size(73, 15)
         Label18.TabIndex = 77
-        Label18.Text = "Label18"
+        Label18.Text = "09171234567"
         ' 
         ' Label17
         ' 
         Label17.AutoSize = True
-        Label17.Location = New Point(51, 240)
+        Label17.Location = New Point(42, 240)
         Label17.Name = "Label17"
-        Label17.Size = New Size(47, 15)
+        Label17.Size = New Size(78, 15)
         Label17.TabIndex = 76
-        Label17.Text = "Label17"
+        Label17.Text = "Hypertension"
         ' 
         ' Label16
         ' 
         Label16.AutoSize = True
-        Label16.Location = New Point(51, 178)
+        Label16.Location = New Point(42, 178)
         Label16.Name = "Label16"
-        Label16.Size = New Size(47, 15)
+        Label16.Size = New Size(90, 15)
         Label16.TabIndex = 75
-        Label16.Text = "Label16"
+        Label16.Text = "Maria Dela Cruz"
         ' 
         ' Label15
         ' 
         Label15.AutoSize = True
-        Label15.Location = New Point(222, 120)
+        Label15.Location = New Point(201, 120)
         Label15.Name = "Label15"
-        Label15.Size = New Size(47, 15)
+        Label15.Size = New Size(22, 15)
         Label15.TabIndex = 74
-        Label15.Text = "Label15"
+        Label15.Text = "B+"
         ' 
         ' Label14
         ' 
         Label14.AutoSize = True
-        Label14.Location = New Point(51, 120)
+        Label14.Location = New Point(40, 120)
         Label14.Name = "Label14"
-        Label14.Size = New Size(47, 15)
+        Label14.Size = New Size(65, 15)
         Label14.TabIndex = 73
-        Label14.Text = "Label14"
+        Label14.Text = "2005-01-04"
         ' 
         ' CirclePictureBox4
         ' 
@@ -332,11 +356,11 @@ Partial Class PatientRecord
         ' 
         Label6.AutoSize = True
         Label6.Font = New Font("Segoe UI", 11.25F, FontStyle.Bold)
-        Label6.Location = New Point(102, 58)
+        Label6.Location = New Point(117, 58)
         Label6.Name = "Label6"
-        Label6.Size = New Size(33, 20)
+        Label6.Size = New Size(45, 20)
         Label6.TabIndex = 62
-        Label6.Text = "Sex"
+        Label6.Text = "Sex : "
         ' 
         ' Label5
         ' 
@@ -344,19 +368,19 @@ Partial Class PatientRecord
         Label5.Font = New Font("Segoe UI", 11.25F, FontStyle.Bold)
         Label5.Location = New Point(42, 58)
         Label5.Name = "Label5"
-        Label5.Size = New Size(37, 20)
+        Label5.Size = New Size(45, 20)
         Label5.TabIndex = 61
-        Label5.Text = "Age"
+        Label5.Text = "Age :"
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Segoe UI", 11.25F, FontStyle.Bold)
-        Label4.Location = New Point(130, 22)
+        Label4.Location = New Point(81, 22)
         Label4.Name = "Label4"
-        Label4.Size = New Size(99, 20)
+        Label4.Size = New Size(40, 20)
         Label4.TabIndex = 60
-        Label4.Text = "MiddleName"
+        Label4.Text = "Dela"
         ' 
         ' Label2
         ' 
@@ -364,19 +388,19 @@ Partial Class PatientRecord
         Label2.Font = New Font("Segoe UI", 11.25F, FontStyle.Bold)
         Label2.Location = New Point(42, 22)
         Label2.Name = "Label2"
-        Label2.Size = New Size(82, 20)
+        Label2.Size = New Size(42, 20)
         Label2.TabIndex = 59
-        Label2.Text = "FirstName"
+        Label2.Text = "Juan"
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 11.25F, FontStyle.Bold)
-        Label1.Location = New Point(235, 22)
+        Label1.Location = New Point(120, 22)
         Label1.Name = "Label1"
-        Label1.Size = New Size(80, 20)
+        Label1.Size = New Size(40, 20)
         Label1.TabIndex = 58
-        Label1.Text = "LastName"
+        Label1.Text = "Cruz"
         ' 
         ' PatientRecord
         ' 
@@ -434,4 +458,6 @@ Partial Class PatientRecord
     Friend WithEvents Label4 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label23 As Label
+    Friend WithEvents Label22 As Label
 End Class
