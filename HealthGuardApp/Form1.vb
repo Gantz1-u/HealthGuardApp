@@ -2,32 +2,37 @@
 
 Public Class Form1
     Private DB As New DBConnection()
-
-    ' When Patient Button is clicked
     Private Sub RoundedButton1_Click(sender As Object, e As EventArgs) Handles RoundedButton1.Click
-        SaveRoleAndRedirect("patient")
+        CreateEmptyAccount("Patient")
     End Sub
-
-    ' When Nurse Button is clicked
     Private Sub RoundedButton2_Click(sender As Object, e As EventArgs) Handles RoundedButton2.Click
-        SaveRoleAndRedirect("nurse")
+        CreateEmptyAccount("Nurse")
+    End Sub
+    Private Sub RoundedButton3_Click(sender As Object, e As EventArgs) Handles RoundedButton3.Click
+        CreateEmptyAccount("Doctor")
     End Sub
 
-    ' Function to save the role and redirect to RegisterPage
-    Private Sub SaveRoleAndRedirect(role As String)
+    ' create empty account tuple
+    Private Sub CreateEmptyAccount(role As String)
         Try
             Dim connection As MySqlConnection = DB.Open()
-            Dim query As String = "INSERT INTO accounts (Role) VALUES (@RoleName)"
+
+            Dim query As String = "
+                INSERT INTO accounts (Role, Status, CreationDate) 
+                VALUES (@Role, 'Pending', NOW());
+                SELECT LAST_INSERT_ID();"
+
+            Dim newUserId As Integer
 
             Using cmd As New MySqlCommand(query, connection)
-                cmd.Parameters.AddWithValue("@RoleName", role)
-                cmd.ExecuteNonQuery()
+                cmd.Parameters.AddWithValue("@Role", role)
+                newUserId = Convert.ToInt32(cmd.ExecuteScalar())
             End Using
 
-            MessageBox.Show($"Role '{role}' saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show($"Empty account created successfully with UserID {newUserId}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-            ' Open the RegisterPage
             Dim registerForm As New RegisterPage()
+            registerForm.SetUserId(newUserId)
             registerForm.Show()
             Me.Hide()
         Catch ex As Exception
