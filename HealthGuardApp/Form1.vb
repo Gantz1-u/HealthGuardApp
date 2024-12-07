@@ -36,4 +36,9 @@ Public Class Form1
             DB.Close()
         End Try
     End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        LoginPage.Show()
+        Me.Hide()
+    End Sub
 End Class

@@ -32,6 +32,7 @@ Partial Class NurseMenuPage
         Label2 = New Label()
         PictureBox4 = New PictureBox()
         PictureBox2 = New PictureBox()
+        btn_Logout = New Button()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
@@ -66,6 +67,7 @@ Partial Class NurseMenuPage
         ' 
         Panel1.BackColor = Color.Transparent
         Panel1.BorderStyle = BorderStyle.FixedSingle
+        Panel1.Controls.Add(btn_Logout)
         Panel1.Controls.Add(Label1)
         Panel1.Controls.Add(PictureBox1)
         Panel1.Controls.Add(PictureBox3)
@@ -163,6 +165,18 @@ Partial Class NurseMenuPage
         PictureBox2.TabIndex = 14
         PictureBox2.TabStop = False
         ' 
+        ' btn_Logout
+        ' 
+        btn_Logout.BackColor = Color.White
+        btn_Logout.FlatStyle = FlatStyle.Flat
+        btn_Logout.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btn_Logout.Location = New Point(327, 16)
+        btn_Logout.Name = "btn_Logout"
+        btn_Logout.Size = New Size(75, 35)
+        btn_Logout.TabIndex = 22
+        btn_Logout.Text = "Log out"
+        btn_Logout.UseVisualStyleBackColor = False
+        ' 
         ' NurseMenuPage
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -198,4 +212,5 @@ Partial Class NurseMenuPage
     Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents btn_Logout As Button
 End Class

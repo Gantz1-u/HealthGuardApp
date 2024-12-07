@@ -17,4 +17,9 @@
         AppointmentPage.Show()
         Me.Hide()
     End Sub
+
+    Private Sub Logout(sender As Object, e As EventArgs) Handles btn_Logout.Click
+        LoginPage.Show()
+        Me.Hide()
+    End Sub
 End Class

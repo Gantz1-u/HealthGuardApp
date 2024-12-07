@@ -33,6 +33,7 @@ Partial Class DoctorMenuPage
         RoundedButton2 = New CustomControls.RJControls.RoundedButton()
         PictureBox2 = New PictureBox()
         RoundedButton3 = New CustomControls.RJControls.RoundedButton()
+        btn_Logout = New Button()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
@@ -89,6 +90,7 @@ Partial Class DoctorMenuPage
         ' 
         Panel1.BackColor = Color.Transparent
         Panel1.BorderStyle = BorderStyle.FixedSingle
+        Panel1.Controls.Add(btn_Logout)
         Panel1.Controls.Add(Label1)
         Panel1.Controls.Add(PictureBox1)
         Panel1.Controls.Add(PictureBox3)
@@ -186,6 +188,18 @@ Partial Class DoctorMenuPage
         RoundedButton3.TextColor = Color.Black
         RoundedButton3.UseVisualStyleBackColor = False
         ' 
+        ' btn_Logout
+        ' 
+        btn_Logout.BackColor = Color.White
+        btn_Logout.FlatStyle = FlatStyle.Flat
+        btn_Logout.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btn_Logout.Location = New Point(327, 16)
+        btn_Logout.Name = "btn_Logout"
+        btn_Logout.Size = New Size(75, 35)
+        btn_Logout.TabIndex = 22
+        btn_Logout.Text = "Log out"
+        btn_Logout.UseVisualStyleBackColor = False
+        ' 
         ' DoctorMenuPage
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -224,4 +238,5 @@ Partial Class DoctorMenuPage
     Friend WithEvents RoundedButton2 As CustomControls.RJControls.RoundedButton
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents RoundedButton3 As CustomControls.RJControls.RoundedButton
+    Friend WithEvents btn_Logout As Button
 End Class

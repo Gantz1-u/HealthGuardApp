@@ -89,7 +89,7 @@ Partial Class LoginPage
         LinkLabel1.AutoSize = True
         LinkLabel1.BackColor = Color.Transparent
         LinkLabel1.Cursor = Cursors.Hand
-        LinkLabel1.Location = New Point(225, 629)
+        LinkLabel1.Location = New Point(220, 629)
         LinkLabel1.Name = "LinkLabel1"
         LinkLabel1.Size = New Size(87, 15)
         LinkLabel1.TabIndex = 11
@@ -100,11 +100,11 @@ Partial Class LoginPage
         ' 
         Label5.AutoSize = True
         Label5.BackColor = Color.Transparent
-        Label5.Location = New Point(86, 629)
+        Label5.Location = New Point(90, 629)
         Label5.Name = "Label5"
-        Label5.Size = New Size(142, 15)
+        Label5.Size = New Size(131, 15)
         Label5.TabIndex = 10
-        Label5.Text = "Doesn't have an account?"
+        Label5.Text = "Don't have an account?"
         ' 
         ' RoundedButton3
         ' 

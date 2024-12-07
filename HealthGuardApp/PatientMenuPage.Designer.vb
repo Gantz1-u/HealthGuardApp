@@ -29,6 +29,7 @@ Partial Class PatientMenuPage
         PictureBox4 = New PictureBox()
         PictureBox2 = New PictureBox()
         Panel1 = New Panel()
+        btn_Logout = New Button()
         Label1 = New Label()
         PictureBox1 = New PictureBox()
         PictureBox3 = New PictureBox()
@@ -122,6 +123,7 @@ Partial Class PatientMenuPage
         ' 
         Panel1.BackColor = Color.Transparent
         Panel1.BorderStyle = BorderStyle.FixedSingle
+        Panel1.Controls.Add(btn_Logout)
         Panel1.Controls.Add(Label1)
         Panel1.Controls.Add(PictureBox1)
         Panel1.Controls.Add(PictureBox3)
@@ -129,6 +131,18 @@ Partial Class PatientMenuPage
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(422, 68)
         Panel1.TabIndex = 19
+        ' 
+        ' btn_Logout
+        ' 
+        btn_Logout.BackColor = Color.White
+        btn_Logout.FlatStyle = FlatStyle.Flat
+        btn_Logout.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btn_Logout.Location = New Point(327, 16)
+        btn_Logout.Name = "btn_Logout"
+        btn_Logout.Size = New Size(75, 35)
+        btn_Logout.TabIndex = 21
+        btn_Logout.Text = "Log out"
+        btn_Logout.UseVisualStyleBackColor = False
         ' 
         ' Label1
         ' 
@@ -224,4 +238,5 @@ Partial Class PatientMenuPage
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents RoundedButton4 As CustomControls.RJControls.RoundedButton
+    Friend WithEvents btn_Logout As Button
 End Class

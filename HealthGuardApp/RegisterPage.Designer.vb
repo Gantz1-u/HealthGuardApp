@@ -72,9 +72,10 @@ Partial Class RegisterPage
         RoundedButton3.FlatStyle = FlatStyle.Flat
         RoundedButton3.Font = New Font("Segoe UI", 10F)
         RoundedButton3.ForeColor = Color.Black
-        RoundedButton3.Location = New Point(34, 682)
+        RoundedButton3.Location = New Point(39, 909)
+        RoundedButton3.Margin = New Padding(3, 4, 3, 4)
         RoundedButton3.Name = "RoundedButton3"
-        RoundedButton3.Size = New Size(331, 52)
+        RoundedButton3.Size = New Size(378, 69)
         RoundedButton3.TabIndex = 23
         RoundedButton3.Text = "Register"
         RoundedButton3.TextColor = Color.Black
@@ -86,9 +87,9 @@ Partial Class RegisterPage
         LinkLabel1.AutoSize = True
         LinkLabel1.BackColor = Color.Transparent
         LinkLabel1.Cursor = Cursors.Hand
-        LinkLabel1.Location = New Point(249, 654)
+        LinkLabel1.Location = New Point(285, 872)
         LinkLabel1.Name = "LinkLabel1"
-        LinkLabel1.Size = New Size(37, 15)
+        LinkLabel1.Size = New Size(46, 20)
         LinkLabel1.TabIndex = 22
         LinkLabel1.TabStop = True
         LinkLabel1.Text = "Login"
@@ -97,9 +98,9 @@ Partial Class RegisterPage
         ' 
         Label5.AutoSize = True
         Label5.BackColor = Color.Transparent
-        Label5.Location = New Point(110, 654)
+        Label5.Location = New Point(126, 872)
         Label5.Name = "Label5"
-        Label5.Size = New Size(142, 15)
+        Label5.Size = New Size(178, 20)
         Label5.TabIndex = 21
         Label5.Text = "Already have an account?"
         ' 
@@ -109,9 +110,9 @@ Partial Class RegisterPage
         Label1.BackColor = Color.Transparent
         Label1.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = Color.SteelBlue
-        Label1.Location = New Point(128, 196)
+        Label1.Location = New Point(146, 261)
         Label1.Name = "Label1"
-        Label1.Size = New Size(141, 21)
+        Label1.Size = New Size(175, 28)
         Label1.TabIndex = 18
         Label1.Text = "Create an account"
         ' 
@@ -119,9 +120,10 @@ Partial Class RegisterPage
         ' 
         Panel1.BackColor = Color.Transparent
         Panel1.Controls.Add(PictureBox1)
-        Panel1.Location = New Point(43, 49)
+        Panel1.Location = New Point(49, 65)
+        Panel1.Margin = New Padding(3, 4, 3, 4)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(289, 176)
+        Panel1.Size = New Size(330, 235)
         Panel1.TabIndex = 17
         ' 
         ' PictureBox1
@@ -130,8 +132,9 @@ Partial Class RegisterPage
         PictureBox1.Dock = DockStyle.Fill
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
         PictureBox1.Location = New Point(0, 0)
+        PictureBox1.Margin = New Padding(3, 4, 3, 4)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(289, 176)
+        PictureBox1.Size = New Size(330, 235)
         PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
@@ -141,18 +144,20 @@ Partial Class RegisterPage
         RoundedPanel2.BackColor = SystemColors.Window
         RoundedPanel2.Controls.Add(RoundedTextBox3)
         RoundedPanel2.CornerRadius = 20
-        RoundedPanel2.Location = New Point(34, 287)
+        RoundedPanel2.Location = New Point(39, 383)
+        RoundedPanel2.Margin = New Padding(3, 4, 3, 4)
         RoundedPanel2.Name = "RoundedPanel2"
-        RoundedPanel2.Size = New Size(331, 48)
+        RoundedPanel2.Size = New Size(378, 64)
         RoundedPanel2.TabIndex = 25
         ' 
         ' RoundedTextBox3
         ' 
-        RoundedTextBox3.Location = New Point(9, 14)
+        RoundedTextBox3.Location = New Point(10, 19)
+        RoundedTextBox3.Margin = New Padding(3, 4, 3, 4)
         RoundedTextBox3.Multiline = True
         RoundedTextBox3.Name = "RoundedTextBox3"
         RoundedTextBox3.PlaceholderText = "Middle Name"
-        RoundedTextBox3.Size = New Size(276, 22)
+        RoundedTextBox3.Size = New Size(315, 28)
         RoundedTextBox3.TabIndex = 3
         ' 
         ' RoundedPanel1
@@ -160,18 +165,20 @@ Partial Class RegisterPage
         RoundedPanel1.BackColor = SystemColors.Window
         RoundedPanel1.Controls.Add(RoundedTextBox1)
         RoundedPanel1.CornerRadius = 20
-        RoundedPanel1.Location = New Point(34, 233)
+        RoundedPanel1.Location = New Point(39, 311)
+        RoundedPanel1.Margin = New Padding(3, 4, 3, 4)
         RoundedPanel1.Name = "RoundedPanel1"
-        RoundedPanel1.Size = New Size(331, 48)
+        RoundedPanel1.Size = New Size(378, 64)
         RoundedPanel1.TabIndex = 24
         ' 
         ' RoundedTextBox1
         ' 
-        RoundedTextBox1.Location = New Point(9, 13)
+        RoundedTextBox1.Location = New Point(10, 17)
+        RoundedTextBox1.Margin = New Padding(3, 4, 3, 4)
         RoundedTextBox1.Multiline = True
         RoundedTextBox1.Name = "RoundedTextBox1"
         RoundedTextBox1.PlaceholderText = "First Name"
-        RoundedTextBox1.Size = New Size(289, 22)
+        RoundedTextBox1.Size = New Size(330, 28)
         RoundedTextBox1.TabIndex = 3
         ' 
         ' RoundedPanel3
@@ -179,18 +186,20 @@ Partial Class RegisterPage
         RoundedPanel3.BackColor = SystemColors.Window
         RoundedPanel3.Controls.Add(RoundedTextBox2)
         RoundedPanel3.CornerRadius = 20
-        RoundedPanel3.Location = New Point(34, 341)
+        RoundedPanel3.Location = New Point(39, 455)
+        RoundedPanel3.Margin = New Padding(3, 4, 3, 4)
         RoundedPanel3.Name = "RoundedPanel3"
-        RoundedPanel3.Size = New Size(331, 48)
+        RoundedPanel3.Size = New Size(378, 64)
         RoundedPanel3.TabIndex = 26
         ' 
         ' RoundedTextBox2
         ' 
-        RoundedTextBox2.Location = New Point(9, 14)
+        RoundedTextBox2.Location = New Point(10, 19)
+        RoundedTextBox2.Margin = New Padding(3, 4, 3, 4)
         RoundedTextBox2.Multiline = True
         RoundedTextBox2.Name = "RoundedTextBox2"
         RoundedTextBox2.PlaceholderText = "Last Name"
-        RoundedTextBox2.Size = New Size(276, 22)
+        RoundedTextBox2.Size = New Size(315, 28)
         RoundedTextBox2.TabIndex = 3
         ' 
         ' RoundedPanel4
@@ -198,18 +207,20 @@ Partial Class RegisterPage
         RoundedPanel4.BackColor = SystemColors.Window
         RoundedPanel4.Controls.Add(RoundedTextBox4)
         RoundedPanel4.CornerRadius = 20
-        RoundedPanel4.Location = New Point(34, 449)
+        RoundedPanel4.Location = New Point(39, 599)
+        RoundedPanel4.Margin = New Padding(3, 4, 3, 4)
         RoundedPanel4.Name = "RoundedPanel4"
-        RoundedPanel4.Size = New Size(331, 48)
+        RoundedPanel4.Size = New Size(378, 64)
         RoundedPanel4.TabIndex = 28
         ' 
         ' RoundedTextBox4
         ' 
-        RoundedTextBox4.Location = New Point(9, 14)
+        RoundedTextBox4.Location = New Point(10, 19)
+        RoundedTextBox4.Margin = New Padding(3, 4, 3, 4)
         RoundedTextBox4.Multiline = True
         RoundedTextBox4.Name = "RoundedTextBox4"
         RoundedTextBox4.PlaceholderText = "Username or Email"
-        RoundedTextBox4.Size = New Size(276, 22)
+        RoundedTextBox4.Size = New Size(315, 28)
         RoundedTextBox4.TabIndex = 3
         ' 
         ' RoundedPanel5
@@ -217,18 +228,20 @@ Partial Class RegisterPage
         RoundedPanel5.BackColor = SystemColors.Window
         RoundedPanel5.Controls.Add(RoundedTextBox5)
         RoundedPanel5.CornerRadius = 20
-        RoundedPanel5.Location = New Point(34, 395)
+        RoundedPanel5.Location = New Point(39, 527)
+        RoundedPanel5.Margin = New Padding(3, 4, 3, 4)
         RoundedPanel5.Name = "RoundedPanel5"
-        RoundedPanel5.Size = New Size(331, 48)
+        RoundedPanel5.Size = New Size(378, 64)
         RoundedPanel5.TabIndex = 27
         ' 
         ' RoundedTextBox5
         ' 
-        RoundedTextBox5.Location = New Point(9, 14)
+        RoundedTextBox5.Location = New Point(10, 19)
+        RoundedTextBox5.Margin = New Padding(3, 4, 3, 4)
         RoundedTextBox5.Multiline = True
         RoundedTextBox5.Name = "RoundedTextBox5"
         RoundedTextBox5.PlaceholderText = "Phone Number"
-        RoundedTextBox5.Size = New Size(276, 22)
+        RoundedTextBox5.Size = New Size(315, 28)
         RoundedTextBox5.TabIndex = 3
         ' 
         ' RoundedPanel6
@@ -237,18 +250,20 @@ Partial Class RegisterPage
         RoundedPanel6.Controls.Add(RoundedTextBox6)
         RoundedPanel6.Controls.Add(PictureBox6)
         RoundedPanel6.CornerRadius = 20
-        RoundedPanel6.Location = New Point(34, 503)
+        RoundedPanel6.Location = New Point(39, 671)
+        RoundedPanel6.Margin = New Padding(3, 4, 3, 4)
         RoundedPanel6.Name = "RoundedPanel6"
-        RoundedPanel6.Size = New Size(331, 48)
+        RoundedPanel6.Size = New Size(378, 64)
         RoundedPanel6.TabIndex = 29
         ' 
         ' RoundedTextBox6
         ' 
-        RoundedTextBox6.Location = New Point(9, 14)
+        RoundedTextBox6.Location = New Point(10, 19)
+        RoundedTextBox6.Margin = New Padding(3, 4, 3, 4)
         RoundedTextBox6.Multiline = True
         RoundedTextBox6.Name = "RoundedTextBox6"
         RoundedTextBox6.PlaceholderText = "Password"
-        RoundedTextBox6.Size = New Size(276, 22)
+        RoundedTextBox6.Size = New Size(315, 28)
         RoundedTextBox6.TabIndex = 3
         ' 
         ' PictureBox6
@@ -256,9 +271,10 @@ Partial Class RegisterPage
         PictureBox6.BackColor = SystemColors.Window
         PictureBox6.Cursor = Cursors.Hand
         PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), Image)
-        PictureBox6.Location = New Point(292, 17)
+        PictureBox6.Location = New Point(334, 23)
+        PictureBox6.Margin = New Padding(3, 4, 3, 4)
         PictureBox6.Name = "PictureBox6"
-        PictureBox6.Size = New Size(19, 16)
+        PictureBox6.Size = New Size(22, 21)
         PictureBox6.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox6.TabIndex = 16
         PictureBox6.TabStop = False
@@ -269,18 +285,20 @@ Partial Class RegisterPage
         RoundedPanel7.Controls.Add(RoundedTextBox7)
         RoundedPanel7.Controls.Add(PictureBox2)
         RoundedPanel7.CornerRadius = 20
-        RoundedPanel7.Location = New Point(34, 557)
+        RoundedPanel7.Location = New Point(39, 743)
+        RoundedPanel7.Margin = New Padding(3, 4, 3, 4)
         RoundedPanel7.Name = "RoundedPanel7"
-        RoundedPanel7.Size = New Size(331, 48)
+        RoundedPanel7.Size = New Size(378, 64)
         RoundedPanel7.TabIndex = 30
         ' 
         ' RoundedTextBox7
         ' 
-        RoundedTextBox7.Location = New Point(9, 14)
+        RoundedTextBox7.Location = New Point(10, 19)
+        RoundedTextBox7.Margin = New Padding(3, 4, 3, 4)
         RoundedTextBox7.Multiline = True
         RoundedTextBox7.Name = "RoundedTextBox7"
         RoundedTextBox7.PlaceholderText = "Confirm Password"
-        RoundedTextBox7.Size = New Size(276, 22)
+        RoundedTextBox7.Size = New Size(315, 28)
         RoundedTextBox7.TabIndex = 3
         ' 
         ' PictureBox2
@@ -288,20 +306,21 @@ Partial Class RegisterPage
         PictureBox2.BackColor = SystemColors.Window
         PictureBox2.Cursor = Cursors.Hand
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(292, 17)
+        PictureBox2.Location = New Point(334, 23)
+        PictureBox2.Margin = New Padding(3, 4, 3, 4)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(19, 16)
+        PictureBox2.Size = New Size(22, 21)
         PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox2.TabIndex = 16
         PictureBox2.TabStop = False
         ' 
         ' RegisterPage
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(400, 750)
+        ClientSize = New Size(457, 1000)
         Controls.Add(RoundedPanel7)
         Controls.Add(RoundedPanel6)
         Controls.Add(RoundedPanel4)
@@ -316,6 +335,7 @@ Partial Class RegisterPage
         Controls.Add(Panel1)
         DoubleBuffered = True
         FormBorderStyle = FormBorderStyle.None
+        Margin = New Padding(3, 4, 3, 4)
         Name = "RegisterPage"
         StartPosition = FormStartPosition.CenterScreen
         Text = "RegisterPage"
