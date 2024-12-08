@@ -23,10 +23,6 @@ Partial Class PatientList
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PatientList))
-        Panel1 = New Panel()
-        Label1 = New Label()
-        PictureBox1 = New PictureBox()
-        PictureBox3 = New PictureBox()
         RoundedPanel1 = New RoundedPanel()
         RoundedTextBox1 = New RoundedTextBox()
         PictureBox2 = New PictureBox()
@@ -35,61 +31,19 @@ Partial Class PatientList
         Label2 = New Label()
         CirclePictureBox1 = New CirclePictureBox()
         PictureBox4 = New PictureBox()
-        Panel1.SuspendLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
+        Panel1 = New Panel()
+        PictureBox3 = New PictureBox()
+        Label1 = New Label()
+        PictureBox1 = New PictureBox()
         RoundedPanel1.SuspendLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         RoundedPanel2.SuspendLayout()
         CType(CirclePictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
+        Panel1.SuspendLayout()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
-        ' 
-        ' Panel1
-        ' 
-        Panel1.BackColor = Color.Transparent
-        Panel1.BorderStyle = BorderStyle.FixedSingle
-        Panel1.Controls.Add(Label1)
-        Panel1.Controls.Add(PictureBox1)
-        Panel1.Controls.Add(PictureBox3)
-        Panel1.Location = New Point(-13, 0)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(415, 68)
-        Panel1.TabIndex = 5
-        ' 
-        ' Label1
-        ' 
-        Label1.BackColor = Color.Transparent
-        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(22, 42)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(47, 16)
-        Label1.TabIndex = 5
-        Label1.Text = "MENU"
-        Label1.TextAlign = ContentAlignment.TopCenter
-        ' 
-        ' PictureBox1
-        ' 
-        PictureBox1.BackColor = Color.Transparent
-        PictureBox1.Cursor = Cursors.Hand
-        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(24, 14)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(40, 25)
-        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox1.TabIndex = 3
-        PictureBox1.TabStop = False
-        ' 
-        ' PictureBox3
-        ' 
-        PictureBox3.BackColor = Color.Transparent
-        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
-        PictureBox3.Location = New Point(48, -11)
-        PictureBox3.Name = "PictureBox3"
-        PictureBox3.Size = New Size(142, 90)
-        PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox3.TabIndex = 2
-        PictureBox3.TabStop = False
         ' 
         ' RoundedPanel1
         ' 
@@ -174,6 +128,53 @@ Partial Class PatientList
         PictureBox4.TabIndex = 12
         PictureBox4.TabStop = False
         ' 
+        ' Panel1
+        ' 
+        Panel1.BackColor = Color.Transparent
+        Panel1.BorderStyle = BorderStyle.FixedSingle
+        Panel1.Controls.Add(PictureBox3)
+        Panel1.Controls.Add(Label1)
+        Panel1.Controls.Add(PictureBox1)
+        Panel1.Dock = DockStyle.Top
+        Panel1.Location = New Point(0, 0)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(400, 68)
+        Panel1.TabIndex = 35
+        ' 
+        ' PictureBox3
+        ' 
+        PictureBox3.BackColor = Color.Transparent
+        PictureBox3.Cursor = Cursors.Hand
+        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
+        PictureBox3.Location = New Point(25, 14)
+        PictureBox3.Name = "PictureBox3"
+        PictureBox3.Size = New Size(40, 25)
+        PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox3.TabIndex = 3
+        PictureBox3.TabStop = False
+        ' 
+        ' Label1
+        ' 
+        Label1.BackColor = Color.Transparent
+        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Location = New Point(22, 42)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(47, 16)
+        Label1.TabIndex = 5
+        Label1.Text = "HOME"
+        Label1.TextAlign = ContentAlignment.TopCenter
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.BackColor = Color.Transparent
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(48, -11)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(142, 90)
+        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox1.TabIndex = 2
+        PictureBox1.TabStop = False
+        ' 
         ' PatientList
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -181,18 +182,15 @@ Partial Class PatientList
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(400, 750)
+        Controls.Add(Panel1)
         Controls.Add(PictureBox4)
         Controls.Add(RoundedPanel2)
         Controls.Add(RoundedPanel1)
-        Controls.Add(Panel1)
         DoubleBuffered = True
         FormBorderStyle = FormBorderStyle.None
         Name = "PatientList"
         StartPosition = FormStartPosition.CenterScreen
         Text = "PersonalInfo"
-        Panel1.ResumeLayout(False)
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         RoundedPanel1.ResumeLayout(False)
         RoundedPanel1.PerformLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
@@ -200,13 +198,11 @@ Partial Class PatientList
         RoundedPanel2.PerformLayout()
         CType(CirclePictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
+        Panel1.ResumeLayout(False)
+        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
-
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label1 As Label
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents RoundedPanel1 As RoundedPanel
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents RoundedTextBox1 As RoundedTextBox
@@ -215,4 +211,8 @@ Partial Class PatientList
     Friend WithEvents Label2 As Label
     Friend WithEvents CirclePictureBox1 As CirclePictureBox
     Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
