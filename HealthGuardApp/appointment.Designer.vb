@@ -24,9 +24,6 @@ Partial Class appointment
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(appointment))
         Panel2 = New Panel()
-        Label1 = New Label()
-        PictureBox1 = New PictureBox()
-        PictureBox5 = New PictureBox()
         PictureBox2 = New PictureBox()
         Label2 = New Label()
         RoundedButton3 = New CustomControls.RJControls.RoundedButton()
@@ -48,9 +45,8 @@ Partial Class appointment
         Label3 = New Label()
         RoundedTextBox1 = New RoundedTextBox()
         RoundedButton16 = New CustomControls.RJControls.RoundedButton()
+        btn_Home = New Button()
         Panel2.SuspendLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -58,47 +54,11 @@ Partial Class appointment
         ' 
         Panel2.BackColor = Color.Transparent
         Panel2.BorderStyle = BorderStyle.FixedSingle
-        Panel2.Controls.Add(Label1)
-        Panel2.Controls.Add(PictureBox1)
-        Panel2.Controls.Add(PictureBox5)
-        Panel2.Location = New Point(0, 3)
+        Panel2.Controls.Add(btn_Home)
+        Panel2.Location = New Point(0, 0)
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(422, 68)
         Panel2.TabIndex = 19
-        ' 
-        ' Label1
-        ' 
-        Label1.BackColor = Color.Transparent
-        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(22, 42)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(47, 16)
-        Label1.TabIndex = 5
-        Label1.Text = "MENU"
-        Label1.TextAlign = ContentAlignment.TopCenter
-        ' 
-        ' PictureBox1
-        ' 
-        PictureBox1.BackColor = Color.Transparent
-        PictureBox1.Cursor = Cursors.Hand
-        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(24, 14)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(40, 25)
-        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox1.TabIndex = 3
-        PictureBox1.TabStop = False
-        ' 
-        ' PictureBox5
-        ' 
-        PictureBox5.BackColor = Color.Transparent
-        PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), Image)
-        PictureBox5.Location = New Point(48, -11)
-        PictureBox5.Name = "PictureBox5"
-        PictureBox5.Size = New Size(142, 90)
-        PictureBox5.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox5.TabIndex = 2
-        PictureBox5.TabStop = False
         ' 
         ' PictureBox2
         ' 
@@ -501,6 +461,20 @@ Partial Class appointment
         RoundedButton16.TextColor = Color.Black
         RoundedButton16.UseVisualStyleBackColor = False
         ' 
+        ' btn_Home
+        ' 
+        btn_Home.FlatStyle = FlatStyle.Flat
+        btn_Home.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btn_Home.Image = Resources.icon_home
+        btn_Home.ImageAlign = ContentAlignment.TopCenter
+        btn_Home.Location = New Point(-1, -1)
+        btn_Home.Name = "btn_Home"
+        btn_Home.Size = New Size(54, 68)
+        btn_Home.TabIndex = 72
+        btn_Home.Text = "Home"
+        btn_Home.TextImageRelation = TextImageRelation.ImageAboveText
+        btn_Home.UseVisualStyleBackColor = True
+        ' 
         ' appointment
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -536,17 +510,12 @@ Partial Class appointment
         StartPosition = FormStartPosition.CenterScreen
         Text = " "
         Panel2.ResumeLayout(False)
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label1 As Label
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Label2 As Label
     Friend WithEvents RoundedButton3 As CustomControls.RJControls.RoundedButton
@@ -568,4 +537,5 @@ Partial Class appointment
     Friend WithEvents Label3 As Label
     Friend WithEvents RoundedTextBox1 As RoundedTextBox
     Friend WithEvents RoundedButton16 As CustomControls.RJControls.RoundedButton
+    Friend WithEvents btn_Home As Button
 End Class

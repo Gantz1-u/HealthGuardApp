@@ -24,15 +24,11 @@ Partial Class AppointmentPage
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AppointmentPage))
         Panel1 = New Panel()
-        Label3 = New Label()
-        PictureBox3 = New PictureBox()
-        PictureBox4 = New PictureBox()
         PictureBox2 = New PictureBox()
         RoundedButton2 = New CustomControls.RJControls.RoundedButton()
         RoundedButton4 = New CustomControls.RJControls.RoundedButton()
+        btn_Home = New Button()
         Panel1.SuspendLayout()
-        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -40,47 +36,11 @@ Partial Class AppointmentPage
         ' 
         Panel1.BackColor = Color.Transparent
         Panel1.BorderStyle = BorderStyle.FixedSingle
-        Panel1.Controls.Add(Label3)
-        Panel1.Controls.Add(PictureBox3)
-        Panel1.Controls.Add(PictureBox4)
+        Panel1.Controls.Add(btn_Home)
         Panel1.Location = New Point(-19, -6)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(422, 68)
         Panel1.TabIndex = 12
-        ' 
-        ' Label3
-        ' 
-        Label3.BackColor = Color.Transparent
-        Label3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(22, 42)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(47, 16)
-        Label3.TabIndex = 5
-        Label3.Text = "MENU"
-        Label3.TextAlign = ContentAlignment.TopCenter
-        ' 
-        ' PictureBox3
-        ' 
-        PictureBox3.BackColor = Color.Transparent
-        PictureBox3.Cursor = Cursors.Hand
-        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
-        PictureBox3.Location = New Point(24, 14)
-        PictureBox3.Name = "PictureBox3"
-        PictureBox3.Size = New Size(40, 25)
-        PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox3.TabIndex = 3
-        PictureBox3.TabStop = False
-        ' 
-        ' PictureBox4
-        ' 
-        PictureBox4.BackColor = Color.Transparent
-        PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
-        PictureBox4.Location = New Point(48, -11)
-        PictureBox4.Name = "PictureBox4"
-        PictureBox4.Size = New Size(142, 90)
-        PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox4.TabIndex = 2
-        PictureBox4.TabStop = False
         ' 
         ' PictureBox2
         ' 
@@ -138,6 +98,20 @@ Partial Class AppointmentPage
         RoundedButton4.TextColor = Color.Black
         RoundedButton4.UseVisualStyleBackColor = False
         ' 
+        ' btn_Home
+        ' 
+        btn_Home.FlatStyle = FlatStyle.Flat
+        btn_Home.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btn_Home.Image = Resources.icon_home
+        btn_Home.ImageAlign = ContentAlignment.TopCenter
+        btn_Home.Location = New Point(18, -1)
+        btn_Home.Name = "btn_Home"
+        btn_Home.Size = New Size(54, 68)
+        btn_Home.TabIndex = 73
+        btn_Home.Text = "Home"
+        btn_Home.TextImageRelation = TextImageRelation.ImageAboveText
+        btn_Home.UseVisualStyleBackColor = True
+        ' 
         ' AppointmentPage
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -155,17 +129,13 @@ Partial Class AppointmentPage
         StartPosition = FormStartPosition.CenterScreen
         Text = "AppointmentPage"
         Panel1.ResumeLayout(False)
-        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label3 As Label
-    Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents RoundedButton2 As CustomControls.RJControls.RoundedButton
     Friend WithEvents RoundedButton4 As CustomControls.RJControls.RoundedButton
+    Friend WithEvents btn_Home As Button
 End Class

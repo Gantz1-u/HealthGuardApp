@@ -3,6 +3,7 @@
 Public Class LoginPage
     Private DB As New DBConnection()
     Private passwordVisible As Boolean = False ' Track password visibility state
+    Public Shared LoggedInUserID As Integer ' Store the logged-in user's ID
 
     ' Link to navigate to another form (e.g., registration form)
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
@@ -12,38 +13,36 @@ Public Class LoginPage
 
     ' Login button click event
     Private Sub RoundedButton3_Click(sender As Object, e As EventArgs) Handles RoundedButton3.Click
-        ' Get the user inputs
         Dim username As String = RoundedTextBox1.Text.Trim()
         Dim password As String = RoundedTextBox3.Text.Trim()
 
-        ' Validate user inputs
         If String.IsNullOrEmpty(username) OrElse String.IsNullOrEmpty(password) Then
             MessageBox.Show("Please enter both username and password.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Exit Sub
         End If
 
-        ' Query to check credentials and retrieve the user's role
-        Dim query As String = "SELECT Role FROM accounts WHERE EmailUsername = @EmailUsername AND Password = @Password"
+        ' Query to check credentials and retrieve the user's role and ID
+        Dim query As String = "SELECT UserID, Role FROM accounts WHERE EmailUsername = @EmailUsername AND Password = @Password"
 
         Try
             Dim connection As MySqlConnection = DB.Open()
             Using cmd As New MySqlCommand(query, connection)
-                ' Add parameters to prevent SQL injection
                 cmd.Parameters.AddWithValue("@EmailUsername", username)
                 cmd.Parameters.AddWithValue("@Password", password)
 
                 Dim reader As MySqlDataReader = cmd.ExecuteReader()
 
-                ' Check if the user exists
                 If reader.HasRows Then
                     reader.Read()
-                    Dim userRole As String = reader("Role").ToString().Trim() ' Trim whitespace
+                    ' Fetch the UserID and Role
+                    LoggedInUserID = Convert.ToInt32(reader("UserID"))
+                    Dim userRole As String = reader("Role").ToString().Trim()
 
-                    ' Debug: Show the role in a message box
-                    MessageBox.Show($"Role retrieved: {userRole}", "Debug", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    ' Debug: Show the UserID and Role
+                    MessageBox.Show($"Logged-in User ID: {LoggedInUserID}, Role: {userRole}", "Debug", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                     ' Open the corresponding menu based on the user's role
-                    Select Case userRole.ToLower() ' Ensure case-insensitivity
+                    Select Case userRole.ToLower()
                         Case "patient"
                             Dim patientMenu As New PatientMenuPage()
                             patientMenu.Show()
@@ -71,18 +70,29 @@ Public Class LoginPage
         End Try
     End Sub
 
-
+    ' Toggle password visibility
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        ' Toggle password visibility
         If passwordVisible Then
-            RoundedTextBox3.UseSystemPasswordChar = True ' Hide password
-            PictureBox2.Text = "Show"           ' Update button text
+            RoundedTextBox3.UseSystemPasswordChar = True
         Else
-            RoundedTextBox3.UseSystemPasswordChar = False ' Show password
-            PictureBox2.Text = "Hide"            ' Update button text
+            RoundedTextBox3.UseSystemPasswordChar = False
         End If
 
-        ' Toggle the state
         passwordVisible = Not passwordVisible
+    End Sub
+
+    ' Prevent Enter key in RoundedTextBox1
+    Private Sub RoundedTextBox1_KeyDown(sender As Object, e As KeyEventArgs) Handles RoundedTextBox1.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            e.SuppressKeyPress = True
+        End If
+    End Sub
+
+    ' Trigger Login button when Enter is pressed in RoundedTextBox3
+    Private Sub RoundedTextBox3_KeyDown(sender As Object, e As KeyEventArgs) Handles RoundedTextBox3.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            e.SuppressKeyPress = True
+            RoundedButton3.PerformClick()
+        End If
     End Sub
 End Class
