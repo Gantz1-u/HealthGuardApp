@@ -24,10 +24,10 @@ Partial Class AppointmentPage
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AppointmentPage))
         Panel1 = New Panel()
+        btn_Home = New Button()
         PictureBox2 = New PictureBox()
         RoundedButton2 = New CustomControls.RJControls.RoundedButton()
         RoundedButton4 = New CustomControls.RJControls.RoundedButton()
-        btn_Home = New Button()
         Panel1.SuspendLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -41,6 +41,19 @@ Partial Class AppointmentPage
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(422, 68)
         Panel1.TabIndex = 12
+        ' 
+        ' btn_Home
+        ' 
+        btn_Home.FlatStyle = FlatStyle.Flat
+        btn_Home.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btn_Home.ImageAlign = ContentAlignment.TopCenter
+        btn_Home.Location = New Point(18, -1)
+        btn_Home.Name = "btn_Home"
+        btn_Home.Size = New Size(54, 68)
+        btn_Home.TabIndex = 73
+        btn_Home.Text = "Home"
+        btn_Home.TextImageRelation = TextImageRelation.ImageAboveText
+        btn_Home.UseVisualStyleBackColor = True
         ' 
         ' PictureBox2
         ' 
@@ -97,20 +110,6 @@ Partial Class AppointmentPage
         RoundedButton4.TextAlign = ContentAlignment.BottomCenter
         RoundedButton4.TextColor = Color.Black
         RoundedButton4.UseVisualStyleBackColor = False
-        ' 
-        ' btn_Home
-        ' 
-        btn_Home.FlatStyle = FlatStyle.Flat
-        btn_Home.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btn_Home.Image = Resources.icon_home
-        btn_Home.ImageAlign = ContentAlignment.TopCenter
-        btn_Home.Location = New Point(18, -1)
-        btn_Home.Name = "btn_Home"
-        btn_Home.Size = New Size(54, 68)
-        btn_Home.TabIndex = 73
-        btn_Home.Text = "Home"
-        btn_Home.TextImageRelation = TextImageRelation.ImageAboveText
-        btn_Home.UseVisualStyleBackColor = True
         ' 
         ' AppointmentPage
         ' 

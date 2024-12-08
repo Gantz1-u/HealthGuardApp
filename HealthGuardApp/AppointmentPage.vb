@@ -13,4 +13,8 @@
         AppointmentTicket.Show()
         Me.Hide()
     End Sub
+
+    Private Sub btn_Home_Click(sender As Object, e As EventArgs) Handles btn_Home.Click
+
+    End Sub
 End Class
