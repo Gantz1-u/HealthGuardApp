@@ -29,16 +29,12 @@ Partial Class PatientMenuPage
         PictureBox4 = New PictureBox()
         PictureBox2 = New PictureBox()
         Panel1 = New Panel()
+        lbl_LoggedInUser = New Label()
         btn_Logout = New Button()
-        Label1 = New Label()
-        PictureBox1 = New PictureBox()
-        PictureBox3 = New PictureBox()
         RoundedButton4 = New CustomControls.RJControls.RoundedButton()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' RoundedButton1
@@ -123,14 +119,22 @@ Partial Class PatientMenuPage
         ' 
         Panel1.BackColor = Color.Transparent
         Panel1.BorderStyle = BorderStyle.FixedSingle
+        Panel1.Controls.Add(lbl_LoggedInUser)
         Panel1.Controls.Add(btn_Logout)
-        Panel1.Controls.Add(Label1)
-        Panel1.Controls.Add(PictureBox1)
-        Panel1.Controls.Add(PictureBox3)
         Panel1.Location = New Point(-15, 0)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(422, 68)
         Panel1.TabIndex = 19
+        ' 
+        ' lbl_LoggedInUser
+        ' 
+        lbl_LoggedInUser.AutoSize = True
+        lbl_LoggedInUser.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lbl_LoggedInUser.Location = New Point(26, 22)
+        lbl_LoggedInUser.Name = "lbl_LoggedInUser"
+        lbl_LoggedInUser.Size = New Size(137, 21)
+        lbl_LoggedInUser.TabIndex = 22
+        lbl_LoggedInUser.Text = "Hello, FirstName"
         ' 
         ' btn_Logout
         ' 
@@ -143,40 +147,6 @@ Partial Class PatientMenuPage
         btn_Logout.TabIndex = 21
         btn_Logout.Text = "Log out"
         btn_Logout.UseVisualStyleBackColor = False
-        ' 
-        ' Label1
-        ' 
-        Label1.BackColor = Color.Transparent
-        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(22, 42)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(47, 16)
-        Label1.TabIndex = 5
-        Label1.Text = "MENU"
-        Label1.TextAlign = ContentAlignment.TopCenter
-        ' 
-        ' PictureBox1
-        ' 
-        PictureBox1.BackColor = Color.Transparent
-        PictureBox1.Cursor = Cursors.Hand
-        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(24, 14)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(40, 25)
-        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox1.TabIndex = 3
-        PictureBox1.TabStop = False
-        ' 
-        ' PictureBox3
-        ' 
-        PictureBox3.BackColor = Color.Transparent
-        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
-        PictureBox3.Location = New Point(48, -11)
-        PictureBox3.Name = "PictureBox3"
-        PictureBox3.Size = New Size(142, 90)
-        PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox3.TabIndex = 2
-        PictureBox3.TabStop = False
         ' 
         ' RoundedButton4
         ' 
@@ -222,8 +192,7 @@ Partial Class PatientMenuPage
         CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
+        Panel1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -234,9 +203,7 @@ Partial Class PatientMenuPage
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label1 As Label
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents RoundedButton4 As CustomControls.RJControls.RoundedButton
     Friend WithEvents btn_Logout As Button
+    Friend WithEvents lbl_LoggedInUser As Label
 End Class

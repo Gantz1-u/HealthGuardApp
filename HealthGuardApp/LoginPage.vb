@@ -5,13 +5,19 @@ Public Class LoginPage
     Private passwordVisible As Boolean = False ' Track password visibility state
     Public Shared LoggedInUserID As Integer ' Store the logged-in user's ID
 
+    ' Reset LoggedInUserID when the login page loads
+    Private Sub LoginPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoggedInUserID = 0 ' Reset the LoggedInUserID when returning to the login page
+    End Sub
+
+
     ' Link to navigate to another form (e.g., registration form)
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         Form1.Show()
         Me.Hide()
     End Sub
 
-    ' Login button click event
+    ' Inside the login button click event
     Private Sub RoundedButton3_Click(sender As Object, e As EventArgs) Handles RoundedButton3.Click
         Dim username As String = RoundedTextBox1.Text.Trim()
         Dim password As String = RoundedTextBox3.Text.Trim()
@@ -69,6 +75,7 @@ Public Class LoginPage
             DB.Close()
         End Try
     End Sub
+
 
     ' Toggle password visibility
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click

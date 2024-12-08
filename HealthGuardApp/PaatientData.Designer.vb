@@ -28,23 +28,23 @@ Partial Class PaatientData
         PictureBox1 = New PictureBox()
         PictureBox3 = New PictureBox()
         RoundedPanel1 = New RoundedPanel()
-        Label19 = New Label()
+        lbl_Sex = New Label()
         Label3 = New Label()
-        Label18 = New Label()
+        lbl_Email = New Label()
         Label4 = New Label()
-        Label17 = New Label()
+        lbl_ContactNumber = New Label()
         Label5 = New Label()
-        Label16 = New Label()
+        lbl_ParentGuardian = New Label()
         Label6 = New Label()
-        Label15 = New Label()
+        lbl_Address = New Label()
         Label7 = New Label()
-        Label14 = New Label()
+        lbl_BirthDate = New Label()
         Label10 = New Label()
-        Label13 = New Label()
+        lbl_LastName = New Label()
         Label9 = New Label()
-        Label12 = New Label()
+        lbl_MiddleName = New Label()
         Label8 = New Label()
-        Label2 = New Label()
+        lbl_FirstName = New Label()
         Label11 = New Label()
         PictureBox4 = New PictureBox()
         Panel1.SuspendLayout()
@@ -69,7 +69,7 @@ Partial Class PaatientData
         ' Label1
         ' 
         Label1.BackColor = Color.Transparent
-        Label1.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.Location = New Point(22, 42)
         Label1.Name = "Label1"
         Label1.Size = New Size(47, 16)
@@ -102,23 +102,23 @@ Partial Class PaatientData
         ' 
         ' RoundedPanel1
         ' 
-        RoundedPanel1.Controls.Add(Label19)
+        RoundedPanel1.Controls.Add(lbl_Sex)
         RoundedPanel1.Controls.Add(Label3)
-        RoundedPanel1.Controls.Add(Label18)
+        RoundedPanel1.Controls.Add(lbl_Email)
         RoundedPanel1.Controls.Add(Label4)
-        RoundedPanel1.Controls.Add(Label17)
+        RoundedPanel1.Controls.Add(lbl_ContactNumber)
         RoundedPanel1.Controls.Add(Label5)
-        RoundedPanel1.Controls.Add(Label16)
+        RoundedPanel1.Controls.Add(lbl_ParentGuardian)
         RoundedPanel1.Controls.Add(Label6)
-        RoundedPanel1.Controls.Add(Label15)
+        RoundedPanel1.Controls.Add(lbl_Address)
         RoundedPanel1.Controls.Add(Label7)
-        RoundedPanel1.Controls.Add(Label14)
+        RoundedPanel1.Controls.Add(lbl_BirthDate)
         RoundedPanel1.Controls.Add(Label10)
-        RoundedPanel1.Controls.Add(Label13)
+        RoundedPanel1.Controls.Add(lbl_LastName)
         RoundedPanel1.Controls.Add(Label9)
-        RoundedPanel1.Controls.Add(Label12)
+        RoundedPanel1.Controls.Add(lbl_MiddleName)
         RoundedPanel1.Controls.Add(Label8)
-        RoundedPanel1.Controls.Add(Label2)
+        RoundedPanel1.Controls.Add(lbl_FirstName)
         RoundedPanel1.Controls.Add(Label11)
         RoundedPanel1.CornerRadius = 20
         RoundedPanel1.Location = New Point(18, 142)
@@ -126,15 +126,15 @@ Partial Class PaatientData
         RoundedPanel1.Size = New Size(362, 564)
         RoundedPanel1.TabIndex = 7
         ' 
-        ' Label19
+        ' lbl_Sex
         ' 
-        Label19.AutoSize = True
-        Label19.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label19.Location = New Point(231, 252)
-        Label19.Name = "Label19"
-        Label19.Size = New Size(37, 17)
-        Label19.TabIndex = 55
-        Label19.Text = "Male"
+        lbl_Sex.AutoSize = True
+        lbl_Sex.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lbl_Sex.Location = New Point(231, 252)
+        lbl_Sex.Name = "lbl_Sex"
+        lbl_Sex.Size = New Size(28, 17)
+        lbl_Sex.TabIndex = 55
+        lbl_Sex.Text = "Sex"
         ' 
         ' Label3
         ' 
@@ -146,15 +146,15 @@ Partial Class PaatientData
         Label3.TabIndex = 38
         Label3.Text = "First Name"
         ' 
-        ' Label18
+        ' lbl_Email
         ' 
-        Label18.AutoSize = True
-        Label18.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label18.Location = New Point(22, 531)
-        Label18.Name = "Label18"
-        Label18.Size = New Size(131, 17)
-        Label18.TabIndex = 54
-        Label18.Text = "juan.cruz@gmail.com"
+        lbl_Email.AutoSize = True
+        lbl_Email.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lbl_Email.Location = New Point(22, 525)
+        lbl_Email.Name = "lbl_Email"
+        lbl_Email.Size = New Size(39, 17)
+        lbl_Email.TabIndex = 54
+        lbl_Email.Text = "Email"
         ' 
         ' Label4
         ' 
@@ -166,15 +166,15 @@ Partial Class PaatientData
         Label4.TabIndex = 39
         Label4.Text = "Middle Name"
         ' 
-        ' Label17
+        ' lbl_ContactNumber
         ' 
-        Label17.AutoSize = True
-        Label17.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label17.Location = New Point(22, 459)
-        Label17.Name = "Label17"
-        Label17.Size = New Size(85, 17)
-        Label17.TabIndex = 53
-        Label17.Text = "09171234567"
+        lbl_ContactNumber.AutoSize = True
+        lbl_ContactNumber.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lbl_ContactNumber.Location = New Point(22, 459)
+        lbl_ContactNumber.Name = "lbl_ContactNumber"
+        lbl_ContactNumber.Size = New Size(100, 17)
+        lbl_ContactNumber.TabIndex = 53
+        lbl_ContactNumber.Text = "ContactNumber"
         ' 
         ' Label5
         ' 
@@ -186,15 +186,15 @@ Partial Class PaatientData
         Label5.TabIndex = 40
         Label5.Text = "Last Name"
         ' 
-        ' Label16
+        ' lbl_ParentGuardian
         ' 
-        Label16.AutoSize = True
-        Label16.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label16.Location = New Point(22, 387)
-        Label16.Name = "Label16"
-        Label16.Size = New Size(102, 17)
-        Label16.TabIndex = 52
-        Label16.Text = "Maria Dela Cruz"
+        lbl_ParentGuardian.AutoSize = True
+        lbl_ParentGuardian.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lbl_ParentGuardian.Location = New Point(22, 387)
+        lbl_ParentGuardian.Name = "lbl_ParentGuardian"
+        lbl_ParentGuardian.Size = New Size(98, 17)
+        lbl_ParentGuardian.TabIndex = 52
+        lbl_ParentGuardian.Text = "ParentGuardian"
         ' 
         ' Label6
         ' 
@@ -206,15 +206,15 @@ Partial Class PaatientData
         Label6.TabIndex = 41
         Label6.Text = "Birth Date"
         ' 
-        ' Label15
+        ' lbl_Address
         ' 
-        Label15.AutoSize = True
-        Label15.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label15.Location = New Point(22, 317)
-        Label15.Name = "Label15"
-        Label15.Size = New Size(102, 17)
-        Label15.TabIndex = 51
-        Label15.Text = "123 Main St, QC"
+        lbl_Address.AutoSize = True
+        lbl_Address.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lbl_Address.Location = New Point(22, 311)
+        lbl_Address.Name = "lbl_Address"
+        lbl_Address.Size = New Size(56, 17)
+        lbl_Address.TabIndex = 51
+        lbl_Address.Text = "Address"
         ' 
         ' Label7
         ' 
@@ -226,15 +226,15 @@ Partial Class PaatientData
         Label7.TabIndex = 42
         Label7.Text = "Sex"
         ' 
-        ' Label14
+        ' lbl_BirthDate
         ' 
-        Label14.AutoSize = True
-        Label14.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label14.Location = New Point(22, 252)
-        Label14.Name = "Label14"
-        Label14.Size = New Size(74, 17)
-        Label14.TabIndex = 50
-        Label14.Text = "2005-01-04"
+        lbl_BirthDate.AutoSize = True
+        lbl_BirthDate.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lbl_BirthDate.Location = New Point(22, 252)
+        lbl_BirthDate.Name = "lbl_BirthDate"
+        lbl_BirthDate.Size = New Size(88, 17)
+        lbl_BirthDate.TabIndex = 50
+        lbl_BirthDate.Text = "YYYY-MM-DD"
         ' 
         ' Label10
         ' 
@@ -246,15 +246,15 @@ Partial Class PaatientData
         Label10.TabIndex = 43
         Label10.Text = "Address"
         ' 
-        ' Label13
+        ' lbl_LastName
         ' 
-        Label13.AutoSize = True
-        Label13.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label13.Location = New Point(22, 183)
-        Label13.Name = "Label13"
-        Label13.Size = New Size(34, 17)
-        Label13.TabIndex = 49
-        Label13.Text = "Cruz"
+        lbl_LastName.AutoSize = True
+        lbl_LastName.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lbl_LastName.Location = New Point(22, 183)
+        lbl_LastName.Name = "lbl_LastName"
+        lbl_LastName.Size = New Size(66, 17)
+        lbl_LastName.TabIndex = 49
+        lbl_LastName.Text = "LastName"
         ' 
         ' Label9
         ' 
@@ -266,15 +266,15 @@ Partial Class PaatientData
         Label9.TabIndex = 44
         Label9.Text = "Parent/Guardian"
         ' 
-        ' Label12
+        ' lbl_MiddleName
         ' 
-        Label12.AutoSize = True
-        Label12.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label12.Location = New Point(22, 116)
-        Label12.Name = "Label12"
-        Label12.Size = New Size(34, 17)
-        Label12.TabIndex = 48
-        Label12.Text = "Dela"
+        lbl_MiddleName.AutoSize = True
+        lbl_MiddleName.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lbl_MiddleName.Location = New Point(22, 116)
+        lbl_MiddleName.Name = "lbl_MiddleName"
+        lbl_MiddleName.Size = New Size(84, 17)
+        lbl_MiddleName.TabIndex = 48
+        lbl_MiddleName.Text = "MiddleName"
         ' 
         ' Label8
         ' 
@@ -286,21 +286,21 @@ Partial Class PaatientData
         Label8.TabIndex = 45
         Label8.Text = "Phone Number"
         ' 
-        ' Label2
+        ' lbl_FirstName
         ' 
-        Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(22, 43)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(34, 17)
-        Label2.TabIndex = 47
-        Label2.Text = "Juan"
+        lbl_FirstName.AutoSize = True
+        lbl_FirstName.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lbl_FirstName.Location = New Point(22, 43)
+        lbl_FirstName.Name = "lbl_FirstName"
+        lbl_FirstName.Size = New Size(67, 17)
+        lbl_FirstName.TabIndex = 47
+        lbl_FirstName.Text = "FirstName"
         ' 
         ' Label11
         ' 
         Label11.AutoSize = True
         Label11.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold)
-        Label11.Location = New Point(19, 501)
+        Label11.Location = New Point(19, 499)
         Label11.Name = "Label11"
         Label11.Size = New Size(42, 17)
         Label11.TabIndex = 46
@@ -320,7 +320,7 @@ Partial Class PaatientData
         ' 
         ' PaatientData
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
@@ -348,22 +348,22 @@ Partial Class PaatientData
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents RoundedPanel1 As RoundedPanel
     Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents Label19 As Label
+    Friend WithEvents lbl_Sex As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label18 As Label
+    Friend WithEvents lbl_Email As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents Label17 As Label
+    Friend WithEvents lbl_ContactNumber As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents Label16 As Label
+    Friend WithEvents lbl_ParentGuardian As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents Label15 As Label
+    Friend WithEvents lbl_Address As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents Label14 As Label
+    Friend WithEvents lbl_BirthDate As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents Label13 As Label
+    Friend WithEvents lbl_LastName As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents Label12 As Label
+    Friend WithEvents lbl_MiddleName As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lbl_FirstName As Label
     Friend WithEvents Label11 As Label
 End Class

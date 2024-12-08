@@ -1,62 +1,122 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class PatientRecord
-    Private DB As New MySqlConnection("server=localhost;user id=root;password=;database=db_healthguard")
+    ' Instance of DBConnection for database connectivity
+    Private DB As New DBConnection()
 
-    ' Call this method to load patient data into labels
-    Public Sub LoadPatientData(patientId As Integer)
+    ' This will be called when the form loads
+    Private Sub PatientRecord_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Ensure the patient data reflects the currently logged-in user
+        DisplayPatientData()
+    End Sub
+
+    ' Function to fetch and display patient data
+    Private Sub DisplayPatientData()
+        ' Check if the LoggedInUserID is set
+        If LoginPage.LoggedInUserID <> 0 Then
+            ' Fetch the PatientID from the accounts table based on the LoggedInUserID
+            Dim patientID As Integer = GetPatientIDByUserID(LoginPage.LoggedInUserID)
+
+            If patientID <> 0 Then
+                ' Fetch the patient data from the patients table based on the PatientID
+                Dim patientData As DataRow = GetPatientDataByPatientID(patientID)
+
+                ' Check if the patient data is found
+                If patientData IsNot Nothing Then
+                    ' Display patient data on the labels
+                    lbl_PatientID.Text = "Patient #" & patientData("PatientID").ToString()
+                    lbl_FullName.Text = patientData("FirstName").ToString() & " " & If(patientData("MiddleName") Is DBNull.Value, "", patientData("MiddleName").ToString()) & " " & patientData("LastName").ToString()
+                    lbl_Age.Text = If(patientData("Age") Is DBNull.Value, "N/A", patientData("Age").ToString())
+                    lbl_Sex.Text = If(patientData("Sex") Is DBNull.Value, "N/A", patientData("Sex").ToString())
+                    lbl_DateOfBirth.Text = If(patientData("DateOfBirth") Is DBNull.Value, "N/A", Convert.ToDateTime(patientData("DateOfBirth")).ToString("MM/dd/yyyy"))
+                    lbl_BloodType.Text = If(patientData("BloodType") Is DBNull.Value, "N/A", patientData("BloodType").ToString())
+                    lbl_ParentGuardian.Text = If(patientData("ParentGuardian") Is DBNull.Value, "N/A", patientData("ParentGuardian").ToString())
+                    lbl_Phone.Text = If(patientData("Phone") Is DBNull.Value, "N/A", patientData("Phone").ToString())
+                    lbl_Address.Text = If(patientData("Address") Is DBNull.Value, "N/A", patientData("Address").ToString())
+                    lbl_Email.Text = If(patientData("Email") Is DBNull.Value, "N/A", patientData("Email").ToString())
+                Else
+                    MessageBox.Show("Patient data not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            Else
+                MessageBox.Show("Patient ID not found for the logged-in user.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Else
+            MessageBox.Show("Error fetching LoggedInUserID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+
+
+    ' Function to get the PatientID from the accounts table based on the LoggedInUserID
+    Private Function GetPatientIDByUserID(userID As Integer) As Integer
+        ' SQL query to fetch the PatientID from the accounts table
+        Dim query As String = "SELECT PatientID FROM accounts WHERE UserID = @UserID"
+        Dim patientID As Integer = 0
+
         Try
-            ' Open the database connection
-            DB.Open()
+            ' Open database connection
+            Dim connection As MySqlConnection = DB.Open()
 
-            ' Query to retrieve the patient's data
-            Dim query As String = "SELECT FirstName, MiddleName, LastName, Sex, DateOfBirth, Age, BloodType, Phone, 
-                                   ParentGuardian, Email, Address, PrimaryDiagnoses FROM patients WHERE PatientID = @P1"
-            Using cmd As New MySqlCommand(query, DB)
-                cmd.Parameters.AddWithValue("@P1", patientId)  ' Pass PatientID to query
+            Using cmd As New MySqlCommand(query, connection)
+                cmd.Parameters.AddWithValue("@UserID", userID)
 
-                ' Execute the query and read data
-                Using reader As MySqlDataReader = cmd.ExecuteReader()
-                    If reader.Read() Then
-                        ' Populate the labels with the data retrieved from the database
-                        Label2.Text = If(reader("FirstName") Is DBNull.Value, "N/A", reader("FirstName").ToString())
-                        Label4.Text = If(reader("MiddleName") Is DBNull.Value, "N/A", reader("MiddleName").ToString())
-                        Label1.Text = If(reader("LastName") Is DBNull.Value, "N/A", reader("LastName").ToString())
-                        Label6.Text = If(reader("Sex") Is DBNull.Value, "N/A", reader("Sex").ToString())
-                        Label14.Text = If(reader("DateOfBirth") Is DBNull.Value, "N/A", Convert.ToDateTime(reader("DateOfBirth")).ToString("yyyy-MM-dd"))
-                        Label5.Text = If(reader("Age") Is DBNull.Value, "N/A", reader("Age").ToString())
-                        Label15.Text = If(reader("BloodType") Is DBNull.Value, "N/A", reader("BloodType").ToString())
-                        Label18.Text = If(reader("Phone") Is DBNull.Value, "N/A", reader("Phone").ToString())
-                        Label16.Text = If(reader("ParentGuardian") Is DBNull.Value, "N/A", reader("ParentGuardian").ToString())
-                        Label19.Text = If(reader("Email") Is DBNull.Value, "N/A", reader("Email").ToString())
-                        Label21.Text = If(reader("Address") Is DBNull.Value, "N/A", reader("Address").ToString())
-                        Label17.Text = If(reader("PrimaryDiagnoses") Is DBNull.Value, "N/A", reader("PrimaryDiagnoses").ToString())
+                ' Execute the query to fetch the PatientID
+                Dim reader As MySqlDataReader = cmd.ExecuteReader()
 
-                        ' Refresh the panel to ensure the labels are updated
-                        Panel1.Refresh()  ' Ensure you replace "Panel1" with the correct panel name
-
-                    Else
-                        ' Show error if no data was returned
-                        MessageBox.Show("Patient not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                If reader.HasRows Then
+                    reader.Read()
+                    ' Handle DBNull to prevent casting error
+                    If Not IsDBNull(reader("PatientID")) Then
+                        patientID = Convert.ToInt32(reader("PatientID"))
                     End If
-                End Using
+                End If
+
+                reader.Close()
             End Using
         Catch ex As Exception
-            ' Show any exceptions that occur
-            MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show($"Error: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
-            ' Close the connection
-            DB.Close()
+            DB.Close() ' Ensure the connection is closed after the query
         End Try
-    End Sub
+
+        Return patientID
+    End Function
+
+    ' Function to get the patient data from the patients table based on the PatientID
+    Private Function GetPatientDataByPatientID(patientID As Integer) As DataRow
+        ' SQL query to fetch patient data based on the PatientID
+        Dim query As String = "SELECT PatientID, FirstName, MiddleName, LastName, Age, Sex, DateOfBirth, BloodType, Phone, 
+                               ParentGuardian, Email, Address FROM patients WHERE PatientID = @PatientID"
+        Dim patientData As DataTable = New DataTable()
+
+        Try
+            ' Open database connection
+            Dim connection As MySqlConnection = DB.Open()
+
+            Using cmd As New MySqlCommand(query, connection)
+                cmd.Parameters.AddWithValue("@PatientID", patientID)
+
+                ' Fill the DataTable with the patient data
+                Using adapter As New MySqlDataAdapter(cmd)
+                    adapter.Fill(patientData)
+                End Using
+            End Using
+
+        Catch ex As Exception
+            MessageBox.Show($"Error: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            DB.Close() ' Ensure the connection is closed after the query
+        End Try
+
+        ' Return the patient data (first row)
+        If patientData.Rows.Count > 0 Then
+            Return patientData.Rows(0)
+        Else
+            Return Nothing
+        End If
+    End Function
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        ' Show the PatientMenuPage and hide the current form
         PatientMenuPage.Show()
         Me.Hide()
-    End Sub
-
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-
     End Sub
 End Class
