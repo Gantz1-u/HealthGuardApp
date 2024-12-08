@@ -102,4 +102,9 @@ Public Class LoginPage
             RoundedButton3.PerformClick()
         End If
     End Sub
+
+    Private Sub LoginPage_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        ' Reset the LoggedInUserID when showing the login form to ensure it's empty
+        LoggedInUserID = 0
+    End Sub
 End Class

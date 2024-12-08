@@ -75,4 +75,8 @@ Public Class RegisterPage
         LoginPage.Show()
         Me.Hide()
     End Sub
+
+    Private Sub RoundedTextBox1_TextChanged(sender As Object, e As EventArgs) Handles RoundedTextBox1.TextChanged
+
+    End Sub
 End Class
