@@ -32,7 +32,7 @@ Partial Class AppointmentTicket
         Label5 = New Label()
         Label4 = New Label()
         Label2 = New Label()
-        Label6 = New Label()
+        lbl_Doctor = New Label()
         lbl_AppointmentTime = New Label()
         lbl_AppointmentDate = New Label()
         Label1 = New Label()
@@ -96,7 +96,7 @@ Partial Class AppointmentTicket
         RoundedPanel1.Controls.Add(Label5)
         RoundedPanel1.Controls.Add(Label4)
         RoundedPanel1.Controls.Add(Label2)
-        RoundedPanel1.Controls.Add(Label6)
+        RoundedPanel1.Controls.Add(lbl_Doctor)
         RoundedPanel1.Controls.Add(lbl_AppointmentTime)
         RoundedPanel1.Controls.Add(lbl_AppointmentDate)
         RoundedPanel1.Controls.Add(Label1)
@@ -148,15 +148,15 @@ Partial Class AppointmentTicket
         Label2.TabIndex = 1
         Label2.Text = "Time"
         ' 
-        ' Label6
+        ' lbl_Doctor
         ' 
-        Label6.AutoSize = True
-        Label6.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label6.Location = New Point(148, 68)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(25, 17)
-        Label6.TabIndex = 0
-        Label6.Text = "Dr."
+        lbl_Doctor.AutoSize = True
+        lbl_Doctor.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lbl_Doctor.Location = New Point(144, 68)
+        lbl_Doctor.Name = "lbl_Doctor"
+        lbl_Doctor.Size = New Size(87, 17)
+        lbl_Doctor.TabIndex = 0
+        lbl_Doctor.Text = "Doctor Name"
         ' 
         ' lbl_AppointmentTime
         ' 
@@ -267,7 +267,7 @@ Partial Class AppointmentTicket
     Friend WithEvents Label4 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label6 As Label
+    Friend WithEvents lbl_Doctor As Label
     Friend WithEvents lbl_AppointmentTime As Label
     Friend WithEvents lbl_AppointmentDate As Label
     Friend WithEvents txt_AppointmentNote As TextBox

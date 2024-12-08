@@ -47,6 +47,9 @@ Partial Class PaatientData
         lbl_FirstName = New Label()
         Label11 = New Label()
         PictureBox4 = New PictureBox()
+        lbl_BloodType = New Label()
+        lbl_Age = New Label()
+        lbl_PrimaryDiagnoses = New Label()
         Panel1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
@@ -102,6 +105,9 @@ Partial Class PaatientData
         ' 
         ' RoundedPanel1
         ' 
+        RoundedPanel1.Controls.Add(lbl_PrimaryDiagnoses)
+        RoundedPanel1.Controls.Add(lbl_Age)
+        RoundedPanel1.Controls.Add(lbl_BloodType)
         RoundedPanel1.Controls.Add(lbl_Sex)
         RoundedPanel1.Controls.Add(Label3)
         RoundedPanel1.Controls.Add(lbl_Email)
@@ -130,7 +136,7 @@ Partial Class PaatientData
         ' 
         lbl_Sex.AutoSize = True
         lbl_Sex.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lbl_Sex.Location = New Point(231, 252)
+        lbl_Sex.Location = New Point(198, 74)
         lbl_Sex.Name = "lbl_Sex"
         lbl_Sex.Size = New Size(28, 17)
         lbl_Sex.TabIndex = 55
@@ -220,7 +226,7 @@ Partial Class PaatientData
         ' 
         Label7.AutoSize = True
         Label7.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold)
-        Label7.Location = New Point(231, 221)
+        Label7.Location = New Point(198, 43)
         Label7.Name = "Label7"
         Label7.Size = New Size(29, 17)
         Label7.TabIndex = 42
@@ -318,6 +324,33 @@ Partial Class PaatientData
         PictureBox4.TabIndex = 13
         PictureBox4.TabStop = False
         ' 
+        ' lbl_BloodType
+        ' 
+        lbl_BloodType.AutoSize = True
+        lbl_BloodType.Location = New Point(199, 187)
+        lbl_BloodType.Name = "lbl_BloodType"
+        lbl_BloodType.Size = New Size(65, 15)
+        lbl_BloodType.TabIndex = 56
+        lbl_BloodType.Text = "Blood Type"
+        ' 
+        ' lbl_Age
+        ' 
+        lbl_Age.AutoSize = True
+        lbl_Age.Location = New Point(199, 252)
+        lbl_Age.Name = "lbl_Age"
+        lbl_Age.Size = New Size(28, 15)
+        lbl_Age.TabIndex = 57
+        lbl_Age.Text = "Age"
+        ' 
+        ' lbl_PrimaryDiagnoses
+        ' 
+        lbl_PrimaryDiagnoses.AutoSize = True
+        lbl_PrimaryDiagnoses.Location = New Point(209, 328)
+        lbl_PrimaryDiagnoses.Name = "lbl_PrimaryDiagnoses"
+        lbl_PrimaryDiagnoses.Size = New Size(105, 15)
+        lbl_PrimaryDiagnoses.TabIndex = 58
+        lbl_PrimaryDiagnoses.Text = "Primary Diagnoses"
+        ' 
         ' PaatientData
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -366,4 +399,7 @@ Partial Class PaatientData
     Friend WithEvents Label8 As Label
     Friend WithEvents lbl_FirstName As Label
     Friend WithEvents Label11 As Label
+    Friend WithEvents lbl_Age As Label
+    Friend WithEvents lbl_BloodType As Label
+    Friend WithEvents lbl_PrimaryDiagnoses As Label
 End Class

@@ -1,30 +1,14 @@
-﻿Public Class appointment
-    ' Private variables to store appointment details
+﻿Public Class SchedulePage
     Private AppointmentDate As Date
     Private AppointmentTime As String
     Private AppointmentNote As String
-
-    ' Public read-only properties to expose appointment details
-    Public ReadOnly Property SelectedAppointmentDate As Date
-        Get
-            Return AppointmentDate
-        End Get
-    End Property
-
-    Public ReadOnly Property SelectedAppointmentTime As String
-        Get
-            Return AppointmentTime
-        End Get
-    End Property
-
-    Public ReadOnly Property SelectedAppointmentNote As String
-        Get
-            Return AppointmentNote
-        End Get
-    End Property
-
-    ' Reference to the last selected button
     Private lastSelectedButton As Button
+
+    ' Constructor to initialize the page with the selected doctor name
+
+
+    ' Property to get and set the doctor name
+
 
     ' Form Load Event
     Private Sub appointment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -56,79 +40,66 @@
             Return
         End If
 
-        ' Proceed to the AppointmentTicket form
-        Dim ticketForm As New AppointmentTicket()
+        ' Create a new AppointmentTicket form and pass the doctor name, date, time, and note
+        Dim ticketForm As New AppointmentTicket(" ", AppointmentDate, AppointmentTime, AppointmentNote)
         ticketForm.Show()
         Me.Hide()
     End Sub
 
     ' Handle Back button click
     Private Sub BackButton(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        Me.Hide()
         SpecialistPage.Show()
+        Me.Hide()
     End Sub
 
     ' Appointment time button click handlers
     Private Sub btn_9_Click(sender As Object, e As EventArgs) Handles btn_9.Click
-        SetAppointmentTime("9:00", btn_9)
+        SetAppointmentTime("9:00 AM", btn_9)
     End Sub
 
     Private Sub btn_930_Click(sender As Object, e As EventArgs) Handles btn_930.Click
-        SetAppointmentTime("9:30", btn_930)
+        SetAppointmentTime("9:30 AM", btn_930)
     End Sub
 
     Private Sub btn_10_Click(sender As Object, e As EventArgs) Handles btn_10.Click
-        SetAppointmentTime("10:00", btn_10)
+        SetAppointmentTime("10:00 AM", btn_10)
     End Sub
-
     Private Sub btn_1030_Click(sender As Object, e As EventArgs) Handles btn_1030.Click
-        SetAppointmentTime("10:30", btn_1030)
+        SetAppointmentTime("10:30 AM", btn_1030)
     End Sub
-
     Private Sub btn_13_Click(sender As Object, e As EventArgs) Handles btn_13.Click
-        SetAppointmentTime("13:00", btn_13)
+        SetAppointmentTime("11:00 AM", btn_13)
     End Sub
-
     Private Sub btn_1330_Click(sender As Object, e As EventArgs) Handles btn_1330.Click
-        SetAppointmentTime("13:30", btn_1330)
+        SetAppointmentTime("13:30 AM", btn_1330)
     End Sub
-
     Private Sub btn_14_Click(sender As Object, e As EventArgs) Handles btn_14.Click
-        SetAppointmentTime("14:00", btn_14)
+        SetAppointmentTime("14:00 AM", btn_14)
     End Sub
-
     Private Sub btn_1430_Click(sender As Object, e As EventArgs) Handles btn_1430.Click
-        SetAppointmentTime("14:30", btn_1430)
+        SetAppointmentTime("14:30 AM", btn_1430)
     End Sub
-
     Private Sub btn_15_Click(sender As Object, e As EventArgs) Handles btn_15.Click
-        SetAppointmentTime("15:00", btn_15)
+        SetAppointmentTime("15:00 AM", btn_15)
     End Sub
-
     Private Sub btn_1530_Click(sender As Object, e As EventArgs) Handles btn_1530.Click
-        SetAppointmentTime("15:30", btn_1530)
+        SetAppointmentTime("15:30 AM", btn_1530)
     End Sub
-
     Private Sub btn_16_Click(sender As Object, e As EventArgs) Handles btn_16.Click
-        SetAppointmentTime("16:00", btn_16)
+        SetAppointmentTime("16:00 AM", btn_16)
     End Sub
-
     Private Sub btn_1630_Click(sender As Object, e As EventArgs) Handles btn_1630.Click
-        SetAppointmentTime("16:30", btn_1630)
+        SetAppointmentTime("16:30 AM", btn_1630)
     End Sub
-
     Private Sub btn_17_Click(sender As Object, e As EventArgs) Handles btn_17.Click
-        SetAppointmentTime("17:00", btn_17)
+        SetAppointmentTime("17:00 AM", btn_17)
     End Sub
-
     Private Sub btn_1730_Click(sender As Object, e As EventArgs) Handles btn_1730.Click
-        SetAppointmentTime("17:30", btn_1730)
+        SetAppointmentTime("17:30 AM", btn_1730)
     End Sub
-
     Private Sub btn_18_Click(sender As Object, e As EventArgs) Handles btn_18.Click
-        SetAppointmentTime("18:00", btn_18)
+        SetAppointmentTime("18:00 AM", btn_18)
     End Sub
-
     ' Method to set the appointment time and highlight the selected button
     Private Sub SetAppointmentTime(time As String, selectedButton As Button)
         ' Update the private AppointmentTime variable

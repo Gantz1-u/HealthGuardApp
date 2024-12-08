@@ -25,13 +25,17 @@ Partial Class DoctorPrescription
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DoctorPrescription))
         PictureBox2 = New PictureBox()
         RoundedPanel1 = New RoundedPanel()
+        RoundedTextBox5 = New RoundedTextBox()
+        RoundedTextBox4 = New RoundedTextBox()
+        RoundedTextBox3 = New RoundedTextBox()
+        RoundedTextBox2 = New RoundedTextBox()
+        RoundedTextBox1 = New RoundedTextBox()
         Label6 = New Label()
-        RoundedPanel2 = New RoundedPanel()
         Label5 = New Label()
-        PictureBox1 = New PictureBox()
+        Label4 = New Label()
         Label2 = New Label()
         Label1 = New Label()
-        Label4 = New Label()
+        RoundedButton2 = New CustomControls.RJControls.RoundedButton()
         RoundedButton1 = New CustomControls.RJControls.RoundedButton()
         Panel1 = New Panel()
         Label3 = New Label()
@@ -39,7 +43,6 @@ Partial Class DoctorPrescription
         PictureBox4 = New PictureBox()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         RoundedPanel1.SuspendLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
@@ -59,86 +62,127 @@ Partial Class DoctorPrescription
         ' 
         ' RoundedPanel1
         ' 
+        RoundedPanel1.Controls.Add(RoundedTextBox5)
+        RoundedPanel1.Controls.Add(RoundedTextBox4)
+        RoundedPanel1.Controls.Add(RoundedTextBox3)
+        RoundedPanel1.Controls.Add(RoundedTextBox2)
+        RoundedPanel1.Controls.Add(RoundedTextBox1)
         RoundedPanel1.Controls.Add(Label6)
-        RoundedPanel1.Controls.Add(RoundedPanel2)
         RoundedPanel1.Controls.Add(Label5)
-        RoundedPanel1.Controls.Add(PictureBox1)
+        RoundedPanel1.Controls.Add(Label4)
         RoundedPanel1.Controls.Add(Label2)
         RoundedPanel1.Controls.Add(Label1)
-        RoundedPanel1.Controls.Add(Label4)
+        RoundedPanel1.Controls.Add(RoundedButton2)
         RoundedPanel1.Controls.Add(RoundedButton1)
         RoundedPanel1.CornerRadius = 20
         RoundedPanel1.Location = New Point(17, 171)
         RoundedPanel1.Name = "RoundedPanel1"
-        RoundedPanel1.Size = New Size(364, 166)
+        RoundedPanel1.Size = New Size(364, 266)
         RoundedPanel1.TabIndex = 13
+        ' 
+        ' RoundedTextBox5
+        ' 
+        RoundedTextBox5.BackColor = Color.White
+        RoundedTextBox5.Location = New Point(95, 120)
+        RoundedTextBox5.Name = "RoundedTextBox5"
+        RoundedTextBox5.Size = New Size(221, 23)
+        RoundedTextBox5.TabIndex = 24
+        ' 
+        ' RoundedTextBox4
+        ' 
+        RoundedTextBox4.BackColor = Color.White
+        RoundedTextBox4.Location = New Point(75, 94)
+        RoundedTextBox4.Name = "RoundedTextBox4"
+        RoundedTextBox4.Size = New Size(221, 23)
+        RoundedTextBox4.TabIndex = 23
+        ' 
+        ' RoundedTextBox3
+        ' 
+        RoundedTextBox3.BackColor = Color.White
+        RoundedTextBox3.Location = New Point(87, 65)
+        RoundedTextBox3.Name = "RoundedTextBox3"
+        RoundedTextBox3.Size = New Size(221, 23)
+        RoundedTextBox3.TabIndex = 22
+        ' 
+        ' RoundedTextBox2
+        ' 
+        RoundedTextBox2.BackColor = Color.White
+        RoundedTextBox2.Location = New Point(75, 40)
+        RoundedTextBox2.Name = "RoundedTextBox2"
+        RoundedTextBox2.Size = New Size(221, 23)
+        RoundedTextBox2.TabIndex = 21
+        ' 
+        ' RoundedTextBox1
+        ' 
+        RoundedTextBox1.BackColor = Color.White
+        RoundedTextBox1.Location = New Point(125, 16)
+        RoundedTextBox1.Name = "RoundedTextBox1"
+        RoundedTextBox1.Size = New Size(221, 23)
+        RoundedTextBox1.TabIndex = 20
         ' 
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.BackColor = Color.MediumSlateBlue
-        Label6.ForeColor = SystemColors.ButtonHighlight
-        Label6.Location = New Point(260, 18)
+        Label6.Location = New Point(8, 123)
         Label6.Name = "Label6"
-        Label6.Size = New Size(74, 15)
-        Label6.TabIndex = 13
-        Label6.Text = "High Priority"
-        ' 
-        ' RoundedPanel2
-        ' 
-        RoundedPanel2.BackColor = Color.MediumSlateBlue
-        RoundedPanel2.CornerRadius = 20
-        RoundedPanel2.Location = New Point(241, 15)
-        RoundedPanel2.Name = "RoundedPanel2"
-        RoundedPanel2.Size = New Size(112, 22)
-        RoundedPanel2.TabIndex = 12
+        Label6.Size = New Size(81, 15)
+        Label6.TabIndex = 19
+        Label6.Text = "INSTRUCTION"
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(196, 83)
+        Label5.Location = New Point(8, 97)
         Label5.Name = "Label5"
-        Label5.Size = New Size(79, 15)
-        Label5.TabIndex = 12
-        Label5.Text = "Every 8 Hours"
-        ' 
-        ' PictureBox1
-        ' 
-        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(133, 81)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(16, 17)
-        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox1.TabIndex = 13
-        PictureBox1.TabStop = False
-        ' 
-        ' Label2
-        ' 
-        Label2.AutoSize = True
-        Label2.Location = New Point(16, 81)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(105, 15)
-        Label2.TabIndex = 2
-        Label2.Text = "Dr. Ronald Dycoco"
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(13, 45)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(111, 25)
-        Label1.TabIndex = 1
-        Label1.Text = "Amoxicillin"
+        Label5.Size = New Size(64, 15)
+        Label5.TabIndex = 18
+        Label5.Text = "DURATION"
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(153, 82)
+        Label4.Location = New Point(8, 68)
         Label4.Name = "Label4"
-        Label4.Size = New Size(41, 15)
-        Label4.TabIndex = 3
-        Label4.Text = "7 Days"
+        Label4.Size = New Size(73, 15)
+        Label4.TabIndex = 17
+        Label4.Text = "FREQUENCY"
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Location = New Point(8, 43)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(52, 15)
+        Label2.TabIndex = 16
+        Label2.Text = "DOSAGE"
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(8, 19)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(98, 15)
+        Label1.TabIndex = 15
+        Label1.Text = "MEDICINE NAME"
+        ' 
+        ' RoundedButton2
+        ' 
+        RoundedButton2.BackColor = SystemColors.ButtonHighlight
+        RoundedButton2.BackgroundColor = SystemColors.ButtonHighlight
+        RoundedButton2.BorderColor = Color.PaleVioletRed
+        RoundedButton2.BorderRadius = 9
+        RoundedButton2.BorderSize = 0
+        RoundedButton2.FlatAppearance.BorderSize = 0
+        RoundedButton2.FlatAppearance.MouseOverBackColor = Color.SteelBlue
+        RoundedButton2.FlatStyle = FlatStyle.Flat
+        RoundedButton2.ForeColor = Color.Black
+        RoundedButton2.Location = New Point(8, 165)
+        RoundedButton2.Name = "RoundedButton2"
+        RoundedButton2.Size = New Size(345, 40)
+        RoundedButton2.TabIndex = 14
+        RoundedButton2.Text = "SAVE"
+        RoundedButton2.TextColor = Color.Black
+        RoundedButton2.UseVisualStyleBackColor = False
         ' 
         ' RoundedButton1
         ' 
@@ -151,7 +195,7 @@ Partial Class DoctorPrescription
         RoundedButton1.FlatAppearance.MouseOverBackColor = Color.SteelBlue
         RoundedButton1.FlatStyle = FlatStyle.Flat
         RoundedButton1.ForeColor = Color.Black
-        RoundedButton1.Location = New Point(9, 119)
+        RoundedButton1.Location = New Point(8, 211)
         RoundedButton1.Name = "RoundedButton1"
         RoundedButton1.Size = New Size(345, 40)
         RoundedButton1.TabIndex = 0
@@ -223,7 +267,6 @@ Partial Class DoctorPrescription
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         RoundedPanel1.ResumeLayout(False)
         RoundedPanel1.PerformLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
@@ -232,16 +275,28 @@ Partial Class DoctorPrescription
 
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents RoundedPanel1 As RoundedPanel
-    Friend WithEvents Label6 As Label
-    Friend WithEvents RoundedPanel2 As RoundedPanel
-    Friend WithEvents Label5 As Label
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label4 As Label
     Friend WithEvents RoundedButton1 As CustomControls.RJControls.RoundedButton
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label3 As Label
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents RoundedButton2 As CustomControls.RJControls.RoundedButton
+    Friend WithEvents RoundedTextBox5 As RoundedTextBox
+    Friend WithEvents RoundedTextBox4 As RoundedTextBox
+    Friend WithEvents RoundedTextBox3 As RoundedTextBox
+    Friend WithEvents RoundedTextBox2 As RoundedTextBox
+    Friend WithEvents RoundedTextBox1 As RoundedTextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label2 As Label
+
+    Private Sub DoctorPrescription_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub RoundedTextBox1_TextChanged(sender As Object, e As EventArgs) Handles RoundedTextBox1.TextChanged
+
+    End Sub
 End Class

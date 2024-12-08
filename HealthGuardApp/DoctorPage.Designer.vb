@@ -26,9 +26,7 @@ Partial Class DoctorPage
         Panel1 = New Panel()
         Label1 = New Label()
         Label2 = New Label()
-        RichTextBox1 = New RichTextBox()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
-        Panel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' PictureBox1
@@ -41,7 +39,6 @@ Partial Class DoctorPage
         ' 
         ' Panel1
         ' 
-        Panel1.Controls.Add(RichTextBox1)
         Panel1.Location = New Point(12, 298)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(264, 100)
@@ -66,15 +63,6 @@ Partial Class DoctorPage
         Label2.TabIndex = 3
         Label2.Text = "Pediatrician"
         ' 
-        ' RichTextBox1
-        ' 
-        RichTextBox1.Dock = DockStyle.Fill
-        RichTextBox1.Location = New Point(0, 0)
-        RichTextBox1.Name = "RichTextBox1"
-        RichTextBox1.Size = New Size(264, 100)
-        RichTextBox1.TabIndex = 0
-        RichTextBox1.Text = ""
-        ' 
         ' DoctorPage
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -89,7 +77,6 @@ Partial Class DoctorPage
         StartPosition = FormStartPosition.CenterScreen
         Text = "DoctorPage"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
-        Panel1.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -97,6 +84,5 @@ Partial Class DoctorPage
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
-    Friend WithEvents RichTextBox1 As RichTextBox
     Friend WithEvents Label2 As Label
 End Class

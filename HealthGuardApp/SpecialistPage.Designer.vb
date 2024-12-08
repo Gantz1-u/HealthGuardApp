@@ -25,16 +25,17 @@ Partial Class SpecialistPage
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SpecialistPage))
         PictureBox2 = New PictureBox()
         RoundedPanel1 = New RoundedPanel()
-        RoundedButton3 = New CustomControls.RJControls.RoundedButton()
+        Label3 = New Label()
+        Label2 = New Label()
         PictureBox1 = New PictureBox()
-        PictureBox5 = New PictureBox()
+        RoundedButton3 = New CustomControls.RJControls.RoundedButton()
         Panel1 = New Panel()
         PictureBox3 = New PictureBox()
         Label1 = New Label()
         PictureBox4 = New PictureBox()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        RoundedPanel1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
@@ -45,7 +46,7 @@ Partial Class SpecialistPage
         PictureBox2.BackColor = Color.Transparent
         PictureBox2.Cursor = Cursors.Hand
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(27, 87)
+        PictureBox2.Location = New Point(27, 75)
         PictureBox2.Name = "PictureBox2"
         PictureBox2.Size = New Size(38, 36)
         PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
@@ -55,11 +56,44 @@ Partial Class SpecialistPage
         ' RoundedPanel1
         ' 
         RoundedPanel1.BackColor = Color.White
+        RoundedPanel1.Controls.Add(Label3)
+        RoundedPanel1.Controls.Add(Label2)
+        RoundedPanel1.Controls.Add(PictureBox1)
         RoundedPanel1.CornerRadius = 20
-        RoundedPanel1.Location = New Point(48, 152)
+        RoundedPanel1.Location = New Point(48, 140)
         RoundedPanel1.Name = "RoundedPanel1"
         RoundedPanel1.Size = New Size(304, 455)
         RoundedPanel1.TabIndex = 17
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label3.Location = New Point(105, 379)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(94, 21)
+        Label3.TabIndex = 2
+        Label3.Text = "Pediatrician"
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label2.Location = New Point(64, 354)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(176, 25)
+        Label2.TabIndex = 1
+        Label2.Text = "Dr. Ronald Dycoco"
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(20, 55)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(264, 286)
+        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox1.TabIndex = 0
+        PictureBox1.TabStop = False
         ' 
         ' RoundedButton3
         ' 
@@ -75,35 +109,13 @@ Partial Class SpecialistPage
         RoundedButton3.FlatStyle = FlatStyle.Flat
         RoundedButton3.Font = New Font("Segoe UI", 10F)
         RoundedButton3.ForeColor = Color.Black
-        RoundedButton3.Location = New Point(26, 635)
+        RoundedButton3.Location = New Point(26, 623)
         RoundedButton3.Name = "RoundedButton3"
         RoundedButton3.Size = New Size(348, 52)
         RoundedButton3.TabIndex = 34
         RoundedButton3.Text = "Book Appointment"
         RoundedButton3.TextColor = Color.Black
         RoundedButton3.UseVisualStyleBackColor = False
-        ' 
-        ' PictureBox1
-        ' 
-        PictureBox1.BackColor = Color.Transparent
-        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(358, 362)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(29, 50)
-        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox1.TabIndex = 35
-        PictureBox1.TabStop = False
-        ' 
-        ' PictureBox5
-        ' 
-        PictureBox5.BackColor = Color.Transparent
-        PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), Image)
-        PictureBox5.Location = New Point(14, 362)
-        PictureBox5.Name = "PictureBox5"
-        PictureBox5.Size = New Size(29, 50)
-        PictureBox5.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox5.TabIndex = 36
-        PictureBox5.TabStop = False
         ' 
         ' Panel1
         ' 
@@ -160,8 +172,6 @@ Partial Class SpecialistPage
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(400, 750)
         Controls.Add(Panel1)
-        Controls.Add(PictureBox5)
-        Controls.Add(PictureBox1)
         Controls.Add(RoundedButton3)
         Controls.Add(RoundedPanel1)
         Controls.Add(PictureBox2)
@@ -171,8 +181,9 @@ Partial Class SpecialistPage
         StartPosition = FormStartPosition.CenterScreen
         Text = "SpecialistPage"
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        RoundedPanel1.ResumeLayout(False)
+        RoundedPanel1.PerformLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
@@ -181,10 +192,11 @@ Partial Class SpecialistPage
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents RoundedPanel1 As RoundedPanel
     Friend WithEvents RoundedButton3 As CustomControls.RJControls.RoundedButton
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

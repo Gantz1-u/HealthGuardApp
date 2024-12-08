@@ -201,9 +201,9 @@ Partial Class SymptomsPage
         RoundedButton5.FlatStyle = FlatStyle.Flat
         RoundedButton5.Font = New Font("Segoe UI", 10F)
         RoundedButton5.ForeColor = Color.Black
-        RoundedButton5.Location = New Point(26, 255)
+        RoundedButton5.Location = New Point(25, 255)
         RoundedButton5.Name = "RoundedButton5"
-        RoundedButton5.Size = New Size(348, 52)
+        RoundedButton5.Size = New Size(349, 52)
         RoundedButton5.TabIndex = 38
         RoundedButton5.Text = "Pediatrics "
         RoundedButton5.TextColor = Color.Black
