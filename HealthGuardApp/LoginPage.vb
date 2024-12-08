@@ -27,8 +27,8 @@ Public Class LoginPage
             Exit Sub
         End If
 
-        ' Query to check credentials and retrieve the user's role and ID
-        Dim query As String = "SELECT UserID, Role FROM accounts WHERE EmailUsername = @EmailUsername AND Password = @Password"
+        ' Query to check credentials and retrieve the user's role, status, and ID
+        Dim query As String = "SELECT UserID, Role, Status FROM accounts WHERE EmailUsername = @EmailUsername AND Password = @Password"
 
         Try
             Dim connection As MySqlConnection = DB.Open()
@@ -40,12 +40,20 @@ Public Class LoginPage
 
                 If reader.HasRows Then
                     reader.Read()
-                    ' Fetch the UserID and Role
+                    ' Fetch the UserID, Role, and Status
                     LoggedInUserID = Convert.ToInt32(reader("UserID"))
                     Dim userRole As String = reader("Role").ToString().Trim()
+                    Dim userStatus As String = reader("Status").ToString().Trim()
 
-                    ' Debug: Show the UserID and Role
-                    MessageBox.Show($"Logged-in User ID: {LoggedInUserID}, Role: {userRole}", "Debug", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    ' Check if the account status is active
+                    If userStatus.ToLower() <> "active" Then
+                        MessageBox.Show("Account is not activated, please wait for admin approval.", "Account Not Activated", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                        reader.Close()
+                        Exit Sub
+                    End If
+
+                    ' Debug: Show the UserID, Role, and Status
+                    MessageBox.Show($"Logged-in User ID: {LoggedInUserID}, Role: {userRole}, Status: {userStatus}", "Debug", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                     ' Open the corresponding menu based on the user's role
                     Select Case userRole.ToLower()
@@ -75,7 +83,6 @@ Public Class LoginPage
             DB.Close()
         End Try
     End Sub
-
 
     ' Toggle password visibility
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
