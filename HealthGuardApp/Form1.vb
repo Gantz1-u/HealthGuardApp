@@ -3,16 +3,22 @@
 Public Class Form1
     Private DB As New DBConnection()
 
+    ' Declare a variable to hold the role
+    Private selectedRole As String
+
     Private Sub RoundedButton1_Click(sender As Object, e As EventArgs) Handles RoundedButton1.Click
-        CreateEmptyAccount("Patient")
+        selectedRole = "Patient"
+        CreateEmptyAccount(selectedRole)
     End Sub
 
     Private Sub RoundedButton2_Click(sender As Object, e As EventArgs) Handles RoundedButton2.Click
-        CreateEmptyAccount("Nurse")
+        selectedRole = "Nurse"
+        CreateEmptyAccount(selectedRole)
     End Sub
 
     Private Sub RoundedButton3_Click(sender As Object, e As EventArgs) Handles RoundedButton3.Click
-        CreateEmptyAccount("Doctor")
+        selectedRole = "Doctor"
+        CreateEmptyAccount(selectedRole)
     End Sub
 
     ' Create empty account tuple
@@ -20,13 +26,12 @@ Public Class Form1
         Try
             Dim connection As MySqlConnection = DB.Open()
 
-            ' Adjust the query based on the role
             Dim query As String = "
                 INSERT INTO accounts (Role, Status, CreationDate) 
                 VALUES (@Role, @Status, NOW());
                 SELECT LAST_INSERT_ID();"
 
-            ' Set status for "Patient" to "Active", others to "Pending"
+            ' Default status for "Patient" is Active, for "Nurse" and "Doctor" it is Pending
             Dim accountStatus As String = If(role.ToLower() = "patient", "Active", "Pending")
 
             Dim newUserId As Integer
@@ -39,12 +44,11 @@ Public Class Form1
 
             MessageBox.Show($"Empty account created successfully with UserID {newUserId}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-            ' Open the register form to complete the registration process
+            ' Pass UserId and Role to RegisterPage
             Dim registerForm As New RegisterPage()
-            registerForm.SetUserId(newUserId)
+            registerForm.SetUserId(newUserId, role) ' Pass the role
             registerForm.Show()
             Me.Hide()
-
         Catch ex As Exception
             MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally

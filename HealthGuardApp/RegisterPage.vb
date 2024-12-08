@@ -2,10 +2,14 @@
 
 Public Class RegisterPage
     Public Property UserId As Integer
+    Public Property UserRole As String ' Property to hold the user role
 
     Private DB As New DBConnection()
-    Public Sub SetUserId(newUserId As Integer)
+
+    ' Set the UserId and UserRole
+    Public Sub SetUserId(newUserId As Integer, role As String)
         UserId = newUserId
+        UserRole = role
     End Sub
 
     Private Sub RoundedButton3_Click(sender As Object, e As EventArgs) Handles RoundedButton3.Click
@@ -30,6 +34,10 @@ Public Class RegisterPage
             Exit Sub
         End If
 
+        ' Set the account status based on the user role
+        Dim accountStatus As String = If(UserRole.ToLower() = "patient", "Active", "Pending")
+
+        ' Update the account details, including the status
         Dim query As String = "
             UPDATE accounts 
             SET FirstName = @FirstName, 
@@ -38,7 +46,7 @@ Public Class RegisterPage
                 ContactNumber = @PhoneNumber, 
                 EmailUsername = @EmailUsername, 
                 Password = @Password, 
-                Status = 'Active' 
+                Status = @Status 
             WHERE UserID = @UserId"
 
         Try
@@ -50,6 +58,7 @@ Public Class RegisterPage
                 cmd.Parameters.AddWithValue("@PhoneNumber", phoneNumber)
                 cmd.Parameters.AddWithValue("@EmailUsername", username)
                 cmd.Parameters.AddWithValue("@Password", password)
+                cmd.Parameters.AddWithValue("@Status", accountStatus) ' Use accountStatus based on role
                 cmd.Parameters.AddWithValue("@UserId", UserId)
 
                 cmd.ExecuteNonQuery()
