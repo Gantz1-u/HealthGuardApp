@@ -45,7 +45,6 @@ Public Class PatientRecord
         End If
     End Sub
 
-
     ' Function to get the PatientID from the accounts table based on the LoggedInUserID
     Private Function GetPatientIDByUserID(userID As Integer) As Integer
         ' SQL query to fetch the PatientID from the accounts table

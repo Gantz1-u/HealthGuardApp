@@ -24,33 +24,27 @@ Partial Class appointment
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(appointment))
         Panel2 = New Panel()
-        Label1 = New Label()
-        PictureBox1 = New PictureBox()
-        PictureBox5 = New PictureBox()
         PictureBox2 = New PictureBox()
         Label2 = New Label()
         btn_9 = New CustomControls.RJControls.RoundedButton()
-        DateTimePicker1 = New DateTimePicker()
-        RoundedButton1 = New CustomControls.RJControls.RoundedButton()
-        RoundedButton2 = New CustomControls.RJControls.RoundedButton()
-        RoundedButton4 = New CustomControls.RJControls.RoundedButton()
-        RoundedButton5 = New CustomControls.RJControls.RoundedButton()
-        RoundedButton6 = New CustomControls.RJControls.RoundedButton()
-        RoundedButton7 = New CustomControls.RJControls.RoundedButton()
-        RoundedButton8 = New CustomControls.RJControls.RoundedButton()
-        RoundedButton9 = New CustomControls.RJControls.RoundedButton()
-        RoundedButton10 = New CustomControls.RJControls.RoundedButton()
-        RoundedButton11 = New CustomControls.RJControls.RoundedButton()
-        RoundedButton12 = New CustomControls.RJControls.RoundedButton()
-        RoundedButton13 = New CustomControls.RJControls.RoundedButton()
-        RoundedButton14 = New CustomControls.RJControls.RoundedButton()
-        RoundedButton15 = New CustomControls.RJControls.RoundedButton()
+        dtp_AppointmentDate = New DateTimePicker()
+        btn_930 = New CustomControls.RJControls.RoundedButton()
+        btn_10 = New CustomControls.RJControls.RoundedButton()
+        btn_1330 = New CustomControls.RJControls.RoundedButton()
+        btn_13 = New CustomControls.RJControls.RoundedButton()
+        btn_1030 = New CustomControls.RJControls.RoundedButton()
+        btn_15 = New CustomControls.RJControls.RoundedButton()
+        btn_1430 = New CustomControls.RJControls.RoundedButton()
+        btn_14 = New CustomControls.RJControls.RoundedButton()
+        btn_1630 = New CustomControls.RJControls.RoundedButton()
+        btn_16 = New CustomControls.RJControls.RoundedButton()
+        btn_1530 = New CustomControls.RJControls.RoundedButton()
+        btn_18 = New CustomControls.RJControls.RoundedButton()
+        btn_1730 = New CustomControls.RJControls.RoundedButton()
+        btn_17 = New CustomControls.RJControls.RoundedButton()
         Label3 = New Label()
-        RoundedTextBox1 = New RoundedTextBox()
+        txt_Note = New RoundedTextBox()
         RoundedButton16 = New CustomControls.RJControls.RoundedButton()
-        Panel2.SuspendLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -58,45 +52,10 @@ Partial Class appointment
         ' 
         Panel2.BackColor = Color.Transparent
         Panel2.BorderStyle = BorderStyle.FixedSingle
-        Panel2.Controls.Add(Label1)
-        Panel2.Controls.Add(PictureBox1)
-        Panel2.Controls.Add(PictureBox5)
         Panel2.Location = New Point(0, 3)
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(422, 68)
         Panel2.TabIndex = 19
-        ' 
-        ' Label1
-        ' 
-        Label1.BackColor = Color.Transparent
-        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(22, 42)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(47, 16)
-        Label1.TabIndex = 5
-        Label1.Text = "MENU"
-        Label1.TextAlign = ContentAlignment.TopCenter
-        ' 
-        ' PictureBox1
-        ' 
-        PictureBox1.BackColor = Color.Transparent
-        PictureBox1.Cursor = Cursors.Hand
-        PictureBox1.Location = New Point(24, 14)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(40, 25)
-        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox1.TabIndex = 3
-        PictureBox1.TabStop = False
-        ' 
-        ' PictureBox5
-        ' 
-        PictureBox5.BackColor = Color.Transparent
-        PictureBox5.Location = New Point(48, -11)
-        PictureBox5.Name = "PictureBox5"
-        PictureBox5.Size = New Size(142, 90)
-        PictureBox5.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox5.TabIndex = 2
-        PictureBox5.TabStop = False
         ' 
         ' PictureBox2
         ' 
@@ -114,7 +73,7 @@ Partial Class appointment
         ' 
         Label2.AutoSize = True
         Label2.BackColor = Color.Transparent
-        Label2.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label2.Font = New Font("Segoe UI", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label2.Location = New Point(112, 158)
         Label2.Name = "Label2"
         Label2.Size = New Size(166, 32)
@@ -133,7 +92,7 @@ Partial Class appointment
         btn_9.FlatAppearance.MouseDownBackColor = Color.White
         btn_9.FlatAppearance.MouseOverBackColor = Color.SteelBlue
         btn_9.FlatStyle = FlatStyle.Flat
-        btn_9.Font = New Font("Segoe UI", 10F)
+        btn_9.Font = New Font("Segoe UI", 10.0F)
         btn_9.ForeColor = Color.Black
         btn_9.Location = New Point(56, 253)
         btn_9.Name = "btn_9"
@@ -143,339 +102,341 @@ Partial Class appointment
         btn_9.TextColor = Color.Black
         btn_9.UseVisualStyleBackColor = False
         ' 
-        ' DateTimePicker1
+        ' dtp_AppointmentDate
         ' 
-        DateTimePicker1.Location = New Point(43, 209)
-        DateTimePicker1.Name = "DateTimePicker1"
-        DateTimePicker1.Size = New Size(313, 23)
-        DateTimePicker1.TabIndex = 53
+        dtp_AppointmentDate.CustomFormat = "yyyy-MM-dd"
+        dtp_AppointmentDate.Format = DateTimePickerFormat.Custom
+        dtp_AppointmentDate.Location = New Point(43, 209)
+        dtp_AppointmentDate.Name = "dtp_AppointmentDate"
+        dtp_AppointmentDate.Size = New Size(313, 23)
+        dtp_AppointmentDate.TabIndex = 53
         ' 
-        ' RoundedButton1
+        ' btn_930
         ' 
-        RoundedButton1.BackColor = SystemColors.ButtonHighlight
-        RoundedButton1.BackgroundColor = SystemColors.ButtonHighlight
-        RoundedButton1.BorderColor = Color.PaleVioletRed
-        RoundedButton1.BorderRadius = 9
-        RoundedButton1.BorderSize = 0
-        RoundedButton1.Cursor = Cursors.Hand
-        RoundedButton1.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
-        RoundedButton1.FlatAppearance.MouseDownBackColor = Color.White
-        RoundedButton1.FlatAppearance.MouseOverBackColor = Color.SteelBlue
-        RoundedButton1.FlatStyle = FlatStyle.Flat
-        RoundedButton1.Font = New Font("Segoe UI", 10F)
-        RoundedButton1.ForeColor = Color.Black
-        RoundedButton1.Location = New Point(154, 253)
-        RoundedButton1.Name = "RoundedButton1"
-        RoundedButton1.Size = New Size(92, 35)
-        RoundedButton1.TabIndex = 54
-        RoundedButton1.Text = "9:30"
-        RoundedButton1.TextColor = Color.Black
-        RoundedButton1.UseVisualStyleBackColor = False
+        btn_930.BackColor = SystemColors.ButtonHighlight
+        btn_930.BackgroundColor = SystemColors.ButtonHighlight
+        btn_930.BorderColor = Color.PaleVioletRed
+        btn_930.BorderRadius = 9
+        btn_930.BorderSize = 0
+        btn_930.Cursor = Cursors.Hand
+        btn_930.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
+        btn_930.FlatAppearance.MouseDownBackColor = Color.White
+        btn_930.FlatAppearance.MouseOverBackColor = Color.SteelBlue
+        btn_930.FlatStyle = FlatStyle.Flat
+        btn_930.Font = New Font("Segoe UI", 10.0F)
+        btn_930.ForeColor = Color.Black
+        btn_930.Location = New Point(154, 253)
+        btn_930.Name = "btn_930"
+        btn_930.Size = New Size(92, 35)
+        btn_930.TabIndex = 54
+        btn_930.Text = "9:30"
+        btn_930.TextColor = Color.Black
+        btn_930.UseVisualStyleBackColor = False
         ' 
-        ' RoundedButton2
+        ' btn_10
         ' 
-        RoundedButton2.BackColor = SystemColors.ButtonHighlight
-        RoundedButton2.BackgroundColor = SystemColors.ButtonHighlight
-        RoundedButton2.BorderColor = Color.PaleVioletRed
-        RoundedButton2.BorderRadius = 9
-        RoundedButton2.BorderSize = 0
-        RoundedButton2.Cursor = Cursors.Hand
-        RoundedButton2.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
-        RoundedButton2.FlatAppearance.MouseDownBackColor = Color.White
-        RoundedButton2.FlatAppearance.MouseOverBackColor = Color.SteelBlue
-        RoundedButton2.FlatStyle = FlatStyle.Flat
-        RoundedButton2.Font = New Font("Segoe UI", 10F)
-        RoundedButton2.ForeColor = Color.Black
-        RoundedButton2.Location = New Point(254, 253)
-        RoundedButton2.Name = "RoundedButton2"
-        RoundedButton2.Size = New Size(92, 35)
-        RoundedButton2.TabIndex = 56
-        RoundedButton2.Text = "10:00"
-        RoundedButton2.TextColor = Color.Black
-        RoundedButton2.UseVisualStyleBackColor = False
+        btn_10.BackColor = SystemColors.ButtonHighlight
+        btn_10.BackgroundColor = SystemColors.ButtonHighlight
+        btn_10.BorderColor = Color.PaleVioletRed
+        btn_10.BorderRadius = 9
+        btn_10.BorderSize = 0
+        btn_10.Cursor = Cursors.Hand
+        btn_10.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
+        btn_10.FlatAppearance.MouseDownBackColor = Color.White
+        btn_10.FlatAppearance.MouseOverBackColor = Color.SteelBlue
+        btn_10.FlatStyle = FlatStyle.Flat
+        btn_10.Font = New Font("Segoe UI", 10.0F)
+        btn_10.ForeColor = Color.Black
+        btn_10.Location = New Point(254, 253)
+        btn_10.Name = "btn_10"
+        btn_10.Size = New Size(92, 35)
+        btn_10.TabIndex = 56
+        btn_10.Text = "10:00"
+        btn_10.TextColor = Color.Black
+        btn_10.UseVisualStyleBackColor = False
         ' 
-        ' RoundedButton4
+        ' btn_1330
         ' 
-        RoundedButton4.BackColor = SystemColors.ButtonHighlight
-        RoundedButton4.BackgroundColor = SystemColors.ButtonHighlight
-        RoundedButton4.BorderColor = Color.PaleVioletRed
-        RoundedButton4.BorderRadius = 9
-        RoundedButton4.BorderSize = 0
-        RoundedButton4.Cursor = Cursors.Hand
-        RoundedButton4.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
-        RoundedButton4.FlatAppearance.MouseDownBackColor = Color.White
-        RoundedButton4.FlatAppearance.MouseOverBackColor = Color.SteelBlue
-        RoundedButton4.FlatStyle = FlatStyle.Flat
-        RoundedButton4.Font = New Font("Segoe UI", 10F)
-        RoundedButton4.ForeColor = Color.Black
-        RoundedButton4.Location = New Point(254, 294)
-        RoundedButton4.Name = "RoundedButton4"
-        RoundedButton4.Size = New Size(92, 35)
-        RoundedButton4.TabIndex = 59
-        RoundedButton4.Text = "13:30"
-        RoundedButton4.TextColor = Color.Black
-        RoundedButton4.UseVisualStyleBackColor = False
+        btn_1330.BackColor = SystemColors.ButtonHighlight
+        btn_1330.BackgroundColor = SystemColors.ButtonHighlight
+        btn_1330.BorderColor = Color.PaleVioletRed
+        btn_1330.BorderRadius = 9
+        btn_1330.BorderSize = 0
+        btn_1330.Cursor = Cursors.Hand
+        btn_1330.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
+        btn_1330.FlatAppearance.MouseDownBackColor = Color.White
+        btn_1330.FlatAppearance.MouseOverBackColor = Color.SteelBlue
+        btn_1330.FlatStyle = FlatStyle.Flat
+        btn_1330.Font = New Font("Segoe UI", 10.0F)
+        btn_1330.ForeColor = Color.Black
+        btn_1330.Location = New Point(254, 294)
+        btn_1330.Name = "btn_1330"
+        btn_1330.Size = New Size(92, 35)
+        btn_1330.TabIndex = 59
+        btn_1330.Text = "13:30"
+        btn_1330.TextColor = Color.Black
+        btn_1330.UseVisualStyleBackColor = False
         ' 
-        ' RoundedButton5
+        ' btn_13
         ' 
-        RoundedButton5.BackColor = SystemColors.ButtonHighlight
-        RoundedButton5.BackgroundColor = SystemColors.ButtonHighlight
-        RoundedButton5.BorderColor = Color.PaleVioletRed
-        RoundedButton5.BorderRadius = 9
-        RoundedButton5.BorderSize = 0
-        RoundedButton5.Cursor = Cursors.Hand
-        RoundedButton5.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
-        RoundedButton5.FlatAppearance.MouseDownBackColor = Color.White
-        RoundedButton5.FlatAppearance.MouseOverBackColor = Color.SteelBlue
-        RoundedButton5.FlatStyle = FlatStyle.Flat
-        RoundedButton5.Font = New Font("Segoe UI", 10F)
-        RoundedButton5.ForeColor = Color.Black
-        RoundedButton5.Location = New Point(154, 294)
-        RoundedButton5.Name = "RoundedButton5"
-        RoundedButton5.Size = New Size(92, 35)
-        RoundedButton5.TabIndex = 58
-        RoundedButton5.Text = "13:00"
-        RoundedButton5.TextColor = Color.Black
-        RoundedButton5.UseVisualStyleBackColor = False
+        btn_13.BackColor = SystemColors.ButtonHighlight
+        btn_13.BackgroundColor = SystemColors.ButtonHighlight
+        btn_13.BorderColor = Color.PaleVioletRed
+        btn_13.BorderRadius = 9
+        btn_13.BorderSize = 0
+        btn_13.Cursor = Cursors.Hand
+        btn_13.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
+        btn_13.FlatAppearance.MouseDownBackColor = Color.White
+        btn_13.FlatAppearance.MouseOverBackColor = Color.SteelBlue
+        btn_13.FlatStyle = FlatStyle.Flat
+        btn_13.Font = New Font("Segoe UI", 10.0F)
+        btn_13.ForeColor = Color.Black
+        btn_13.Location = New Point(154, 294)
+        btn_13.Name = "btn_13"
+        btn_13.Size = New Size(92, 35)
+        btn_13.TabIndex = 58
+        btn_13.Text = "13:00"
+        btn_13.TextColor = Color.Black
+        btn_13.UseVisualStyleBackColor = False
         ' 
-        ' RoundedButton6
+        ' btn_1030
         ' 
-        RoundedButton6.BackColor = SystemColors.ButtonHighlight
-        RoundedButton6.BackgroundColor = SystemColors.ButtonHighlight
-        RoundedButton6.BorderColor = Color.PaleVioletRed
-        RoundedButton6.BorderRadius = 9
-        RoundedButton6.BorderSize = 0
-        RoundedButton6.Cursor = Cursors.Hand
-        RoundedButton6.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
-        RoundedButton6.FlatAppearance.MouseDownBackColor = Color.White
-        RoundedButton6.FlatAppearance.MouseOverBackColor = Color.SteelBlue
-        RoundedButton6.FlatStyle = FlatStyle.Flat
-        RoundedButton6.Font = New Font("Segoe UI", 10F)
-        RoundedButton6.ForeColor = Color.Black
-        RoundedButton6.Location = New Point(56, 294)
-        RoundedButton6.Name = "RoundedButton6"
-        RoundedButton6.Size = New Size(92, 35)
-        RoundedButton6.TabIndex = 57
-        RoundedButton6.Text = "10:30"
-        RoundedButton6.TextColor = Color.Black
-        RoundedButton6.UseVisualStyleBackColor = False
+        btn_1030.BackColor = SystemColors.ButtonHighlight
+        btn_1030.BackgroundColor = SystemColors.ButtonHighlight
+        btn_1030.BorderColor = Color.PaleVioletRed
+        btn_1030.BorderRadius = 9
+        btn_1030.BorderSize = 0
+        btn_1030.Cursor = Cursors.Hand
+        btn_1030.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
+        btn_1030.FlatAppearance.MouseDownBackColor = Color.White
+        btn_1030.FlatAppearance.MouseOverBackColor = Color.SteelBlue
+        btn_1030.FlatStyle = FlatStyle.Flat
+        btn_1030.Font = New Font("Segoe UI", 10.0F)
+        btn_1030.ForeColor = Color.Black
+        btn_1030.Location = New Point(56, 294)
+        btn_1030.Name = "btn_1030"
+        btn_1030.Size = New Size(92, 35)
+        btn_1030.TabIndex = 57
+        btn_1030.Text = "10:30"
+        btn_1030.TextColor = Color.Black
+        btn_1030.UseVisualStyleBackColor = False
         ' 
-        ' RoundedButton7
+        ' btn_15
         ' 
-        RoundedButton7.BackColor = SystemColors.ButtonHighlight
-        RoundedButton7.BackgroundColor = SystemColors.ButtonHighlight
-        RoundedButton7.BorderColor = Color.PaleVioletRed
-        RoundedButton7.BorderRadius = 9
-        RoundedButton7.BorderSize = 0
-        RoundedButton7.Cursor = Cursors.Hand
-        RoundedButton7.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
-        RoundedButton7.FlatAppearance.MouseDownBackColor = Color.White
-        RoundedButton7.FlatAppearance.MouseOverBackColor = Color.SteelBlue
-        RoundedButton7.FlatStyle = FlatStyle.Flat
-        RoundedButton7.Font = New Font("Segoe UI", 10F)
-        RoundedButton7.ForeColor = Color.Black
-        RoundedButton7.Location = New Point(254, 335)
-        RoundedButton7.Name = "RoundedButton7"
-        RoundedButton7.Size = New Size(92, 35)
-        RoundedButton7.TabIndex = 62
-        RoundedButton7.Text = "15:00"
-        RoundedButton7.TextColor = Color.Black
-        RoundedButton7.UseVisualStyleBackColor = False
+        btn_15.BackColor = SystemColors.ButtonHighlight
+        btn_15.BackgroundColor = SystemColors.ButtonHighlight
+        btn_15.BorderColor = Color.PaleVioletRed
+        btn_15.BorderRadius = 9
+        btn_15.BorderSize = 0
+        btn_15.Cursor = Cursors.Hand
+        btn_15.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
+        btn_15.FlatAppearance.MouseDownBackColor = Color.White
+        btn_15.FlatAppearance.MouseOverBackColor = Color.SteelBlue
+        btn_15.FlatStyle = FlatStyle.Flat
+        btn_15.Font = New Font("Segoe UI", 10.0F)
+        btn_15.ForeColor = Color.Black
+        btn_15.Location = New Point(254, 335)
+        btn_15.Name = "btn_15"
+        btn_15.Size = New Size(92, 35)
+        btn_15.TabIndex = 62
+        btn_15.Text = "15:00"
+        btn_15.TextColor = Color.Black
+        btn_15.UseVisualStyleBackColor = False
         ' 
-        ' RoundedButton8
+        ' btn_1430
         ' 
-        RoundedButton8.BackColor = SystemColors.ButtonHighlight
-        RoundedButton8.BackgroundColor = SystemColors.ButtonHighlight
-        RoundedButton8.BorderColor = Color.PaleVioletRed
-        RoundedButton8.BorderRadius = 9
-        RoundedButton8.BorderSize = 0
-        RoundedButton8.Cursor = Cursors.Hand
-        RoundedButton8.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
-        RoundedButton8.FlatAppearance.MouseDownBackColor = Color.White
-        RoundedButton8.FlatAppearance.MouseOverBackColor = Color.SteelBlue
-        RoundedButton8.FlatStyle = FlatStyle.Flat
-        RoundedButton8.Font = New Font("Segoe UI", 10F)
-        RoundedButton8.ForeColor = Color.Black
-        RoundedButton8.Location = New Point(154, 335)
-        RoundedButton8.Name = "RoundedButton8"
-        RoundedButton8.Size = New Size(92, 35)
-        RoundedButton8.TabIndex = 61
-        RoundedButton8.Text = "14:30"
-        RoundedButton8.TextColor = Color.Black
-        RoundedButton8.UseVisualStyleBackColor = False
+        btn_1430.BackColor = SystemColors.ButtonHighlight
+        btn_1430.BackgroundColor = SystemColors.ButtonHighlight
+        btn_1430.BorderColor = Color.PaleVioletRed
+        btn_1430.BorderRadius = 9
+        btn_1430.BorderSize = 0
+        btn_1430.Cursor = Cursors.Hand
+        btn_1430.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
+        btn_1430.FlatAppearance.MouseDownBackColor = Color.White
+        btn_1430.FlatAppearance.MouseOverBackColor = Color.SteelBlue
+        btn_1430.FlatStyle = FlatStyle.Flat
+        btn_1430.Font = New Font("Segoe UI", 10.0F)
+        btn_1430.ForeColor = Color.Black
+        btn_1430.Location = New Point(154, 335)
+        btn_1430.Name = "btn_1430"
+        btn_1430.Size = New Size(92, 35)
+        btn_1430.TabIndex = 61
+        btn_1430.Text = "14:30"
+        btn_1430.TextColor = Color.Black
+        btn_1430.UseVisualStyleBackColor = False
         ' 
-        ' RoundedButton9
+        ' btn_14
         ' 
-        RoundedButton9.BackColor = SystemColors.ButtonHighlight
-        RoundedButton9.BackgroundColor = SystemColors.ButtonHighlight
-        RoundedButton9.BorderColor = Color.PaleVioletRed
-        RoundedButton9.BorderRadius = 9
-        RoundedButton9.BorderSize = 0
-        RoundedButton9.Cursor = Cursors.Hand
-        RoundedButton9.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
-        RoundedButton9.FlatAppearance.MouseDownBackColor = Color.White
-        RoundedButton9.FlatAppearance.MouseOverBackColor = Color.SteelBlue
-        RoundedButton9.FlatStyle = FlatStyle.Flat
-        RoundedButton9.Font = New Font("Segoe UI", 10F)
-        RoundedButton9.ForeColor = Color.Black
-        RoundedButton9.Location = New Point(56, 335)
-        RoundedButton9.Name = "RoundedButton9"
-        RoundedButton9.Size = New Size(92, 35)
-        RoundedButton9.TabIndex = 60
-        RoundedButton9.Text = "14:00"
-        RoundedButton9.TextColor = Color.Black
-        RoundedButton9.UseVisualStyleBackColor = False
+        btn_14.BackColor = SystemColors.ButtonHighlight
+        btn_14.BackgroundColor = SystemColors.ButtonHighlight
+        btn_14.BorderColor = Color.PaleVioletRed
+        btn_14.BorderRadius = 9
+        btn_14.BorderSize = 0
+        btn_14.Cursor = Cursors.Hand
+        btn_14.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
+        btn_14.FlatAppearance.MouseDownBackColor = Color.White
+        btn_14.FlatAppearance.MouseOverBackColor = Color.SteelBlue
+        btn_14.FlatStyle = FlatStyle.Flat
+        btn_14.Font = New Font("Segoe UI", 10.0F)
+        btn_14.ForeColor = Color.Black
+        btn_14.Location = New Point(56, 335)
+        btn_14.Name = "btn_14"
+        btn_14.Size = New Size(92, 35)
+        btn_14.TabIndex = 60
+        btn_14.Text = "14:00"
+        btn_14.TextColor = Color.Black
+        btn_14.UseVisualStyleBackColor = False
         ' 
-        ' RoundedButton10
+        ' btn_1630
         ' 
-        RoundedButton10.BackColor = SystemColors.ButtonHighlight
-        RoundedButton10.BackgroundColor = SystemColors.ButtonHighlight
-        RoundedButton10.BorderColor = Color.PaleVioletRed
-        RoundedButton10.BorderRadius = 9
-        RoundedButton10.BorderSize = 0
-        RoundedButton10.Cursor = Cursors.Hand
-        RoundedButton10.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
-        RoundedButton10.FlatAppearance.MouseDownBackColor = Color.White
-        RoundedButton10.FlatAppearance.MouseOverBackColor = Color.SteelBlue
-        RoundedButton10.FlatStyle = FlatStyle.Flat
-        RoundedButton10.Font = New Font("Segoe UI", 10F)
-        RoundedButton10.ForeColor = Color.Black
-        RoundedButton10.Location = New Point(254, 376)
-        RoundedButton10.Name = "RoundedButton10"
-        RoundedButton10.Size = New Size(92, 35)
-        RoundedButton10.TabIndex = 65
-        RoundedButton10.Text = "16:30"
-        RoundedButton10.TextColor = Color.Black
-        RoundedButton10.UseVisualStyleBackColor = False
+        btn_1630.BackColor = SystemColors.ButtonHighlight
+        btn_1630.BackgroundColor = SystemColors.ButtonHighlight
+        btn_1630.BorderColor = Color.PaleVioletRed
+        btn_1630.BorderRadius = 9
+        btn_1630.BorderSize = 0
+        btn_1630.Cursor = Cursors.Hand
+        btn_1630.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
+        btn_1630.FlatAppearance.MouseDownBackColor = Color.White
+        btn_1630.FlatAppearance.MouseOverBackColor = Color.SteelBlue
+        btn_1630.FlatStyle = FlatStyle.Flat
+        btn_1630.Font = New Font("Segoe UI", 10.0F)
+        btn_1630.ForeColor = Color.Black
+        btn_1630.Location = New Point(254, 376)
+        btn_1630.Name = "btn_1630"
+        btn_1630.Size = New Size(92, 35)
+        btn_1630.TabIndex = 65
+        btn_1630.Text = "16:30"
+        btn_1630.TextColor = Color.Black
+        btn_1630.UseVisualStyleBackColor = False
         ' 
-        ' RoundedButton11
+        ' btn_16
         ' 
-        RoundedButton11.BackColor = SystemColors.ButtonHighlight
-        RoundedButton11.BackgroundColor = SystemColors.ButtonHighlight
-        RoundedButton11.BorderColor = Color.PaleVioletRed
-        RoundedButton11.BorderRadius = 9
-        RoundedButton11.BorderSize = 0
-        RoundedButton11.Cursor = Cursors.Hand
-        RoundedButton11.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
-        RoundedButton11.FlatAppearance.MouseDownBackColor = Color.White
-        RoundedButton11.FlatAppearance.MouseOverBackColor = Color.SteelBlue
-        RoundedButton11.FlatStyle = FlatStyle.Flat
-        RoundedButton11.Font = New Font("Segoe UI", 10F)
-        RoundedButton11.ForeColor = Color.Black
-        RoundedButton11.Location = New Point(154, 376)
-        RoundedButton11.Name = "RoundedButton11"
-        RoundedButton11.Size = New Size(92, 35)
-        RoundedButton11.TabIndex = 64
-        RoundedButton11.Text = "16:00"
-        RoundedButton11.TextColor = Color.Black
-        RoundedButton11.UseVisualStyleBackColor = False
+        btn_16.BackColor = SystemColors.ButtonHighlight
+        btn_16.BackgroundColor = SystemColors.ButtonHighlight
+        btn_16.BorderColor = Color.PaleVioletRed
+        btn_16.BorderRadius = 9
+        btn_16.BorderSize = 0
+        btn_16.Cursor = Cursors.Hand
+        btn_16.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
+        btn_16.FlatAppearance.MouseDownBackColor = Color.White
+        btn_16.FlatAppearance.MouseOverBackColor = Color.SteelBlue
+        btn_16.FlatStyle = FlatStyle.Flat
+        btn_16.Font = New Font("Segoe UI", 10.0F)
+        btn_16.ForeColor = Color.Black
+        btn_16.Location = New Point(154, 376)
+        btn_16.Name = "btn_16"
+        btn_16.Size = New Size(92, 35)
+        btn_16.TabIndex = 64
+        btn_16.Text = "16:00"
+        btn_16.TextColor = Color.Black
+        btn_16.UseVisualStyleBackColor = False
         ' 
-        ' RoundedButton12
+        ' btn_1530
         ' 
-        RoundedButton12.BackColor = SystemColors.ButtonHighlight
-        RoundedButton12.BackgroundColor = SystemColors.ButtonHighlight
-        RoundedButton12.BorderColor = Color.PaleVioletRed
-        RoundedButton12.BorderRadius = 9
-        RoundedButton12.BorderSize = 0
-        RoundedButton12.Cursor = Cursors.Hand
-        RoundedButton12.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
-        RoundedButton12.FlatAppearance.MouseDownBackColor = Color.White
-        RoundedButton12.FlatAppearance.MouseOverBackColor = Color.SteelBlue
-        RoundedButton12.FlatStyle = FlatStyle.Flat
-        RoundedButton12.Font = New Font("Segoe UI", 10F)
-        RoundedButton12.ForeColor = Color.Black
-        RoundedButton12.Location = New Point(56, 376)
-        RoundedButton12.Name = "RoundedButton12"
-        RoundedButton12.Size = New Size(92, 35)
-        RoundedButton12.TabIndex = 63
-        RoundedButton12.Text = "15:30"
-        RoundedButton12.TextColor = Color.Black
-        RoundedButton12.UseVisualStyleBackColor = False
+        btn_1530.BackColor = SystemColors.ButtonHighlight
+        btn_1530.BackgroundColor = SystemColors.ButtonHighlight
+        btn_1530.BorderColor = Color.PaleVioletRed
+        btn_1530.BorderRadius = 9
+        btn_1530.BorderSize = 0
+        btn_1530.Cursor = Cursors.Hand
+        btn_1530.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
+        btn_1530.FlatAppearance.MouseDownBackColor = Color.White
+        btn_1530.FlatAppearance.MouseOverBackColor = Color.SteelBlue
+        btn_1530.FlatStyle = FlatStyle.Flat
+        btn_1530.Font = New Font("Segoe UI", 10.0F)
+        btn_1530.ForeColor = Color.Black
+        btn_1530.Location = New Point(56, 376)
+        btn_1530.Name = "btn_1530"
+        btn_1530.Size = New Size(92, 35)
+        btn_1530.TabIndex = 63
+        btn_1530.Text = "15:30"
+        btn_1530.TextColor = Color.Black
+        btn_1530.UseVisualStyleBackColor = False
         ' 
-        ' RoundedButton13
+        ' btn_18
         ' 
-        RoundedButton13.BackColor = SystemColors.ButtonHighlight
-        RoundedButton13.BackgroundColor = SystemColors.ButtonHighlight
-        RoundedButton13.BorderColor = Color.PaleVioletRed
-        RoundedButton13.BorderRadius = 9
-        RoundedButton13.BorderSize = 0
-        RoundedButton13.Cursor = Cursors.Hand
-        RoundedButton13.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
-        RoundedButton13.FlatAppearance.MouseDownBackColor = Color.White
-        RoundedButton13.FlatAppearance.MouseOverBackColor = Color.SteelBlue
-        RoundedButton13.FlatStyle = FlatStyle.Flat
-        RoundedButton13.Font = New Font("Segoe UI", 10F)
-        RoundedButton13.ForeColor = Color.Black
-        RoundedButton13.Location = New Point(254, 417)
-        RoundedButton13.Name = "RoundedButton13"
-        RoundedButton13.Size = New Size(92, 35)
-        RoundedButton13.TabIndex = 68
-        RoundedButton13.Text = "18:00"
-        RoundedButton13.TextColor = Color.Black
-        RoundedButton13.UseVisualStyleBackColor = False
+        btn_18.BackColor = SystemColors.ButtonHighlight
+        btn_18.BackgroundColor = SystemColors.ButtonHighlight
+        btn_18.BorderColor = Color.PaleVioletRed
+        btn_18.BorderRadius = 9
+        btn_18.BorderSize = 0
+        btn_18.Cursor = Cursors.Hand
+        btn_18.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
+        btn_18.FlatAppearance.MouseDownBackColor = Color.White
+        btn_18.FlatAppearance.MouseOverBackColor = Color.SteelBlue
+        btn_18.FlatStyle = FlatStyle.Flat
+        btn_18.Font = New Font("Segoe UI", 10.0F)
+        btn_18.ForeColor = Color.Black
+        btn_18.Location = New Point(254, 417)
+        btn_18.Name = "btn_18"
+        btn_18.Size = New Size(92, 35)
+        btn_18.TabIndex = 68
+        btn_18.Text = "18:00"
+        btn_18.TextColor = Color.Black
+        btn_18.UseVisualStyleBackColor = False
         ' 
-        ' RoundedButton14
+        ' btn_1730
         ' 
-        RoundedButton14.BackColor = SystemColors.ButtonHighlight
-        RoundedButton14.BackgroundColor = SystemColors.ButtonHighlight
-        RoundedButton14.BorderColor = Color.PaleVioletRed
-        RoundedButton14.BorderRadius = 9
-        RoundedButton14.BorderSize = 0
-        RoundedButton14.Cursor = Cursors.Hand
-        RoundedButton14.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
-        RoundedButton14.FlatAppearance.MouseDownBackColor = Color.White
-        RoundedButton14.FlatAppearance.MouseOverBackColor = Color.SteelBlue
-        RoundedButton14.FlatStyle = FlatStyle.Flat
-        RoundedButton14.Font = New Font("Segoe UI", 10F)
-        RoundedButton14.ForeColor = Color.Black
-        RoundedButton14.Location = New Point(154, 417)
-        RoundedButton14.Name = "RoundedButton14"
-        RoundedButton14.Size = New Size(92, 35)
-        RoundedButton14.TabIndex = 67
-        RoundedButton14.Text = "17:30"
-        RoundedButton14.TextColor = Color.Black
-        RoundedButton14.UseVisualStyleBackColor = False
+        btn_1730.BackColor = SystemColors.ButtonHighlight
+        btn_1730.BackgroundColor = SystemColors.ButtonHighlight
+        btn_1730.BorderColor = Color.PaleVioletRed
+        btn_1730.BorderRadius = 9
+        btn_1730.BorderSize = 0
+        btn_1730.Cursor = Cursors.Hand
+        btn_1730.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
+        btn_1730.FlatAppearance.MouseDownBackColor = Color.White
+        btn_1730.FlatAppearance.MouseOverBackColor = Color.SteelBlue
+        btn_1730.FlatStyle = FlatStyle.Flat
+        btn_1730.Font = New Font("Segoe UI", 10.0F)
+        btn_1730.ForeColor = Color.Black
+        btn_1730.Location = New Point(154, 417)
+        btn_1730.Name = "btn_1730"
+        btn_1730.Size = New Size(92, 35)
+        btn_1730.TabIndex = 67
+        btn_1730.Text = "17:30"
+        btn_1730.TextColor = Color.Black
+        btn_1730.UseVisualStyleBackColor = False
         ' 
-        ' RoundedButton15
+        ' btn_17
         ' 
-        RoundedButton15.BackColor = SystemColors.ButtonHighlight
-        RoundedButton15.BackgroundColor = SystemColors.ButtonHighlight
-        RoundedButton15.BorderColor = Color.PaleVioletRed
-        RoundedButton15.BorderRadius = 9
-        RoundedButton15.BorderSize = 0
-        RoundedButton15.Cursor = Cursors.Hand
-        RoundedButton15.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
-        RoundedButton15.FlatAppearance.MouseDownBackColor = Color.White
-        RoundedButton15.FlatAppearance.MouseOverBackColor = Color.SteelBlue
-        RoundedButton15.FlatStyle = FlatStyle.Flat
-        RoundedButton15.Font = New Font("Segoe UI", 10F)
-        RoundedButton15.ForeColor = Color.Black
-        RoundedButton15.Location = New Point(56, 417)
-        RoundedButton15.Name = "RoundedButton15"
-        RoundedButton15.Size = New Size(92, 35)
-        RoundedButton15.TabIndex = 66
-        RoundedButton15.Text = "17:00"
-        RoundedButton15.TextColor = Color.Black
-        RoundedButton15.UseVisualStyleBackColor = False
+        btn_17.BackColor = SystemColors.ButtonHighlight
+        btn_17.BackgroundColor = SystemColors.ButtonHighlight
+        btn_17.BorderColor = Color.PaleVioletRed
+        btn_17.BorderRadius = 9
+        btn_17.BorderSize = 0
+        btn_17.Cursor = Cursors.Hand
+        btn_17.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
+        btn_17.FlatAppearance.MouseDownBackColor = Color.White
+        btn_17.FlatAppearance.MouseOverBackColor = Color.SteelBlue
+        btn_17.FlatStyle = FlatStyle.Flat
+        btn_17.Font = New Font("Segoe UI", 10.0F)
+        btn_17.ForeColor = Color.Black
+        btn_17.Location = New Point(56, 417)
+        btn_17.Name = "btn_17"
+        btn_17.Size = New Size(92, 35)
+        btn_17.TabIndex = 66
+        btn_17.Text = "17:00"
+        btn_17.TextColor = Color.Black
+        btn_17.UseVisualStyleBackColor = False
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
         Label3.BackColor = Color.Transparent
-        Label3.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label3.Font = New Font("Segoe UI Semibold", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label3.Location = New Point(38, 472)
         Label3.Name = "Label3"
         Label3.Size = New Size(51, 21)
         Label3.TabIndex = 69
         Label3.Text = "Note:"
         ' 
-        ' RoundedTextBox1
+        ' txt_Note
         ' 
-        RoundedTextBox1.Location = New Point(38, 496)
-        RoundedTextBox1.Multiline = True
-        RoundedTextBox1.Name = "RoundedTextBox1"
-        RoundedTextBox1.Size = New Size(315, 85)
-        RoundedTextBox1.TabIndex = 70
+        txt_Note.Location = New Point(38, 496)
+        txt_Note.Multiline = True
+        txt_Note.Name = "txt_Note"
+        txt_Note.Size = New Size(315, 85)
+        txt_Note.TabIndex = 70
         ' 
         ' RoundedButton16
         ' 
@@ -489,7 +450,7 @@ Partial Class appointment
         RoundedButton16.FlatAppearance.MouseDownBackColor = Color.White
         RoundedButton16.FlatAppearance.MouseOverBackColor = Color.SteelBlue
         RoundedButton16.FlatStyle = FlatStyle.Flat
-        RoundedButton16.Font = New Font("Segoe UI", 10F)
+        RoundedButton16.Font = New Font("Segoe UI", 10.0F)
         RoundedButton16.ForeColor = Color.Black
         RoundedButton16.Location = New Point(26, 629)
         RoundedButton16.Name = "RoundedButton16"
@@ -501,29 +462,29 @@ Partial Class appointment
         ' 
         ' appointment
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(400, 750)
         Controls.Add(RoundedButton16)
-        Controls.Add(RoundedTextBox1)
+        Controls.Add(txt_Note)
         Controls.Add(Label3)
-        Controls.Add(RoundedButton13)
-        Controls.Add(RoundedButton14)
-        Controls.Add(RoundedButton15)
-        Controls.Add(RoundedButton10)
-        Controls.Add(RoundedButton11)
-        Controls.Add(RoundedButton12)
-        Controls.Add(RoundedButton7)
-        Controls.Add(RoundedButton8)
-        Controls.Add(RoundedButton9)
-        Controls.Add(RoundedButton4)
-        Controls.Add(RoundedButton5)
-        Controls.Add(RoundedButton6)
-        Controls.Add(RoundedButton2)
-        Controls.Add(RoundedButton1)
-        Controls.Add(DateTimePicker1)
+        Controls.Add(btn_18)
+        Controls.Add(btn_1730)
+        Controls.Add(btn_17)
+        Controls.Add(btn_1630)
+        Controls.Add(btn_16)
+        Controls.Add(btn_1530)
+        Controls.Add(btn_15)
+        Controls.Add(btn_1430)
+        Controls.Add(btn_14)
+        Controls.Add(btn_1330)
+        Controls.Add(btn_13)
+        Controls.Add(btn_1030)
+        Controls.Add(btn_10)
+        Controls.Add(btn_930)
+        Controls.Add(dtp_AppointmentDate)
         Controls.Add(btn_9)
         Controls.Add(Label2)
         Controls.Add(Panel2)
@@ -533,37 +494,31 @@ Partial Class appointment
         Name = "appointment"
         StartPosition = FormStartPosition.CenterScreen
         Text = " "
-        Panel2.ResumeLayout(False)
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label1 As Label
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Label2 As Label
     Friend WithEvents btn_9 As CustomControls.RJControls.RoundedButton
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents RoundedButton1 As CustomControls.RJControls.RoundedButton
-    Friend WithEvents RoundedButton2 As CustomControls.RJControls.RoundedButton
-    Friend WithEvents RoundedButton4 As CustomControls.RJControls.RoundedButton
-    Friend WithEvents RoundedButton5 As CustomControls.RJControls.RoundedButton
-    Friend WithEvents RoundedButton6 As CustomControls.RJControls.RoundedButton
-    Friend WithEvents RoundedButton7 As CustomControls.RJControls.RoundedButton
-    Friend WithEvents RoundedButton8 As CustomControls.RJControls.RoundedButton
-    Friend WithEvents RoundedButton9 As CustomControls.RJControls.RoundedButton
-    Friend WithEvents RoundedButton10 As CustomControls.RJControls.RoundedButton
-    Friend WithEvents RoundedButton11 As CustomControls.RJControls.RoundedButton
-    Friend WithEvents RoundedButton12 As CustomControls.RJControls.RoundedButton
-    Friend WithEvents RoundedButton13 As CustomControls.RJControls.RoundedButton
-    Friend WithEvents RoundedButton14 As CustomControls.RJControls.RoundedButton
-    Friend WithEvents RoundedButton15 As CustomControls.RJControls.RoundedButton
+    Friend WithEvents dtp_AppointmentDate As DateTimePicker
+    Friend WithEvents btn_930 As CustomControls.RJControls.RoundedButton
+    Friend WithEvents btn_10 As CustomControls.RJControls.RoundedButton
+    Friend WithEvents btn_1330 As CustomControls.RJControls.RoundedButton
+    Friend WithEvents btn_13 As CustomControls.RJControls.RoundedButton
+    Friend WithEvents btn_1030 As CustomControls.RJControls.RoundedButton
+    Friend WithEvents btn_15 As CustomControls.RJControls.RoundedButton
+    Friend WithEvents btn_1430 As CustomControls.RJControls.RoundedButton
+    Friend WithEvents btn_14 As CustomControls.RJControls.RoundedButton
+    Friend WithEvents btn_1630 As CustomControls.RJControls.RoundedButton
+    Friend WithEvents btn_16 As CustomControls.RJControls.RoundedButton
+    Friend WithEvents btn_1530 As CustomControls.RJControls.RoundedButton
+    Friend WithEvents btn_18 As CustomControls.RJControls.RoundedButton
+    Friend WithEvents btn_1730 As CustomControls.RJControls.RoundedButton
+    Friend WithEvents btn_17 As CustomControls.RJControls.RoundedButton
     Friend WithEvents Label3 As Label
-    Friend WithEvents RoundedTextBox1 As RoundedTextBox
+    Friend WithEvents txt_Note As RoundedTextBox
     Friend WithEvents RoundedButton16 As CustomControls.RJControls.RoundedButton
 End Class

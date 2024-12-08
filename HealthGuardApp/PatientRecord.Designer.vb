@@ -312,7 +312,7 @@ Partial Class PatientRecord
         ' Label10
         ' 
         Label10.AutoSize = True
-        Label10.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
+        Label10.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         Label10.Location = New Point(40, 299)
         Label10.Name = "Label10"
         Label10.Size = New Size(152, 20)

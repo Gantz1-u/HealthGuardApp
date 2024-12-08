@@ -3,13 +3,22 @@
 Public Class LoginPage
     Private DB As New DBConnection()
     Private passwordVisible As Boolean = False ' Track password visibility state
-    Public Shared LoggedInUserID As Integer ' Store the logged-in user's ID
+    Private _LoggedInUserID As Integer = 0 ' Initialize the LoggedInUserID to 0 (reset)
+
+    ' Property to access and set LoggedInUserID
+    Public Property LoggedInUserID As Integer
+        Get
+            Return _LoggedInUserID
+        End Get
+        Set(value As Integer)
+            _LoggedInUserID = value
+        End Set
+    End Property
 
     ' Reset LoggedInUserID when the login page loads
     Private Sub LoginPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoggedInUserID = 0 ' Reset the LoggedInUserID when returning to the login page
     End Sub
-
 
     ' Link to navigate to another form (e.g., registration form)
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
@@ -113,5 +122,12 @@ Public Class LoginPage
     Private Sub LoginPage_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         ' Reset the LoggedInUserID when showing the login form to ensure it's empty
         LoggedInUserID = 0
+    End Sub
+
+    ' Logout Functionality: Reset LoggedInUserID
+    Public Sub Logout()
+        LoggedInUserID = 0 ' Reset LoggedInUserID on logout
+        MessageBox.Show("You have logged out successfully.", "Logged Out", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Me.Show() ' Show login page after logging out
     End Sub
 End Class
