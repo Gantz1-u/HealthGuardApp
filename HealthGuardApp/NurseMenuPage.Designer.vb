@@ -23,118 +23,69 @@ Partial Class NurseMenuPage
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NurseMenuPage))
-        RoundedPanel1 = New RoundedPanel()
-        Panel1 = New Panel()
-        PictureBox1 = New PictureBox()
         PictureBox3 = New PictureBox()
-        lbl_LoggedInUser = New Label()
+        PictureBox1 = New PictureBox()
+        Panel1 = New Panel()
+        Label1 = New Label()
+        RoundedButton1 = New CustomControls.RJControls.RoundedButton()
+        RoundedButton2 = New CustomControls.RJControls.RoundedButton()
         Label2 = New Label()
         PictureBox4 = New PictureBox()
         PictureBox2 = New PictureBox()
-        RoundedButton1 = New CustomControls.RJControls.RoundedButton()
-        RoundedButton2 = New CustomControls.RJControls.RoundedButton()
-        RoundedPanel1.SuspendLayout()
-        Panel1.SuspendLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        btn_Logout = New Button()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        Panel1.SuspendLayout()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' RoundedPanel1
+        ' PictureBox3
         ' 
-        RoundedPanel1.BackgroundImage = CType(resources.GetObject("RoundedPanel1.BackgroundImage"), Image)
-        RoundedPanel1.BackgroundImageLayout = ImageLayout.Stretch
-        RoundedPanel1.Controls.Add(Panel1)
-        RoundedPanel1.Controls.Add(Label2)
-        RoundedPanel1.Controls.Add(PictureBox4)
-        RoundedPanel1.Controls.Add(PictureBox2)
-        RoundedPanel1.Controls.Add(RoundedButton1)
-        RoundedPanel1.Controls.Add(RoundedButton2)
-        RoundedPanel1.CornerRadius = 35
-        RoundedPanel1.Location = New Point(12, 26)
-        RoundedPanel1.Name = "RoundedPanel1"
-        RoundedPanel1.Size = New Size(376, 712)
-        RoundedPanel1.TabIndex = 0
-        ' 
-        ' Panel1
-        ' 
-        Panel1.BackColor = Color.Transparent
-        Panel1.BorderStyle = BorderStyle.FixedSingle
-        Panel1.Controls.Add(PictureBox1)
-        Panel1.Controls.Add(PictureBox3)
-        Panel1.Controls.Add(lbl_LoggedInUser)
-        Panel1.Location = New Point(-9, 0)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(400, 68)
-        Panel1.TabIndex = 30
+        PictureBox3.BackColor = Color.Transparent
+        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
+        PictureBox3.Location = New Point(48, -11)
+        PictureBox3.Name = "PictureBox3"
+        PictureBox3.Size = New Size(142, 90)
+        PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox3.TabIndex = 2
+        PictureBox3.TabStop = False
         ' 
         ' PictureBox1
         ' 
         PictureBox1.BackColor = Color.Transparent
         PictureBox1.Cursor = Cursors.Hand
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(343, 19)
+        PictureBox1.Location = New Point(24, 14)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(32, 26)
+        PictureBox1.Size = New Size(40, 25)
         PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox1.TabIndex = 21
+        PictureBox1.TabIndex = 3
         PictureBox1.TabStop = False
         ' 
-        ' PictureBox3
+        ' Panel1
         ' 
-        PictureBox3.BackColor = Color.Transparent
-        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
-        PictureBox3.Location = New Point(-9, -12)
-        PictureBox3.Name = "PictureBox3"
-        PictureBox3.Size = New Size(145, 90)
-        PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox3.TabIndex = 23
-        PictureBox3.TabStop = False
+        Panel1.BackColor = Color.Transparent
+        Panel1.BorderStyle = BorderStyle.FixedSingle
+        Panel1.Controls.Add(btn_Logout)
+        Panel1.Controls.Add(Label1)
+        Panel1.Controls.Add(PictureBox1)
+        Panel1.Controls.Add(PictureBox3)
+        Panel1.Location = New Point(-13, -5)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(415, 68)
+        Panel1.TabIndex = 4
         ' 
-        ' lbl_LoggedInUser
+        ' Label1
         ' 
-        lbl_LoggedInUser.AutoSize = True
-        lbl_LoggedInUser.Font = New Font("Segoe UI Semibold", 8.25F, FontStyle.Bold Or FontStyle.Underline, GraphicsUnit.Point, CByte(0))
-        lbl_LoggedInUser.Location = New Point(228, 26)
-        lbl_LoggedInUser.Name = "lbl_LoggedInUser"
-        lbl_LoggedInUser.Size = New Size(109, 13)
-        lbl_LoggedInUser.TabIndex = 22
-        lbl_LoggedInUser.Text = "Logged in as: NAME"
-        ' 
-        ' Label2
-        ' 
-        Label2.AutoSize = True
-        Label2.BackColor = Color.Transparent
-        Label2.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(87, 337)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(213, 42)
-        Label2.TabIndex = 29
-        Label2.Text = "PLEASE CHOOSE FROM " & vbCrLf & "THE FOLLOWING SERVICES"
-        Label2.TextAlign = ContentAlignment.TopCenter
-        ' 
-        ' PictureBox4
-        ' 
-        PictureBox4.BackColor = Color.Transparent
-        PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
-        PictureBox4.Location = New Point(22, 170)
-        PictureBox4.Name = "PictureBox4"
-        PictureBox4.Size = New Size(336, 192)
-        PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox4.TabIndex = 28
-        PictureBox4.TabStop = False
-        ' 
-        ' PictureBox2
-        ' 
-        PictureBox2.BackColor = Color.Transparent
-        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(-5, 27)
-        PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(387, 300)
-        PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox2.TabIndex = 27
-        PictureBox2.TabStop = False
+        Label1.BackColor = Color.Transparent
+        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Location = New Point(22, 42)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(47, 16)
+        Label1.TabIndex = 5
+        Label1.Text = "MENU"
+        Label1.TextAlign = ContentAlignment.TopCenter
         ' 
         ' RoundedButton1
         ' 
@@ -149,10 +100,10 @@ Partial Class NurseMenuPage
         RoundedButton1.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         RoundedButton1.ForeColor = Color.Black
         RoundedButton1.Image = CType(resources.GetObject("RoundedButton1.Image"), Image)
-        RoundedButton1.Location = New Point(29, 420)
+        RoundedButton1.Location = New Point(42, 430)
         RoundedButton1.Name = "RoundedButton1"
         RoundedButton1.Size = New Size(136, 118)
-        RoundedButton1.TabIndex = 20
+        RoundedButton1.TabIndex = 18
         RoundedButton1.Text = "Records"
         RoundedButton1.TextAlign = ContentAlignment.BottomCenter
         RoundedButton1.TextColor = Color.Black
@@ -171,47 +122,95 @@ Partial Class NurseMenuPage
         RoundedButton2.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         RoundedButton2.ForeColor = Color.Black
         RoundedButton2.Image = CType(resources.GetObject("RoundedButton2.Image"), Image)
-        RoundedButton2.Location = New Point(210, 420)
+        RoundedButton2.Location = New Point(223, 430)
         RoundedButton2.Name = "RoundedButton2"
         RoundedButton2.Size = New Size(136, 118)
-        RoundedButton2.TabIndex = 19
+        RoundedButton2.TabIndex = 17
         RoundedButton2.Text = "Prescription"
         RoundedButton2.TextAlign = ContentAlignment.BottomCenter
         RoundedButton2.TextColor = Color.Black
         RoundedButton2.UseVisualStyleBackColor = False
         ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.BackColor = Color.Transparent
+        Label2.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label2.Location = New Point(91, 332)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(213, 42)
+        Label2.TabIndex = 16
+        Label2.Text = "PLEASE CHOOSE FROM " & vbCrLf & "THE FOLLOWING SERVICES"
+        Label2.TextAlign = ContentAlignment.TopCenter
+        ' 
+        ' PictureBox4
+        ' 
+        PictureBox4.BackColor = Color.Transparent
+        PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
+        PictureBox4.Location = New Point(29, 165)
+        PictureBox4.Name = "PictureBox4"
+        PictureBox4.Size = New Size(336, 192)
+        PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox4.TabIndex = 15
+        PictureBox4.TabStop = False
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.BackColor = Color.Transparent
+        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
+        PictureBox2.Location = New Point(-9, 22)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(408, 300)
+        PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox2.TabIndex = 14
+        PictureBox2.TabStop = False
+        ' 
+        ' btn_Logout
+        ' 
+        btn_Logout.BackColor = Color.White
+        btn_Logout.FlatStyle = FlatStyle.Flat
+        btn_Logout.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btn_Logout.Location = New Point(327, 16)
+        btn_Logout.Name = "btn_Logout"
+        btn_Logout.Size = New Size(75, 35)
+        btn_Logout.TabIndex = 22
+        btn_Logout.Text = "Log out"
+        btn_Logout.UseVisualStyleBackColor = False
+        ' 
         ' NurseMenuPage
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.Black
+        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(400, 750)
-        Controls.Add(RoundedPanel1)
+        Controls.Add(Label2)
+        Controls.Add(PictureBox4)
+        Controls.Add(RoundedButton1)
+        Controls.Add(Panel1)
+        Controls.Add(RoundedButton2)
+        Controls.Add(PictureBox2)
         DoubleBuffered = True
         FormBorderStyle = FormBorderStyle.None
         Name = "NurseMenuPage"
         StartPosition = FormStartPosition.CenterScreen
         Text = "MenuPage"
-        RoundedPanel1.ResumeLayout(False)
-        RoundedPanel1.PerformLayout()
-        Panel1.ResumeLayout(False)
-        Panel1.PerformLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        Panel1.ResumeLayout(False)
         CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
-
-    Friend WithEvents RoundedPanel1 As RoundedPanel
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label1 As Label
     Friend WithEvents RoundedButton1 As CustomControls.RJControls.RoundedButton
     Friend WithEvents RoundedButton2 As CustomControls.RJControls.RoundedButton
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents lbl_LoggedInUser As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents btn_Logout As Button
 End Class
