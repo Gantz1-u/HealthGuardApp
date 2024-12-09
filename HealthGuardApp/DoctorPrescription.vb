@@ -1,7 +1,40 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Drawing.Drawing2D
+Imports MySql.Data.MySqlClient
 
 Public Class DoctorPrescription
-    ' Public property to receive the selected patient ID
+    Inherits Form
+
+    ' Define the radius for the rounded corners
+    Private _cornerRadius As Integer = 50
+
+    Public Sub New()
+        InitializeComponent()
+        ' Optionally, you can set the form's border style to None to get rid of the default border
+        Me.FormBorderStyle = FormBorderStyle.None
+        ' Call this method to apply rounded corners to the form
+        ApplyRoundedCorners()
+    End Sub
+
+    ' This method applies the rounded corners to the form
+    Private Sub ApplyRoundedCorners()
+        Dim path As New GraphicsPath()
+        ' Create a rounded rectangle path
+        path.AddArc(0, 0, _cornerRadius, _cornerRadius, 180, 90) ' Top-left corner
+        path.AddArc(Me.Width - _cornerRadius, 0, _cornerRadius, _cornerRadius, 270, 90) ' Top-right corner
+        path.AddArc(Me.Width - _cornerRadius, Me.Height - _cornerRadius, _cornerRadius, _cornerRadius, 0, 90) ' Bottom-right corner
+        path.AddArc(0, Me.Height - _cornerRadius, _cornerRadius, _cornerRadius, 90, 90) ' Bottom-left corner
+        path.CloseFigure() ' Close the figure to form the rounded rectangle
+
+        ' Set the form's region to the rounded rectangle path
+        Me.Region = New Region(path)
+    End Sub
+
+    ' Optionally, handle the resizing of the form
+    Protected Overrides Sub OnResize(e As EventArgs)
+        MyBase.OnResize(e)
+        ApplyRoundedCorners() ' Reapply the rounded corners when resizing
+    End Sub
+
     Public Property SelectedPatientID As Integer
 
     ' Instance of DBConnection for database connectivity
@@ -65,25 +98,21 @@ Public Class DoctorPrescription
     End Function
 
     ' Navigate back to the previous form when the picture box is clicked
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        Dim previousForm As New DoctorPrescriptionPatients()
-        previousForm.Show()
-        Me.Hide()
-    End Sub
+
 
     ' Save the input data into the medicines table
     Private Sub SaveInput(sender As Object, e As EventArgs) Handles RoundedButton2.Click
         ' Check if the necessary fields are not empty
         If String.IsNullOrEmpty(txt_MedicineName.Text) Or String.IsNullOrEmpty(txt_Dosage.Text) Or
-           String.IsNullOrEmpty(txt_Frequency.Text) Or String.IsNullOrEmpty(txt_Duration.Text) Or
-           String.IsNullOrEmpty(txt_Instruction.Text) Then
+        String.IsNullOrEmpty(txt_Frequency.Text) Or String.IsNullOrEmpty(txt_Duration.Text) Or
+        String.IsNullOrEmpty(txt_Instruction.Text) Then
             MessageBox.Show("Please fill in all fields.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
 
         ' Prepare the SQL query to insert the data into the medicines table
         Dim query As String = "INSERT INTO medicines (MedicineName, PatientID, DoctorID, Dosage, Frequency, Duration, Instructions) " &
-                              "VALUES (@MedicineName, @PatientID, @DoctorID, @Dosage, @Frequency, @Duration, @Instructions)"
+                           "VALUES (@MedicineName, @PatientID, @DoctorID, @Dosage, @Frequency, @Duration, @Instructions)"
 
         Try
             ' Open database connection using DBConnection class
@@ -111,7 +140,15 @@ Public Class DoctorPrescription
         Finally
             DB.Close() ' Ensure the connection is closed after the query
         End Try
+    End Sub
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        Dim previousForm As New DoctorPrescriptionPatients()
+        previousForm.Show()
+        Me.Hide()
+    End Sub
 
-
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        DoctorMenuPage.Show()
+        Me.Hide()
     End Sub
 End Class

@@ -107,7 +107,7 @@ Partial Class NurseMenuPage
         Label2.AutoSize = True
         Label2.BackColor = Color.Transparent
         Label2.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(87, 337)
+        Label2.Location = New Point(82, 337)
         Label2.Name = "Label2"
         Label2.Size = New Size(213, 42)
         Label2.TabIndex = 21
@@ -118,7 +118,7 @@ Partial Class NurseMenuPage
         ' 
         PictureBox4.BackColor = Color.Transparent
         PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
-        PictureBox4.Location = New Point(22, 170)
+        PictureBox4.Location = New Point(20, 170)
         PictureBox4.Name = "PictureBox4"
         PictureBox4.Size = New Size(336, 192)
         PictureBox4.SizeMode = PictureBoxSizeMode.Zoom

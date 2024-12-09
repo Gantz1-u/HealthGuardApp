@@ -23,8 +23,8 @@ Partial Class DoctorPrescription
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DoctorPrescription))
-        PictureBox2 = New PictureBox()
         RoundedPanel1 = New RoundedPanel()
+        RoundedPanel2 = New RoundedPanel()
         txt_Instruction = New RoundedTextBox()
         txt_Duration = New RoundedTextBox()
         txt_Frequency = New RoundedTextBox()
@@ -41,49 +41,54 @@ Partial Class DoctorPrescription
         Label3 = New Label()
         PictureBox3 = New PictureBox()
         PictureBox4 = New PictureBox()
+        PictureBox1 = New PictureBox()
         lbl_SelectedPatient = New Label()
-        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         RoundedPanel1.SuspendLayout()
+        RoundedPanel2.SuspendLayout()
         Panel1.SuspendLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
-        ' 
-        ' PictureBox2
-        ' 
-        PictureBox2.BackColor = Color.Transparent
-        PictureBox2.Cursor = Cursors.Hand
-        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(15, 98)
-        PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(38, 36)
-        PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox2.TabIndex = 14
-        PictureBox2.TabStop = False
         ' 
         ' RoundedPanel1
         ' 
-        RoundedPanel1.Controls.Add(txt_Instruction)
-        RoundedPanel1.Controls.Add(txt_Duration)
-        RoundedPanel1.Controls.Add(txt_Frequency)
-        RoundedPanel1.Controls.Add(txt_Dosage)
-        RoundedPanel1.Controls.Add(txt_MedicineName)
-        RoundedPanel1.Controls.Add(Label6)
-        RoundedPanel1.Controls.Add(Label5)
-        RoundedPanel1.Controls.Add(Label4)
-        RoundedPanel1.Controls.Add(Label2)
-        RoundedPanel1.Controls.Add(Label1)
-        RoundedPanel1.Controls.Add(RoundedButton2)
-        RoundedPanel1.Controls.Add(RoundedButton1)
-        RoundedPanel1.CornerRadius = 20
-        RoundedPanel1.Location = New Point(17, 171)
+        RoundedPanel1.BackgroundImage = CType(resources.GetObject("RoundedPanel1.BackgroundImage"), Image)
+        RoundedPanel1.BackgroundImageLayout = ImageLayout.Stretch
+        RoundedPanel1.Controls.Add(RoundedPanel2)
+        RoundedPanel1.Controls.Add(Panel1)
+        RoundedPanel1.Controls.Add(PictureBox1)
+        RoundedPanel1.Controls.Add(lbl_SelectedPatient)
+        RoundedPanel1.CornerRadius = 35
+        RoundedPanel1.Location = New Point(12, 26)
         RoundedPanel1.Name = "RoundedPanel1"
-        RoundedPanel1.Size = New Size(364, 266)
-        RoundedPanel1.TabIndex = 13
+        RoundedPanel1.Size = New Size(376, 712)
+        RoundedPanel1.TabIndex = 0
+        ' 
+        ' RoundedPanel2
+        ' 
+        RoundedPanel2.BackColor = Color.White
+        RoundedPanel2.Controls.Add(txt_Instruction)
+        RoundedPanel2.Controls.Add(txt_Duration)
+        RoundedPanel2.Controls.Add(txt_Frequency)
+        RoundedPanel2.Controls.Add(txt_Dosage)
+        RoundedPanel2.Controls.Add(txt_MedicineName)
+        RoundedPanel2.Controls.Add(Label6)
+        RoundedPanel2.Controls.Add(Label5)
+        RoundedPanel2.Controls.Add(Label4)
+        RoundedPanel2.Controls.Add(Label2)
+        RoundedPanel2.Controls.Add(Label1)
+        RoundedPanel2.Controls.Add(RoundedButton2)
+        RoundedPanel2.Controls.Add(RoundedButton1)
+        RoundedPanel2.CornerRadius = 20
+        RoundedPanel2.Location = New Point(16, 202)
+        RoundedPanel2.Name = "RoundedPanel2"
+        RoundedPanel2.Size = New Size(344, 286)
+        RoundedPanel2.TabIndex = 16
         ' 
         ' txt_Instruction
         ' 
-        txt_Instruction.BackColor = Color.White
+        txt_Instruction.BackColor = Color.Gainsboro
         txt_Instruction.Location = New Point(95, 120)
         txt_Instruction.Name = "txt_Instruction"
         txt_Instruction.Size = New Size(221, 23)
@@ -91,7 +96,7 @@ Partial Class DoctorPrescription
         ' 
         ' txt_Duration
         ' 
-        txt_Duration.BackColor = Color.White
+        txt_Duration.BackColor = Color.Gainsboro
         txt_Duration.Location = New Point(75, 94)
         txt_Duration.Name = "txt_Duration"
         txt_Duration.Size = New Size(221, 23)
@@ -99,7 +104,7 @@ Partial Class DoctorPrescription
         ' 
         ' txt_Frequency
         ' 
-        txt_Frequency.BackColor = Color.White
+        txt_Frequency.BackColor = Color.Gainsboro
         txt_Frequency.Location = New Point(87, 65)
         txt_Frequency.Name = "txt_Frequency"
         txt_Frequency.Size = New Size(221, 23)
@@ -107,7 +112,7 @@ Partial Class DoctorPrescription
         ' 
         ' txt_Dosage
         ' 
-        txt_Dosage.BackColor = Color.White
+        txt_Dosage.BackColor = Color.Gainsboro
         txt_Dosage.Location = New Point(75, 40)
         txt_Dosage.Name = "txt_Dosage"
         txt_Dosage.Size = New Size(221, 23)
@@ -115,7 +120,7 @@ Partial Class DoctorPrescription
         ' 
         ' txt_MedicineName
         ' 
-        txt_MedicineName.BackColor = Color.White
+        txt_MedicineName.BackColor = Color.Gainsboro
         txt_MedicineName.Location = New Point(124, 16)
         txt_MedicineName.Name = "txt_MedicineName"
         txt_MedicineName.Size = New Size(221, 23)
@@ -168,8 +173,8 @@ Partial Class DoctorPrescription
         ' 
         ' RoundedButton2
         ' 
-        RoundedButton2.BackColor = SystemColors.ButtonHighlight
-        RoundedButton2.BackgroundColor = SystemColors.ButtonHighlight
+        RoundedButton2.BackColor = SystemColors.ControlLight
+        RoundedButton2.BackgroundColor = SystemColors.ControlLight
         RoundedButton2.BorderColor = Color.PaleVioletRed
         RoundedButton2.BorderRadius = 9
         RoundedButton2.BorderSize = 0
@@ -177,9 +182,9 @@ Partial Class DoctorPrescription
         RoundedButton2.FlatAppearance.MouseOverBackColor = Color.SteelBlue
         RoundedButton2.FlatStyle = FlatStyle.Flat
         RoundedButton2.ForeColor = Color.Black
-        RoundedButton2.Location = New Point(8, 165)
+        RoundedButton2.Location = New Point(6, 165)
         RoundedButton2.Name = "RoundedButton2"
-        RoundedButton2.Size = New Size(345, 40)
+        RoundedButton2.Size = New Size(333, 40)
         RoundedButton2.TabIndex = 14
         RoundedButton2.Text = "SAVE"
         RoundedButton2.TextColor = Color.Black
@@ -187,8 +192,8 @@ Partial Class DoctorPrescription
         ' 
         ' RoundedButton1
         ' 
-        RoundedButton1.BackColor = SystemColors.ButtonHighlight
-        RoundedButton1.BackgroundColor = SystemColors.ButtonHighlight
+        RoundedButton1.BackColor = SystemColors.ControlLight
+        RoundedButton1.BackgroundColor = SystemColors.ControlLight
         RoundedButton1.BorderColor = Color.PaleVioletRed
         RoundedButton1.BorderRadius = 9
         RoundedButton1.BorderSize = 0
@@ -196,9 +201,9 @@ Partial Class DoctorPrescription
         RoundedButton1.FlatAppearance.MouseOverBackColor = Color.SteelBlue
         RoundedButton1.FlatStyle = FlatStyle.Flat
         RoundedButton1.ForeColor = Color.Black
-        RoundedButton1.Location = New Point(8, 211)
+        RoundedButton1.Location = New Point(6, 211)
         RoundedButton1.Name = "RoundedButton1"
-        RoundedButton1.Size = New Size(345, 40)
+        RoundedButton1.Size = New Size(333, 40)
         RoundedButton1.TabIndex = 0
         RoundedButton1.Text = "EDIT"
         RoundedButton1.TextColor = Color.Black
@@ -211,20 +216,20 @@ Partial Class DoctorPrescription
         Panel1.Controls.Add(Label3)
         Panel1.Controls.Add(PictureBox3)
         Panel1.Controls.Add(PictureBox4)
-        Panel1.Location = New Point(-12, -1)
+        Panel1.Location = New Point(-9, 0)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(422, 68)
-        Panel1.TabIndex = 12
+        Panel1.Size = New Size(400, 68)
+        Panel1.TabIndex = 69
         ' 
         ' Label3
         ' 
         Label3.BackColor = Color.Transparent
         Label3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(22, 42)
+        Label3.Location = New Point(322, 42)
         Label3.Name = "Label3"
         Label3.Size = New Size(47, 16)
-        Label3.TabIndex = 5
-        Label3.Text = "MENU"
+        Label3.TabIndex = 25
+        Label3.Text = "HOME"
         Label3.TextAlign = ContentAlignment.TopCenter
         ' 
         ' PictureBox3
@@ -232,69 +237,73 @@ Partial Class DoctorPrescription
         PictureBox3.BackColor = Color.Transparent
         PictureBox3.Cursor = Cursors.Hand
         PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
-        PictureBox3.Location = New Point(24, 14)
+        PictureBox3.Location = New Point(325, 15)
         PictureBox3.Name = "PictureBox3"
         PictureBox3.Size = New Size(40, 25)
         PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox3.TabIndex = 3
+        PictureBox3.TabIndex = 24
         PictureBox3.TabStop = False
         ' 
         ' PictureBox4
         ' 
         PictureBox4.BackColor = Color.Transparent
         PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
-        PictureBox4.Location = New Point(48, -11)
+        PictureBox4.Location = New Point(-9, -12)
         PictureBox4.Name = "PictureBox4"
-        PictureBox4.Size = New Size(142, 90)
+        PictureBox4.Size = New Size(145, 90)
         PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox4.TabIndex = 2
+        PictureBox4.TabIndex = 23
         PictureBox4.TabStop = False
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.BackColor = Color.Transparent
+        PictureBox1.Cursor = Cursors.Hand
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(13, 81)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(38, 36)
+        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox1.TabIndex = 70
+        PictureBox1.TabStop = False
         ' 
         ' lbl_SelectedPatient
         ' 
         lbl_SelectedPatient.AutoSize = True
+        lbl_SelectedPatient.BackColor = Color.White
         lbl_SelectedPatient.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lbl_SelectedPatient.Location = New Point(74, 104)
+        lbl_SelectedPatient.Location = New Point(96, 155)
         lbl_SelectedPatient.Name = "lbl_SelectedPatient"
         lbl_SelectedPatient.Size = New Size(185, 25)
-        lbl_SelectedPatient.TabIndex = 15
+        lbl_SelectedPatient.TabIndex = 17
         lbl_SelectedPatient.Text = "FirstName LastName"
         ' 
         ' DoctorPrescription
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        BackColor = Color.Black
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(400, 750)
-        Controls.Add(PictureBox2)
         Controls.Add(RoundedPanel1)
-        Controls.Add(Panel1)
-        Controls.Add(lbl_SelectedPatient)
         DoubleBuffered = True
         FormBorderStyle = FormBorderStyle.None
         Name = "DoctorPrescription"
         StartPosition = FormStartPosition.CenterScreen
         Text = "DoctorPrescription"
-        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         RoundedPanel1.ResumeLayout(False)
         RoundedPanel1.PerformLayout()
+        RoundedPanel2.ResumeLayout(False)
+        RoundedPanel2.PerformLayout()
         Panel1.ResumeLayout(False)
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
-        PerformLayout()
     End Sub
 
-    Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents RoundedPanel1 As RoundedPanel
-    Friend WithEvents RoundedButton1 As CustomControls.RJControls.RoundedButton
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label3 As Label
-    Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents RoundedButton2 As CustomControls.RJControls.RoundedButton
+    Friend WithEvents RoundedPanel2 As RoundedPanel
     Friend WithEvents txt_Instruction As RoundedTextBox
     Friend WithEvents txt_Duration As RoundedTextBox
     Friend WithEvents txt_Frequency As RoundedTextBox
@@ -304,5 +313,13 @@ Partial Class DoctorPrescription
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents RoundedButton2 As CustomControls.RJControls.RoundedButton
+    Friend WithEvents RoundedButton1 As CustomControls.RJControls.RoundedButton
     Friend WithEvents lbl_SelectedPatient As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label3 As Label
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

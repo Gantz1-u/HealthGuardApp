@@ -49,7 +49,7 @@ Public Class PatientList
     End Sub
 
     Private Sub CirclePictureBox1_Click(sender As Object, e As EventArgs) Handles CirclePictureBox1.Click
-        PaatientData.Show()
-        Me.Hide()
+        PaatientData.Show
+        Hide
     End Sub
 End Class
