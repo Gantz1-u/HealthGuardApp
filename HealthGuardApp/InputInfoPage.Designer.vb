@@ -28,6 +28,7 @@ Partial Class InputInfoPage
         cmb_Sex = New ComboBox()
         RoundedPanel5 = New RoundedPanel()
         txt_ParentGuardian = New RoundedTextBox()
+        lbl_PatientID = New Label()
         lbl_Age = New Label()
         Label3 = New Label()
         Label7 = New Label()
@@ -41,7 +42,6 @@ Partial Class InputInfoPage
         Label2 = New Label()
         lbl_FirstName = New Label()
         Label1 = New Label()
-        lbl_PatientID = New Label()
         RoundedPanel1.SuspendLayout()
         RoundedPanel5.SuspendLayout()
         RoundedPanel6.SuspendLayout()
@@ -130,6 +130,16 @@ Partial Class InputInfoPage
         txt_ParentGuardian.Name = "txt_ParentGuardian"
         txt_ParentGuardian.Size = New Size(284, 23)
         txt_ParentGuardian.TabIndex = 5
+        ' 
+        ' lbl_PatientID
+        ' 
+        lbl_PatientID.AutoSize = True
+        lbl_PatientID.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lbl_PatientID.Location = New Point(35, 29)
+        lbl_PatientID.Name = "lbl_PatientID"
+        lbl_PatientID.Size = New Size(59, 17)
+        lbl_PatientID.TabIndex = 45
+        lbl_PatientID.Text = "PatientID"
         ' 
         ' lbl_Age
         ' 
@@ -264,16 +274,6 @@ Partial Class InputInfoPage
         Label1.Size = New Size(259, 21)
         Label1.TabIndex = 38
         Label1.Text = "Tell us something about yourself"
-        ' 
-        ' lbl_PatientID
-        ' 
-        lbl_PatientID.AutoSize = True
-        lbl_PatientID.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lbl_PatientID.Location = New Point(35, 29)
-        lbl_PatientID.Name = "lbl_PatientID"
-        lbl_PatientID.Size = New Size(59, 17)
-        lbl_PatientID.TabIndex = 45
-        lbl_PatientID.Text = "PatientID"
         ' 
         ' InputInfoPage
         ' 

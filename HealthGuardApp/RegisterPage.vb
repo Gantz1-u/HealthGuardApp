@@ -7,9 +7,8 @@ Public Class RegisterPage
     ' Define the radius for the rounded corners
     Private _cornerRadius As Integer = 50
 
-    ' Properties for UserID and PatientID
+    ' Properties for UserID and UserRole
     Public Property UserId As Integer
-    Public Property PatientId As Integer
     Public Property UserRole As String
 
     Private DB As New DBConnection()
@@ -31,95 +30,61 @@ Public Class RegisterPage
         Me.Region = New Region(path)
     End Sub
 
-    Protected Overrides Sub OnResize(e As EventArgs)
-        MyBase.OnResize(e)
-        ApplyRoundedCorners()
-    End Sub
-
-    ' Set the UserID, PatientID, and UserRole
-    Public Sub SetUserDetails(newUserId As Integer, newPatientId As Integer, role As String)
+    ' Set the UserID and UserRole
+    Public Sub SetUserDetails(newUserId As Integer, role As String)
         UserId = newUserId
-        PatientId = newPatientId
         UserRole = role
     End Sub
 
+    ' Handle the button click for saving user data and opening InputInfoPage
     Private Sub RoundedButton3_Click(sender As Object, e As EventArgs) Handles RoundedButton3.Click
+        ' Collect user inputs
         Dim firstName = RoundedTextBox5.Text.Trim
-        Dim middleName = RoundedTextBox4.Text.Trim
         Dim lastName = RoundedTextBox6.Text.Trim
         Dim email = RoundedTextBox1.Text.Trim
         Dim phoneNumber = RoundedTextBox7.Text.Trim
         Dim password = RoundedTextBox2.Text.Trim
-        Dim status As String
-
-        ' Check if the role is "patient" and set status accordingly
-        If UserRole = "Patient" Then
-            status = "Active" ' Set status to active for patients
-        Else
-            status = "Pending" ' Default status for other roles
-        End If
+        Dim status = If(UserRole = "Patient", "Active", "Pending")
 
         ' Validate required fields
         If String.IsNullOrEmpty(firstName) OrElse String.IsNullOrEmpty(lastName) OrElse String.IsNullOrEmpty(phoneNumber) Then
             MessageBox.Show("Please fill all required fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Exit Sub
+            Return
         End If
 
-        Dim query As String
-        If UserId = 0 Then
-            ' Insert new user record if UserID is not set
-            query = "
-        INSERT INTO accounts 
-        (Role, FirstName, MiddleName, LastName, EmailUsername, Password, ContactNumber, Status, CreationDate) 
-        VALUES (@Role, @FirstName, @MiddleName, @LastName, @Email, @Password, @PhoneNumber, @Status, NOW());
-        SELECT LAST_INSERT_ID();"
-        Else
-            ' Update existing user record if UserID is already set
-            query = "
-        UPDATE accounts 
-        SET Role = @Role, 
-            FirstName = @FirstName, 
-            MiddleName = @MiddleName, 
-            LastName = @LastName, 
-            EmailUsername = @Email,
-            Password = @Password,
-            ContactNumber = @PhoneNumber,
-            Status = @Status 
-        WHERE UserID = @UserId;"
-        End If
+        ' Prepare query
+        Dim query As String = If(UserId = 0,
+                                  "INSERT INTO accounts (Role, FirstName, LastName, EmailUsername, Password, ContactNumber, Status, CreationDate) 
+                                  VALUES (@Role, @FirstName, @LastName, @Email, @Password, @PhoneNumber, @Status, NOW()); 
+                                  SELECT LAST_INSERT_ID();",
+                                  "UPDATE accounts SET Role = @Role, FirstName = @FirstName, LastName = @LastName, 
+                                  EmailUsername = @Email, Password = @Password, ContactNumber = @PhoneNumber, Status = @Status 
+                                  WHERE UserID = @UserId;")
 
         Try
             Dim connection = DB.Open()
             Using cmd As New MySqlCommand(query, connection)
                 cmd.Parameters.AddWithValue("@Role", UserRole)
                 cmd.Parameters.AddWithValue("@FirstName", firstName)
-                cmd.Parameters.AddWithValue("@MiddleName", middleName)
                 cmd.Parameters.AddWithValue("@LastName", lastName)
                 cmd.Parameters.AddWithValue("@Email", email)
                 cmd.Parameters.AddWithValue("@Password", password)
                 cmd.Parameters.AddWithValue("@PhoneNumber", phoneNumber)
                 cmd.Parameters.AddWithValue("@Status", status)
 
-                ' Ensure PatientID is set correctly (null or a valid ID)
-                If PatientId = 0 Then
-                    cmd.Parameters.AddWithValue("@PatientID", DBNull.Value)
-                Else
-                    cmd.Parameters.AddWithValue("@PatientID", PatientId)
-                End If
-
                 If UserId = 0 Then
-                    ' Execute insert and retrieve new UserID
                     UserId = Convert.ToInt32(cmd.ExecuteScalar())
                     MessageBox.Show($"Account successfully created! UserID: {UserId}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-                    ' After creating the account, open InputInfoPage with new PatientID
-                    Dim inputInfoPage As New InputInfoPage(UserId)
-                    inputInfoPage.Show()
-
-                    ' Hide the RegisterPage form after opening InputInfoPage
-                    Me.Hide()
+                    ' Open InputInfoPage without passing PatientID
+                    Dim inputInfoPage As New InputInfoPage()
+                    Try
+                        inputInfoPage.Show()
+                        Me.Hide() ' Optionally hide RegisterPage
+                    Catch ex As Exception
+                        MessageBox.Show($"Error opening InputInfoPage: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End Try
                 Else
-                    ' Execute update
                     cmd.Parameters.AddWithValue("@UserId", UserId)
                     cmd.ExecuteNonQuery()
                     MessageBox.Show($"Account successfully updated! UserID: {UserId}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -143,40 +108,5 @@ Public Class RegisterPage
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         LoginPage.Show()
         Hide()
-    End Sub
-
-    ' Boolean variables to track visibility for Password and Confirm Password
-    Private isPasswordVisible As Boolean = False
-    Private isConfirmPasswordVisible As Boolean = False
-
-    ' Toggle visibility for the Password field
-    Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
-        TogglePasswordVisibility(RoundedTextBox3, PictureBox2, PictureBox5, isPasswordVisible)
-    End Sub
-
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        TogglePasswordVisibility(RoundedTextBox3, PictureBox2, PictureBox5, isPasswordVisible)
-    End Sub
-
-    ' Toggle visibility for the Confirm Password field
-    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
-        TogglePasswordVisibility(RoundedTextBox2, PictureBox3, PictureBox4, isConfirmPasswordVisible)
-    End Sub
-
-    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
-        TogglePasswordVisibility(RoundedTextBox2, PictureBox3, PictureBox4, isConfirmPasswordVisible)
-    End Sub
-
-    ' General method to toggle visibility
-    Private Sub TogglePasswordVisibility(textBox As TextBox, pictureBoxShow As PictureBox, pictureBoxHide As PictureBox, ByRef isVisible As Boolean)
-        isVisible = Not isVisible
-
-        ' Update password character visibility and PictureBox order
-        textBox.UseSystemPasswordChar = Not isVisible
-        If isVisible Then
-            pictureBoxShow.BringToFront() ' Show "Hide Password" icon
-        Else
-            pictureBoxHide.BringToFront() ' Show "Show Password" icon
-        End If
     End Sub
 End Class

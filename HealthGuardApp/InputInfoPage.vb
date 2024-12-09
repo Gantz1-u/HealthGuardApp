@@ -1,51 +1,41 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class InputInfoPage
-    ' Property to store the PatientID
+    Inherits Form
     Public Property PatientId As Integer
-
-    ' Private instance of the DBConnection class
     Private DB As New DBConnection()
 
-    ' Method to set the PatientID and load related data (optional)
+    ' Set PatientID and optionally load data
     Public Sub SetPatientId(patientId As Integer)
         Me.PatientId = patientId
-        ' Optionally, you can use PatientId to query the database and populate other fields
         LoadPatientData()
     End Sub
 
-    ' Method to calculate age based on DateOfBirth
+    ' Calculate age based on DateOfBirth
     Private Sub CalculateAge()
         Dim birthDate As DateTime = dtp_DateOfBirth.Value
-        Dim today As DateTime = DateTime.Now
-        Dim age As Integer = today.Year - birthDate.Year
-
-        ' Adjust if the birthday hasn't occurred yet this year
-        If today.Month < birthDate.Month OrElse (today.Month = birthDate.Month And today.Day < birthDate.Day) Then
+        Dim age As Integer = DateTime.Now.Year - birthDate.Year
+        If DateTime.Now.Month < birthDate.Month OrElse (DateTime.Now.Month = birthDate.Month AndAlso DateTime.Now.Day < birthDate.Day) Then
             age -= 1
         End If
-
         lbl_Age.Text = $"Age: {age} years"
     End Sub
 
-    ' Event handler for Date of Birth change to recalculate age
-    Private Sub dtp_DateOfBirth_ValueChanged(sender As Object, e As EventArgs)
+    ' Handle DateOfBirth change event
+    Private Sub dtp_DateOfBirth_ValueChanged(sender As Object, e As EventArgs) Handles dtp_DateOfBirth.ValueChanged
         CalculateAge()
     End Sub
 
-    ' Load patient data based on PatientID (Optional)
+    ' Load patient data from the database
     Private Sub LoadPatientData()
-        ' Query database to get patient data (if needed)
         If PatientId > 0 Then
             Dim query As String = "SELECT * FROM patients WHERE PatientID = @PatientID"
             Try
-                ' Use the DBConnection class to open a connection
                 Dim connection = DB.Open()
                 Using cmd As New MySqlCommand(query, connection)
                     cmd.Parameters.AddWithValue("@PatientID", PatientId)
                     Using reader As MySqlDataReader = cmd.ExecuteReader()
                         If reader.Read() Then
-                            ' Populate fields with the fetched data (example fields)
                             dtp_DateOfBirth.Value = Convert.ToDateTime(reader("DateOfBirth"))
                             cmb_Sex.SelectedItem = reader("Sex").ToString()
                             cmb_BloodType.SelectedItem = reader("BloodType").ToString()
@@ -62,36 +52,27 @@ Public Class InputInfoPage
         End If
     End Sub
 
-    ' Event handler for Save button click
+    ' Save updated patient data
     Private Sub RoundedButton3_Click(sender As Object, e As EventArgs) Handles RoundedButton3.Click
-        ' Get the input data from controls
-        Dim dateOfBirth = dtp_DateOfBirth.Value
-        Dim sex = cmb_Sex.SelectedItem.ToString()
-        Dim bloodType = cmb_BloodType.SelectedItem.ToString()
-        Dim parentGuardian = txt_ParentGuardian.Text.Trim()
-        Dim address = txt_Address.Text.Trim()
+        Dim query = "UPDATE patients SET DateOfBirth = @DateOfBirth, Sex = @Sex, BloodType = @BloodType, 
+                     ParentGuardian = @ParentGuardian, Address = @Address WHERE PatientID = @PatientID"
 
-        ' Validate required fields
+        ' Collect data
+        Dim dateOfBirth = dtp_DateOfBirth.Value
+        Dim sex = cmb_Sex.SelectedItem.ToString
+        Dim bloodType = cmb_BloodType.SelectedItem.ToString
+        Dim parentGuardian = txt_ParentGuardian.Text.Trim
+        Dim address = txt_Address.Text.Trim
+
+        ' Validate inputs
         If String.IsNullOrEmpty(sex) OrElse String.IsNullOrEmpty(bloodType) OrElse String.IsNullOrEmpty(parentGuardian) OrElse String.IsNullOrEmpty(address) Then
             MessageBox.Show("Please fill all required fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Exit Sub
+            Return
         End If
 
-        ' Update the patient data in the database
-        Dim query = "
-            UPDATE patients
-            SET DateOfBirth = @DateOfBirth,
-                Sex = @Sex,
-                BloodType = @BloodType,
-                ParentGuardian = @ParentGuardian,
-                Address = @Address
-            WHERE PatientID = @PatientID"
-
         Try
-            ' Open database connection
             Dim connection = DB.Open()
             Using cmd As New MySqlCommand(query, connection)
-                ' Add parameters to the query
                 cmd.Parameters.AddWithValue("@DateOfBirth", dateOfBirth)
                 cmd.Parameters.AddWithValue("@Sex", sex)
                 cmd.Parameters.AddWithValue("@BloodType", bloodType)
@@ -99,7 +80,6 @@ Public Class InputInfoPage
                 cmd.Parameters.AddWithValue("@Address", address)
                 cmd.Parameters.AddWithValue("@PatientID", PatientId)
 
-                ' Execute the update query
                 cmd.ExecuteNonQuery()
                 MessageBox.Show("Patient data updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End Using
@@ -109,5 +89,4 @@ Public Class InputInfoPage
             DB.Close()
         End Try
     End Sub
-
 End Class
