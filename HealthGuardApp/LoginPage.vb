@@ -128,7 +128,7 @@ Public Class LoginPage
     End Sub
 
     ' Toggle password visibility
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs)
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         If passwordVisible Then
             RoundedTextBox3.UseSystemPasswordChar = True
         Else
@@ -164,6 +164,5 @@ Public Class LoginPage
         MessageBox.Show("You have logged out successfully.", "Logged Out", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Me.Show() ' Show login page after logging out
     End Sub
-
 
 End Class

@@ -35,23 +35,21 @@ Public Class AppointmentPage
     End Sub
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         PatientMenuPage.Show()
-        Me.Hide()
+        Hide()
     End Sub
 
     Private Sub RoundedButton4_Click(sender As Object, e As EventArgs) Handles RoundedButton4.Click
         SymptomsPage.Show()
-        Me.Hide()
+        Hide()
     End Sub
 
-    Private Sub btn_Home_Click(sender As Object, e As EventArgs) Handles btn_Home.Click
-
-    End Sub
-
-    Private Sub AppointmentPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        PatientMenuPage.Show()
+        Hide()
     End Sub
 
     Private Sub RoundedButton2_Click(sender As Object, e As EventArgs) Handles RoundedButton2.Click
-
+        AppointmentTicket.Show()
+        Me.Hide()
     End Sub
 End Class

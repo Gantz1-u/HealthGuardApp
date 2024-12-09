@@ -25,18 +25,28 @@
         lbl_AppointmentDate.Text = appointmentDate.ToString("yyyy-MM-dd") ' Format the date
         lbl_AppointmentTime.Text = appointmentTime ' Display the selected time
         lbl_Doctor.Text = SymptomsPage.SelectedDoctor ' Display the doctor's name (Passed from SchedulePage)
-        txt_AppointmentNote.Text = appointmentNote ' Display the entered note
+        RichTextBox1.Text = appointmentNote ' Display the entered note
     End Sub
 
     ' Handle Cancel button click
-    Private Sub Cancel(sender As Object, e As EventArgs) Handles RoundedButton2.Click
-        PatientMenuPage.Show() ' Show the PatientMenuPage
-        Me.Hide() ' Hide the current form (AppointmentTicket)
+    Private Sub Cancel(sender As Object, e As EventArgs)
+        PatientMenuPage.Show ' Show the PatientMenuPage
+        Hide ' Hide the current form (AppointmentTicket)
     End Sub
 
     ' Handle Save button click
-    Private Sub SaveButton(sender As Object, e As EventArgs) Handles RoundedButton1.Click
+    Private Sub SaveButton(sender As Object, e As EventArgs)
         ' Implement save logic here (e.g., save to database or memory)
         MessageBox.Show("Appointment saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        PatientMenuPage.Show()
+        Hide()
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        PatientMenuPage.Show()
+        Hide()
     End Sub
 End Class

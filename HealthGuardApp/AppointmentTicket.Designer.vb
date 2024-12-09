@@ -23,12 +23,9 @@ Partial Class AppointmentTicket
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AppointmentTicket))
-        Panel1 = New Panel()
-        Label3 = New Label()
-        PictureBox3 = New PictureBox()
-        PictureBox4 = New PictureBox()
         RoundedPanel1 = New RoundedPanel()
-        txt_AppointmentNote = New TextBox()
+        RoundedPanel2 = New RoundedPanel()
+        RichTextBox1 = New RichTextBox()
         Label5 = New Label()
         Label4 = New Label()
         Label2 = New Label()
@@ -36,179 +33,195 @@ Partial Class AppointmentTicket
         lbl_AppointmentTime = New Label()
         lbl_AppointmentDate = New Label()
         Label1 = New Label()
-        RoundedButton1 = New CustomControls.RJControls.RoundedButton()
+        PictureBox2 = New PictureBox()
+        Panel1 = New Panel()
+        Label3 = New Label()
+        PictureBox1 = New PictureBox()
+        PictureBox3 = New PictureBox()
         RoundedButton2 = New CustomControls.RJControls.RoundedButton()
-        Panel1.SuspendLayout()
-        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
+        RoundedButton1 = New CustomControls.RJControls.RoundedButton()
         RoundedPanel1.SuspendLayout()
+        RoundedPanel2.SuspendLayout()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        Panel1.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
-        ' 
-        ' Panel1
-        ' 
-        Panel1.BackColor = Color.Transparent
-        Panel1.BorderStyle = BorderStyle.FixedSingle
-        Panel1.Controls.Add(Label3)
-        Panel1.Controls.Add(PictureBox3)
-        Panel1.Controls.Add(PictureBox4)
-        Panel1.Location = New Point(-19, -5)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(422, 68)
-        Panel1.TabIndex = 18
-        ' 
-        ' Label3
-        ' 
-        Label3.BackColor = Color.Transparent
-        Label3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(22, 42)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(47, 16)
-        Label3.TabIndex = 5
-        Label3.Text = "MENU"
-        Label3.TextAlign = ContentAlignment.TopCenter
-        ' 
-        ' PictureBox3
-        ' 
-        PictureBox3.BackColor = Color.Transparent
-        PictureBox3.Cursor = Cursors.Hand
-        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
-        PictureBox3.Location = New Point(24, 14)
-        PictureBox3.Name = "PictureBox3"
-        PictureBox3.Size = New Size(40, 25)
-        PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox3.TabIndex = 3
-        PictureBox3.TabStop = False
-        ' 
-        ' PictureBox4
-        ' 
-        PictureBox4.BackColor = Color.Transparent
-        PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
-        PictureBox4.Location = New Point(48, -11)
-        PictureBox4.Name = "PictureBox4"
-        PictureBox4.Size = New Size(142, 90)
-        PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox4.TabIndex = 2
-        PictureBox4.TabStop = False
         ' 
         ' RoundedPanel1
         ' 
-        RoundedPanel1.Controls.Add(txt_AppointmentNote)
-        RoundedPanel1.Controls.Add(Label5)
-        RoundedPanel1.Controls.Add(Label4)
-        RoundedPanel1.Controls.Add(Label2)
-        RoundedPanel1.Controls.Add(lbl_Doctor)
-        RoundedPanel1.Controls.Add(lbl_AppointmentTime)
-        RoundedPanel1.Controls.Add(lbl_AppointmentDate)
-        RoundedPanel1.Controls.Add(Label1)
-        RoundedPanel1.CornerRadius = 20
-        RoundedPanel1.Location = New Point(18, 236)
+        RoundedPanel1.BackgroundImage = CType(resources.GetObject("RoundedPanel1.BackgroundImage"), Image)
+        RoundedPanel1.BackgroundImageLayout = ImageLayout.Stretch
+        RoundedPanel1.Controls.Add(RoundedPanel2)
+        RoundedPanel1.Controls.Add(PictureBox2)
+        RoundedPanel1.Controls.Add(Panel1)
+        RoundedPanel1.Controls.Add(RoundedButton2)
+        RoundedPanel1.Controls.Add(RoundedButton1)
+        RoundedPanel1.CornerRadius = 35
+        RoundedPanel1.Location = New Point(12, 26)
         RoundedPanel1.Name = "RoundedPanel1"
-        RoundedPanel1.Size = New Size(345, 170)
-        RoundedPanel1.TabIndex = 19
+        RoundedPanel1.Size = New Size(376, 712)
+        RoundedPanel1.TabIndex = 0
         ' 
-        ' txt_AppointmentNote
+        ' RoundedPanel2
         ' 
-        txt_AppointmentNote.BorderStyle = BorderStyle.FixedSingle
-        txt_AppointmentNote.Location = New Point(59, 98)
-        txt_AppointmentNote.Multiline = True
-        txt_AppointmentNote.Name = "txt_AppointmentNote"
-        txt_AppointmentNote.ReadOnly = True
-        txt_AppointmentNote.ScrollBars = ScrollBars.Vertical
-        txt_AppointmentNote.Size = New Size(270, 55)
-        txt_AppointmentNote.TabIndex = 4
-        txt_AppointmentNote.Text = resources.GetString("txt_AppointmentNote.Text")
+        RoundedPanel2.BackColor = Color.LightCyan
+        RoundedPanel2.Controls.Add(RichTextBox1)
+        RoundedPanel2.Controls.Add(Label5)
+        RoundedPanel2.Controls.Add(Label4)
+        RoundedPanel2.Controls.Add(Label2)
+        RoundedPanel2.Controls.Add(lbl_Doctor)
+        RoundedPanel2.Controls.Add(lbl_AppointmentTime)
+        RoundedPanel2.Controls.Add(lbl_AppointmentDate)
+        RoundedPanel2.Controls.Add(Label1)
+        RoundedPanel2.CornerRadius = 20
+        RoundedPanel2.Location = New Point(16, 186)
+        RoundedPanel2.Name = "RoundedPanel2"
+        RoundedPanel2.Size = New Size(345, 312)
+        RoundedPanel2.TabIndex = 38
+        ' 
+        ' RichTextBox1
+        ' 
+        RichTextBox1.Location = New Point(66, 206)
+        RichTextBox1.Name = "RichTextBox1"
+        RichTextBox1.Size = New Size(263, 82)
+        RichTextBox1.TabIndex = 4
+        RichTextBox1.Text = ""
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label5.Location = New Point(13, 97)
+        Label5.BackColor = Color.Transparent
+        Label5.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
+        Label5.Location = New Point(10, 206)
         Label5.Name = "Label5"
-        Label5.Size = New Size(42, 17)
+        Label5.Size = New Size(52, 21)
         Label5.TabIndex = 3
         Label5.Text = "Note:"
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label4.Location = New Point(12, 68)
+        Label4.BackColor = Color.Transparent
+        Label4.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
+        Label4.Location = New Point(10, 126)
         Label4.Name = "Label4"
-        Label4.Size = New Size(130, 17)
+        Label4.Size = New Size(167, 21)
         Label4.TabIndex = 2
-        Label4.Text = "Healthcare Provider"
+        Label4.Text = "Healthcare Provider:"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(12, 41)
+        Label2.BackColor = Color.Transparent
+        Label2.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
+        Label2.Location = New Point(10, 79)
         Label2.Name = "Label2"
-        Label2.Size = New Size(39, 17)
+        Label2.Size = New Size(52, 21)
         Label2.TabIndex = 1
-        Label2.Text = "Time"
+        Label2.Text = "Time:"
         ' 
         ' lbl_Doctor
         ' 
         lbl_Doctor.AutoSize = True
-        lbl_Doctor.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lbl_Doctor.Location = New Point(144, 68)
+        lbl_Doctor.BackColor = Color.Transparent
+        lbl_Doctor.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold)
+        lbl_Doctor.Location = New Point(12, 163)
         lbl_Doctor.Name = "lbl_Doctor"
-        lbl_Doctor.Size = New Size(87, 17)
+        lbl_Doctor.Size = New Size(101, 20)
         lbl_Doctor.TabIndex = 0
         lbl_Doctor.Text = "Doctor Name"
         ' 
         ' lbl_AppointmentTime
         ' 
         lbl_AppointmentTime.AutoSize = True
-        lbl_AppointmentTime.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lbl_AppointmentTime.Location = New Point(57, 41)
+        lbl_AppointmentTime.BackColor = Color.Transparent
+        lbl_AppointmentTime.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold)
+        lbl_AppointmentTime.Location = New Point(68, 80)
         lbl_AppointmentTime.Name = "lbl_AppointmentTime"
-        lbl_AppointmentTime.Size = New Size(39, 17)
+        lbl_AppointmentTime.Size = New Size(45, 20)
         lbl_AppointmentTime.TabIndex = 0
         lbl_AppointmentTime.Text = "00:00"
         ' 
         ' lbl_AppointmentDate
         ' 
         lbl_AppointmentDate.AutoSize = True
-        lbl_AppointmentDate.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lbl_AppointmentDate.Location = New Point(55, 15)
+        lbl_AppointmentDate.BackColor = Color.Transparent
+        lbl_AppointmentDate.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold)
+        lbl_AppointmentDate.Location = New Point(66, 33)
         lbl_AppointmentDate.Name = "lbl_AppointmentDate"
-        lbl_AppointmentDate.Size = New Size(88, 17)
+        lbl_AppointmentDate.Size = New Size(107, 20)
         lbl_AppointmentDate.TabIndex = 0
         lbl_AppointmentDate.Text = "YYYY-MM-DD"
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(12, 15)
+        Label1.BackColor = Color.Transparent
+        Label1.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
+        Label1.Location = New Point(10, 32)
         Label1.Name = "Label1"
-        Label1.Size = New Size(37, 17)
+        Label1.Size = New Size(50, 21)
         Label1.TabIndex = 0
-        Label1.Text = "Date"
+        Label1.Text = "Date:"
         ' 
-        ' RoundedButton1
+        ' PictureBox2
         ' 
-        RoundedButton1.BackColor = SystemColors.ButtonHighlight
-        RoundedButton1.BackgroundColor = SystemColors.ButtonHighlight
-        RoundedButton1.BorderColor = Color.PaleVioletRed
-        RoundedButton1.BorderRadius = 9
-        RoundedButton1.BorderSize = 0
-        RoundedButton1.Cursor = Cursors.Hand
-        RoundedButton1.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
-        RoundedButton1.FlatAppearance.MouseDownBackColor = Color.White
-        RoundedButton1.FlatAppearance.MouseOverBackColor = Color.SteelBlue
-        RoundedButton1.FlatStyle = FlatStyle.Flat
-        RoundedButton1.Font = New Font("Segoe UI", 10F)
-        RoundedButton1.ForeColor = Color.Black
-        RoundedButton1.Location = New Point(18, 422)
-        RoundedButton1.Name = "RoundedButton1"
-        RoundedButton1.Size = New Size(345, 52)
-        RoundedButton1.TabIndex = 36
-        RoundedButton1.Text = "Save"
-        RoundedButton1.TextColor = Color.Black
-        RoundedButton1.UseVisualStyleBackColor = False
+        PictureBox2.BackColor = Color.Transparent
+        PictureBox2.Cursor = Cursors.Hand
+        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
+        PictureBox2.Location = New Point(13, 81)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(38, 36)
+        PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox2.TabIndex = 64
+        PictureBox2.TabStop = False
+        ' 
+        ' Panel1
+        ' 
+        Panel1.BackColor = Color.Transparent
+        Panel1.BorderStyle = BorderStyle.FixedSingle
+        Panel1.Controls.Add(Label3)
+        Panel1.Controls.Add(PictureBox1)
+        Panel1.Controls.Add(PictureBox3)
+        Panel1.Location = New Point(-9, 0)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(400, 68)
+        Panel1.TabIndex = 63
+        ' 
+        ' Label3
+        ' 
+        Label3.BackColor = Color.Transparent
+        Label3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label3.Location = New Point(322, 42)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(47, 16)
+        Label3.TabIndex = 25
+        Label3.Text = "HOME"
+        Label3.TextAlign = ContentAlignment.TopCenter
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.BackColor = Color.Transparent
+        PictureBox1.Cursor = Cursors.Hand
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(325, 15)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(40, 25)
+        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox1.TabIndex = 24
+        PictureBox1.TabStop = False
+        ' 
+        ' PictureBox3
+        ' 
+        PictureBox3.BackColor = Color.Transparent
+        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
+        PictureBox3.Location = New Point(-9, -12)
+        PictureBox3.Name = "PictureBox3"
+        PictureBox3.Size = New Size(145, 90)
+        PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox3.TabIndex = 23
+        PictureBox3.TabStop = False
         ' 
         ' RoundedButton2
         ' 
@@ -224,51 +237,74 @@ Partial Class AppointmentTicket
         RoundedButton2.FlatStyle = FlatStyle.Flat
         RoundedButton2.Font = New Font("Segoe UI", 10F)
         RoundedButton2.ForeColor = Color.Black
-        RoundedButton2.Location = New Point(18, 480)
+        RoundedButton2.Location = New Point(16, 589)
         RoundedButton2.Name = "RoundedButton2"
         RoundedButton2.Size = New Size(345, 52)
-        RoundedButton2.TabIndex = 37
+        RoundedButton2.TabIndex = 40
         RoundedButton2.Text = "Cancel"
         RoundedButton2.TextColor = Color.Black
         RoundedButton2.UseVisualStyleBackColor = False
+        ' 
+        ' RoundedButton1
+        ' 
+        RoundedButton1.BackColor = SystemColors.ButtonHighlight
+        RoundedButton1.BackgroundColor = SystemColors.ButtonHighlight
+        RoundedButton1.BorderColor = Color.PaleVioletRed
+        RoundedButton1.BorderRadius = 9
+        RoundedButton1.BorderSize = 0
+        RoundedButton1.Cursor = Cursors.Hand
+        RoundedButton1.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
+        RoundedButton1.FlatAppearance.MouseDownBackColor = Color.White
+        RoundedButton1.FlatAppearance.MouseOverBackColor = Color.SteelBlue
+        RoundedButton1.FlatStyle = FlatStyle.Flat
+        RoundedButton1.Font = New Font("Segoe UI", 10F)
+        RoundedButton1.ForeColor = Color.Black
+        RoundedButton1.Location = New Point(16, 531)
+        RoundedButton1.Name = "RoundedButton1"
+        RoundedButton1.Size = New Size(345, 52)
+        RoundedButton1.TabIndex = 39
+        RoundedButton1.Text = "Save"
+        RoundedButton1.TextColor = Color.Black
+        RoundedButton1.UseVisualStyleBackColor = False
         ' 
         ' AppointmentTicket
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        BackColor = Color.Black
         BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(384, 711)
-        Controls.Add(RoundedButton2)
-        Controls.Add(RoundedButton1)
+        ClientSize = New Size(400, 750)
         Controls.Add(RoundedPanel1)
-        Controls.Add(Panel1)
         DoubleBuffered = True
         FormBorderStyle = FormBorderStyle.None
         Name = "AppointmentTicket"
         StartPosition = FormStartPosition.CenterScreen
         Text = "AppointmentTicket"
-        Panel1.ResumeLayout(False)
-        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
         RoundedPanel1.ResumeLayout(False)
-        RoundedPanel1.PerformLayout()
+        RoundedPanel2.ResumeLayout(False)
+        RoundedPanel2.PerformLayout()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        Panel1.ResumeLayout(False)
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label3 As Label
-    Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents RoundedPanel1 As RoundedPanel
-    Friend WithEvents RoundedButton1 As CustomControls.RJControls.RoundedButton
     Friend WithEvents RoundedButton2 As CustomControls.RJControls.RoundedButton
+    Friend WithEvents RoundedButton1 As CustomControls.RJControls.RoundedButton
+    Friend WithEvents RoundedPanel2 As RoundedPanel
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
     Friend WithEvents lbl_Doctor As Label
     Friend WithEvents lbl_AppointmentTime As Label
     Friend WithEvents lbl_AppointmentDate As Label
-    Friend WithEvents txt_AppointmentNote As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label3 As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents RichTextBox1 As RichTextBox
 End Class

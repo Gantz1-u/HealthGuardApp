@@ -57,7 +57,6 @@ Public Class PatientRecord
                 ' Check if the patient data is found
                 If patientData IsNot Nothing Then
                     ' Display patient data on the labels
-                    lbl_PatientID.Text = "Patient #" & patientData("PatientID").ToString()
                     lbl_FullName.Text = patientData("FirstName").ToString() & " " & If(patientData("MiddleName") Is DBNull.Value, "", patientData("MiddleName").ToString()) & " " & patientData("LastName").ToString()
                     lbl_Age.Text = If(patientData("Age") Is DBNull.Value, "N/A", patientData("Age").ToString())
                     lbl_Sex.Text = If(patientData("Sex") Is DBNull.Value, "N/A", patientData("Sex").ToString())
@@ -147,12 +146,13 @@ Public Class PatientRecord
         End If
     End Function
 
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
         PatientMenuPage.Show()
         Me.Hide()
     End Sub
 
-    Private Sub lbl_PatientID_Click(sender As Object, e As EventArgs) Handles lbl_PatientID.Click
-
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        PatientMenuPage.Show()
+        Me.Hide()
     End Sub
 End Class

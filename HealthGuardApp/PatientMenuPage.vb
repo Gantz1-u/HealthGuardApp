@@ -49,7 +49,7 @@ Public Class PatientMenuPage
             Dim firstName As String = GetFirstNameByUserID(LoginPage.LoggedInUserID)
 
             If Not String.IsNullOrEmpty(firstName) Then
-                lbl_LoggedInUser.Text = $"Hello, {firstName}"
+                lbl_LoggedInUser.Text = $"Logged in as: {firstName}"
             Else
                 lbl_LoggedInUser.Text = "User not found."
             End If
@@ -96,34 +96,27 @@ Public Class PatientMenuPage
     ' Handling the event when the user clicks the "Patient Record" button
     Private Sub RoundedButton1_Click(sender As Object, e As EventArgs) Handles RoundedButton1.Click
         PatientRecord.Show()
-        Me.Hide()
+        Hide()
     End Sub
 
     ' Handling the event when the user clicks the "Patient Prescription" button
     Private Sub RoundedButton2_Click(sender As Object, e As EventArgs) Handles RoundedButton2.Click
         PatientPrescriptionPage.Show()
-        Me.Hide()
+        Hide()
     End Sub
 
     ' Handling the event when the user clicks the "Appointment Page" button
     Private Sub RoundedButton4_Click(sender As Object, e As EventArgs) Handles RoundedButton4.Click
         AppointmentPage.Show()
-        Me.Hide()
+        Hide()
     End Sub
 
-    ' Handling the logout event
-    Private Sub Logout(sender As Object, e As EventArgs) Handles btn_Logout.Click
-        ' Reset the LoggedInUserID to 0 (no user is logged in)
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         LoginPage.LoggedInUserID = 0
 
         ' Show the LoginPage and hide the current form
         LoginPage.Show()
-        Me.Hide()
+        Hide()
     End Sub
 
-
-    ' Optional: Add functionality for label click if needed
-    Private Sub lbl_LoggedInUser_Click(sender As Object, e As EventArgs) Handles lbl_LoggedInUser.Click
-        ' Placeholder for any additional functionality when the label is clicked
-    End Sub
 End Class

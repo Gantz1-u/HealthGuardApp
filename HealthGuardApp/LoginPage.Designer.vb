@@ -110,6 +110,7 @@
         RoundedButton3.BorderSize = 0
         RoundedButton3.Cursor = Cursors.Hand
         RoundedButton3.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
+        RoundedButton3.FlatAppearance.BorderSize = 0
         RoundedButton3.FlatAppearance.MouseDownBackColor = Color.White
         RoundedButton3.FlatAppearance.MouseOverBackColor = Color.SteelBlue
         RoundedButton3.FlatStyle = FlatStyle.Flat

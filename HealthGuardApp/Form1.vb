@@ -91,8 +91,7 @@ Public Class Form1
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         LoginPage.Show()
-        Me.Hide()
+        Hide()
     End Sub
-
 
 End Class

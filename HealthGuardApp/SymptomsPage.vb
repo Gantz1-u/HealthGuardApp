@@ -49,7 +49,7 @@ Public Class SymptomsPage
     ' Button Click Event Handlers for Each Department Button
     Private Sub btn_Click(sender As Object, e As EventArgs) Handles RoundedButton5.Click, RoundedButton1.Click, RoundedButton2.Click, RoundedButton4.Click, RoundedButton3.Click
         ' Determine which button was clicked
-        Dim clickedButton As Button = CType(sender, Button)
+        Dim clickedButton = CType(sender, Button)
 
         ' Set the selected doctor based on the button clicked
         Select Case clickedButton.Name
@@ -73,6 +73,20 @@ Public Class SymptomsPage
                 Exit Sub ' Stop the code here if unrecognized
         End Select
 
-        Me.Hide() ' Hide the current form (SymptomsPage)
+        Hide() ' Hide the current form (SymptomsPage)
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        PatientMenuPage.Show()
+        Hide()
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        PatientMenuPage.Show()
+        Hide()
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
     End Sub
 End Class

@@ -1,58 +1,63 @@
-﻿Public Class SchedulePage
+﻿Imports System.Drawing.Drawing2D
+
+Public Class SchedulePage
+    Inherits Form
+
+    ' Define the radius for the rounded corners
+    Private _cornerRadius As Integer = 50
     Private AppointmentDate As Date
     Private AppointmentTime As String
     Private AppointmentNote As String
     Private lastSelectedButton As Button
 
-    ' Constructor to initialize the page with the selected doctor name
+    Public Sub New()
+        InitializeComponent()
+        Me.FormBorderStyle = FormBorderStyle.None
+        ApplyRoundedCorners()
+    End Sub
 
-
-    ' Property to get and set the doctor name
-
+    ' Applies rounded corners to the form
+    Private Sub ApplyRoundedCorners()
+        Using path As New GraphicsPath()
+            path.AddArc(0, 0, _cornerRadius, _cornerRadius, 180, 90) ' Top-left
+            path.AddArc(Me.Width - _cornerRadius, 0, _cornerRadius, _cornerRadius, 270, 90) ' Top-right
+            path.AddArc(Me.Width - _cornerRadius, Me.Height - _cornerRadius, _cornerRadius, _cornerRadius, 0, 90) ' Bottom-right
+            path.AddArc(0, Me.Height - _cornerRadius, _cornerRadius, _cornerRadius, 90, 90) ' Bottom-left
+            path.CloseFigure()
+            Me.Region = New Region(path)
+        End Using
+    End Sub
 
     ' Form Load Event
-    Private Sub appointment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Clear private appointment variables
+    Private Sub SchedulePage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AppointmentDate = Nothing
         AppointmentTime = String.Empty
         AppointmentNote = String.Empty
-
-        ' Reset controls
-        dtp_AppointmentDate.Value = Date.Today ' Default to today's date
+        dtp_AppointmentDate.Value = Date.Today
         txt_Note.Clear()
 
-        ' Reset button highlights
         If lastSelectedButton IsNot Nothing Then
             lastSelectedButton.BackColor = Color.White
             lastSelectedButton = Nothing
         End If
     End Sub
 
-    ' Handle Confirm Appointment button click
-    Private Sub ConfirmAppointment(sender As Object, e As EventArgs) Handles RoundedButton16.Click
-        ' Store the selected date, time, and note
+    ' Handles Confirm Appointment Button
+    Private Sub ConfirmAppointment_Click(sender As Object, e As EventArgs) Handles RoundedButton16.Click
         AppointmentDate = dtp_AppointmentDate.Value.Date
         AppointmentNote = txt_Note.Text.Trim()
 
-        ' Ensure AppointmentTime is selected before proceeding
         If String.IsNullOrEmpty(AppointmentTime) Then
             MessageBox.Show("Please select an appointment time.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
-        ' Create a new AppointmentTicket form and pass the doctor name, date, time, and note
-        Dim ticketForm As New AppointmentTicket(" ", AppointmentDate, AppointmentTime, AppointmentNote)
+        Dim ticketForm As New AppointmentTicket("Doctor Name", AppointmentDate, AppointmentTime, AppointmentNote)
         ticketForm.Show()
         Me.Hide()
     End Sub
 
-    ' Handle Back button click
-    Private Sub BackButton(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        SpecialistPage.Show()
-        Me.Hide()
-    End Sub
-
-    ' Appointment time button click handlers
+    ' Handles Appointment Time Button Clicks
     Private Sub btn_9_Click(sender As Object, e As EventArgs) Handles btn_9.Click
         SetAppointmentTime("9:00 AM", btn_9)
     End Sub
@@ -64,54 +69,77 @@
     Private Sub btn_10_Click(sender As Object, e As EventArgs) Handles btn_10.Click
         SetAppointmentTime("10:00 AM", btn_10)
     End Sub
+
     Private Sub btn_1030_Click(sender As Object, e As EventArgs) Handles btn_1030.Click
         SetAppointmentTime("10:30 AM", btn_1030)
     End Sub
+
     Private Sub btn_13_Click(sender As Object, e As EventArgs) Handles btn_13.Click
-        SetAppointmentTime("11:00 AM", btn_13)
+        SetAppointmentTime("1:00 PM", btn_13)
     End Sub
+
     Private Sub btn_1330_Click(sender As Object, e As EventArgs) Handles btn_1330.Click
-        SetAppointmentTime("13:30 AM", btn_1330)
+        SetAppointmentTime("1:30 PM", btn_1330)
     End Sub
+
     Private Sub btn_14_Click(sender As Object, e As EventArgs) Handles btn_14.Click
-        SetAppointmentTime("14:00 AM", btn_14)
+        SetAppointmentTime("2:00 PM", btn_14)
     End Sub
+
     Private Sub btn_1430_Click(sender As Object, e As EventArgs) Handles btn_1430.Click
-        SetAppointmentTime("14:30 AM", btn_1430)
+        SetAppointmentTime("2:30 PM", btn_1430)
     End Sub
+
     Private Sub btn_15_Click(sender As Object, e As EventArgs) Handles btn_15.Click
-        SetAppointmentTime("15:00 AM", btn_15)
+        SetAppointmentTime("3:00 PM", btn_15)
     End Sub
+
     Private Sub btn_1530_Click(sender As Object, e As EventArgs) Handles btn_1530.Click
-        SetAppointmentTime("15:30 AM", btn_1530)
+        SetAppointmentTime("3:30 PM", btn_1530)
     End Sub
+
     Private Sub btn_16_Click(sender As Object, e As EventArgs) Handles btn_16.Click
-        SetAppointmentTime("16:00 AM", btn_16)
+        SetAppointmentTime("4:00 PM", btn_16)
     End Sub
+
     Private Sub btn_1630_Click(sender As Object, e As EventArgs) Handles btn_1630.Click
-        SetAppointmentTime("16:30 AM", btn_1630)
+        SetAppointmentTime("4:30 PM", btn_1630)
     End Sub
+
     Private Sub btn_17_Click(sender As Object, e As EventArgs) Handles btn_17.Click
-        SetAppointmentTime("17:00 AM", btn_17)
+        SetAppointmentTime("5:00 PM", btn_17)
     End Sub
+
     Private Sub btn_1730_Click(sender As Object, e As EventArgs) Handles btn_1730.Click
-        SetAppointmentTime("17:30 AM", btn_1730)
+        SetAppointmentTime("5:30 PM", btn_1730)
     End Sub
+
     Private Sub btn_18_Click(sender As Object, e As EventArgs) Handles btn_18.Click
-        SetAppointmentTime("18:00 AM", btn_18)
+        SetAppointmentTime("6:00 PM", btn_18)
     End Sub
-    ' Method to set the appointment time and highlight the selected button
+
+    ' Sets appointment time and highlights the selected button
     Private Sub SetAppointmentTime(time As String, selectedButton As Button)
-        ' Update the private AppointmentTime variable
         AppointmentTime = time
 
-        ' Reset the background color of the last selected button
         If lastSelectedButton IsNot Nothing Then
             lastSelectedButton.BackColor = Color.White
         End If
 
-        ' Set the background color of the selected button and store it as the last selected
         selectedButton.BackColor = Color.SteelBlue
         lastSelectedButton = selectedButton
     End Sub
+
+    ' Back Navigation Buttons
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        PatientMenuPage.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        SymptomsPage.Show()
+        Me.Hide()
+    End Sub
+
+
 End Class

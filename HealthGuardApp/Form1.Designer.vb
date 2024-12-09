@@ -23,29 +23,187 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Panel1 = New Panel()
-        PictureBox1 = New PictureBox()
-        Label1 = New Label()
-        Label2 = New Label()
-        Label3 = New Label()
-        RoundedButton1 = New CustomControls.RJControls.RoundedButton()
-        RoundedButton2 = New CustomControls.RJControls.RoundedButton()
-        RoundedButton3 = New CustomControls.RJControls.RoundedButton()
-        Label4 = New Label()
+        RoundedPanel1 = New RoundedPanel()
         LinkLabel1 = New LinkLabel()
         Label5 = New Label()
+        Label4 = New Label()
+        RoundedButton3 = New CustomControls.RJControls.RoundedButton()
+        RoundedButton2 = New CustomControls.RJControls.RoundedButton()
+        RoundedButton1 = New CustomControls.RJControls.RoundedButton()
+        Label3 = New Label()
+        Label2 = New Label()
+        Label1 = New Label()
+        Panel1 = New Panel()
+        PictureBox1 = New PictureBox()
+        RoundedPanel1.SuspendLayout()
         Panel1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
+        ' 
+        ' RoundedPanel1
+        ' 
+        RoundedPanel1.BackgroundImage = CType(resources.GetObject("RoundedPanel1.BackgroundImage"), Image)
+        RoundedPanel1.BackgroundImageLayout = ImageLayout.Stretch
+        RoundedPanel1.Controls.Add(LinkLabel1)
+        RoundedPanel1.Controls.Add(Label5)
+        RoundedPanel1.Controls.Add(Label4)
+        RoundedPanel1.Controls.Add(RoundedButton3)
+        RoundedPanel1.Controls.Add(RoundedButton2)
+        RoundedPanel1.Controls.Add(RoundedButton1)
+        RoundedPanel1.Controls.Add(Label3)
+        RoundedPanel1.Controls.Add(Label2)
+        RoundedPanel1.Controls.Add(Label1)
+        RoundedPanel1.Controls.Add(Panel1)
+        RoundedPanel1.CornerRadius = 20
+        RoundedPanel1.Location = New Point(12, 26)
+        RoundedPanel1.Name = "RoundedPanel1"
+        RoundedPanel1.Size = New Size(376, 712)
+        RoundedPanel1.TabIndex = 0
+        ' 
+        ' LinkLabel1
+        ' 
+        LinkLabel1.ActiveLinkColor = Color.White
+        LinkLabel1.AutoSize = True
+        LinkLabel1.BackColor = Color.Transparent
+        LinkLabel1.Cursor = Cursors.Hand
+        LinkLabel1.Location = New Point(239, 594)
+        LinkLabel1.Name = "LinkLabel1"
+        LinkLabel1.Size = New Size(37, 15)
+        LinkLabel1.TabIndex = 34
+        LinkLabel1.TabStop = True
+        LinkLabel1.Text = "Login"
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.BackColor = Color.Transparent
+        Label5.Location = New Point(100, 594)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(142, 15)
+        Label5.TabIndex = 33
+        Label5.Text = "Already have an account?"
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.BackColor = Color.Transparent
+        Label4.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label4.Location = New Point(114, 539)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(148, 15)
+        Label4.TabIndex = 32
+        Label4.Text = "Please select your user role"
+        ' 
+        ' RoundedButton3
+        ' 
+        RoundedButton3.BackColor = SystemColors.ButtonHighlight
+        RoundedButton3.BackgroundColor = SystemColors.ButtonHighlight
+        RoundedButton3.BorderColor = Color.PaleVioletRed
+        RoundedButton3.BorderRadius = 9
+        RoundedButton3.BorderSize = 0
+        RoundedButton3.Cursor = Cursors.Hand
+        RoundedButton3.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
+        RoundedButton3.FlatAppearance.BorderSize = 0
+        RoundedButton3.FlatAppearance.MouseDownBackColor = Color.White
+        RoundedButton3.FlatAppearance.MouseOverBackColor = Color.SteelBlue
+        RoundedButton3.FlatStyle = FlatStyle.Flat
+        RoundedButton3.Font = New Font("Segoe UI", 10F)
+        RoundedButton3.ForeColor = Color.Black
+        RoundedButton3.Location = New Point(83, 485)
+        RoundedButton3.Name = "RoundedButton3"
+        RoundedButton3.Size = New Size(209, 40)
+        RoundedButton3.TabIndex = 31
+        RoundedButton3.Text = "DOCTOR"
+        RoundedButton3.TextColor = Color.Black
+        RoundedButton3.UseVisualStyleBackColor = False
+        ' 
+        ' RoundedButton2
+        ' 
+        RoundedButton2.BackColor = SystemColors.ButtonHighlight
+        RoundedButton2.BackgroundColor = SystemColors.ButtonHighlight
+        RoundedButton2.BorderColor = Color.PaleVioletRed
+        RoundedButton2.BorderRadius = 9
+        RoundedButton2.BorderSize = 0
+        RoundedButton2.Cursor = Cursors.Hand
+        RoundedButton2.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
+        RoundedButton2.FlatAppearance.BorderSize = 0
+        RoundedButton2.FlatAppearance.MouseDownBackColor = Color.White
+        RoundedButton2.FlatAppearance.MouseOverBackColor = Color.SteelBlue
+        RoundedButton2.FlatStyle = FlatStyle.Flat
+        RoundedButton2.Font = New Font("Segoe UI", 10F)
+        RoundedButton2.ForeColor = Color.Black
+        RoundedButton2.Location = New Point(83, 428)
+        RoundedButton2.Name = "RoundedButton2"
+        RoundedButton2.Size = New Size(209, 40)
+        RoundedButton2.TabIndex = 30
+        RoundedButton2.Text = "NURSE"
+        RoundedButton2.TextColor = Color.Black
+        RoundedButton2.UseVisualStyleBackColor = False
+        ' 
+        ' RoundedButton1
+        ' 
+        RoundedButton1.BackColor = SystemColors.ButtonHighlight
+        RoundedButton1.BackgroundColor = SystemColors.ButtonHighlight
+        RoundedButton1.BorderColor = Color.Transparent
+        RoundedButton1.BorderRadius = 9
+        RoundedButton1.BorderSize = 0
+        RoundedButton1.Cursor = Cursors.Hand
+        RoundedButton1.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
+        RoundedButton1.FlatAppearance.BorderSize = 0
+        RoundedButton1.FlatAppearance.MouseDownBackColor = Color.White
+        RoundedButton1.FlatAppearance.MouseOverBackColor = Color.SteelBlue
+        RoundedButton1.FlatStyle = FlatStyle.Flat
+        RoundedButton1.Font = New Font("Segoe UI", 10F)
+        RoundedButton1.ForeColor = Color.Black
+        RoundedButton1.Location = New Point(83, 372)
+        RoundedButton1.Name = "RoundedButton1"
+        RoundedButton1.Size = New Size(209, 40)
+        RoundedButton1.TabIndex = 29
+        RoundedButton1.Text = "PATIENT"
+        RoundedButton1.TextColor = Color.Black
+        RoundedButton1.UseVisualStyleBackColor = False
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.BackColor = Color.Transparent
+        Label3.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
+        Label3.Location = New Point(106, 301)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(164, 17)
+        Label3.TabIndex = 28
+        Label3.Text = "updates easier, every day."
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.BackColor = Color.Transparent
+        Label2.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
+        Label2.Location = New Point(28, 284)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(320, 17)
+        Label2.TabIndex = 27
+        Label2.Text = "Let’s make managing your prescriptions and health"
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.BackColor = Color.Transparent
+        Label1.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Location = New Point(106, 267)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(170, 17)
+        Label1.TabIndex = 26
+        Label1.Text = "Welcome to HealthGuard! "
         ' 
         ' Panel1
         ' 
         Panel1.BackColor = Color.Transparent
         Panel1.Controls.Add(PictureBox1)
-        Panel1.Location = New Point(52, 124)
+        Panel1.Location = New Point(41, 83)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(289, 176)
-        Panel1.TabIndex = 0
+        Panel1.TabIndex = 25
         ' 
         ' PictureBox1
         ' 
@@ -59,178 +217,37 @@ Partial Class Form1
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
         ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.BackColor = Color.Transparent
-        Label1.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(117, 308)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(170, 17)
-        Label1.TabIndex = 1
-        Label1.Text = "Welcome to HealthGuard! "
-        ' 
-        ' Label2
-        ' 
-        Label2.AutoSize = True
-        Label2.BackColor = Color.Transparent
-        Label2.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
-        Label2.Location = New Point(39, 325)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(320, 17)
-        Label2.TabIndex = 2
-        Label2.Text = "Let’s make managing your prescriptions and health"
-        ' 
-        ' Label3
-        ' 
-        Label3.AutoSize = True
-        Label3.BackColor = Color.Transparent
-        Label3.Font = New Font("Segoe UI Semibold", 9.75F, FontStyle.Bold)
-        Label3.Location = New Point(117, 342)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(164, 17)
-        Label3.TabIndex = 3
-        Label3.Text = "updates easier, every day."
-        ' 
-        ' RoundedButton1
-        ' 
-        RoundedButton1.BackColor = SystemColors.ButtonHighlight
-        RoundedButton1.BackgroundColor = SystemColors.ButtonHighlight
-        RoundedButton1.BorderColor = Color.PaleVioletRed
-        RoundedButton1.BorderRadius = 9
-        RoundedButton1.BorderSize = 0
-        RoundedButton1.Cursor = Cursors.Hand
-        RoundedButton1.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
-        RoundedButton1.FlatAppearance.MouseDownBackColor = Color.White
-        RoundedButton1.FlatAppearance.MouseOverBackColor = Color.SteelBlue
-        RoundedButton1.FlatStyle = FlatStyle.Flat
-        RoundedButton1.Font = New Font("Segoe UI", 10F)
-        RoundedButton1.ForeColor = Color.Black
-        RoundedButton1.Location = New Point(94, 413)
-        RoundedButton1.Name = "RoundedButton1"
-        RoundedButton1.Size = New Size(209, 40)
-        RoundedButton1.TabIndex = 4
-        RoundedButton1.Text = "PATIENT"
-        RoundedButton1.TextColor = Color.Black
-        RoundedButton1.UseVisualStyleBackColor = False
-        ' 
-        ' RoundedButton2
-        ' 
-        RoundedButton2.BackColor = SystemColors.ButtonHighlight
-        RoundedButton2.BackgroundColor = SystemColors.ButtonHighlight
-        RoundedButton2.BorderColor = Color.PaleVioletRed
-        RoundedButton2.BorderRadius = 9
-        RoundedButton2.BorderSize = 0
-        RoundedButton2.Cursor = Cursors.Hand
-        RoundedButton2.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
-        RoundedButton2.FlatAppearance.MouseDownBackColor = Color.White
-        RoundedButton2.FlatAppearance.MouseOverBackColor = Color.SteelBlue
-        RoundedButton2.FlatStyle = FlatStyle.Flat
-        RoundedButton2.Font = New Font("Segoe UI", 10F)
-        RoundedButton2.ForeColor = Color.Black
-        RoundedButton2.Location = New Point(94, 469)
-        RoundedButton2.Name = "RoundedButton2"
-        RoundedButton2.Size = New Size(209, 40)
-        RoundedButton2.TabIndex = 5
-        RoundedButton2.Text = "NURSE"
-        RoundedButton2.TextColor = Color.Black
-        RoundedButton2.UseVisualStyleBackColor = False
-        ' 
-        ' RoundedButton3
-        ' 
-        RoundedButton3.BackColor = SystemColors.ButtonHighlight
-        RoundedButton3.BackgroundColor = SystemColors.ButtonHighlight
-        RoundedButton3.BorderColor = Color.PaleVioletRed
-        RoundedButton3.BorderRadius = 9
-        RoundedButton3.BorderSize = 0
-        RoundedButton3.Cursor = Cursors.Hand
-        RoundedButton3.FlatAppearance.BorderColor = SystemColors.ButtonHighlight
-        RoundedButton3.FlatAppearance.MouseDownBackColor = Color.White
-        RoundedButton3.FlatAppearance.MouseOverBackColor = Color.SteelBlue
-        RoundedButton3.FlatStyle = FlatStyle.Flat
-        RoundedButton3.Font = New Font("Segoe UI", 10F)
-        RoundedButton3.ForeColor = Color.Black
-        RoundedButton3.Location = New Point(94, 526)
-        RoundedButton3.Name = "RoundedButton3"
-        RoundedButton3.Size = New Size(209, 40)
-        RoundedButton3.TabIndex = 6
-        RoundedButton3.Text = "DOCTOR"
-        RoundedButton3.TextColor = Color.Black
-        RoundedButton3.UseVisualStyleBackColor = False
-        ' 
-        ' Label4
-        ' 
-        Label4.AutoSize = True
-        Label4.BackColor = Color.Transparent
-        Label4.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label4.Location = New Point(125, 580)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(148, 15)
-        Label4.TabIndex = 7
-        Label4.Text = "Please select your user role"
-        ' 
-        ' LinkLabel1
-        ' 
-        LinkLabel1.ActiveLinkColor = Color.White
-        LinkLabel1.AutoSize = True
-        LinkLabel1.BackColor = Color.Transparent
-        LinkLabel1.Cursor = Cursors.Hand
-        LinkLabel1.Location = New Point(250, 635)
-        LinkLabel1.Name = "LinkLabel1"
-        LinkLabel1.Size = New Size(37, 15)
-        LinkLabel1.TabIndex = 24
-        LinkLabel1.TabStop = True
-        LinkLabel1.Text = "Login"
-        ' 
-        ' Label5
-        ' 
-        Label5.AutoSize = True
-        Label5.BackColor = Color.Transparent
-        Label5.Location = New Point(111, 635)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(142, 15)
-        Label5.TabIndex = 23
-        Label5.Text = "Already have an account?"
-        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.White
-        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        BackColor = Color.Black
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(400, 750)
-        Controls.Add(LinkLabel1)
-        Controls.Add(Label5)
-        Controls.Add(Label4)
-        Controls.Add(RoundedButton3)
-        Controls.Add(RoundedButton2)
-        Controls.Add(RoundedButton1)
-        Controls.Add(Label3)
-        Controls.Add(Label2)
-        Controls.Add(Label1)
-        Controls.Add(Panel1)
+        Controls.Add(RoundedPanel1)
         DoubleBuffered = True
         FormBorderStyle = FormBorderStyle.None
         Name = "Form1"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Form1"
+        RoundedPanel1.ResumeLayout(False)
+        RoundedPanel1.PerformLayout()
         Panel1.ResumeLayout(False)
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
-        PerformLayout()
     End Sub
 
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents RoundedButton1 As CustomControls.RJControls.RoundedButton
-    Friend WithEvents RoundedButton2 As CustomControls.RJControls.RoundedButton
-    Friend WithEvents RoundedButton3 As CustomControls.RJControls.RoundedButton
-    Friend WithEvents Label4 As Label
+    Friend WithEvents RoundedPanel1 As RoundedPanel
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents RoundedButton3 As CustomControls.RJControls.RoundedButton
+    Friend WithEvents RoundedButton2 As CustomControls.RJControls.RoundedButton
+    Friend WithEvents RoundedButton1 As CustomControls.RJControls.RoundedButton
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents PictureBox1 As PictureBox
 
 End Class

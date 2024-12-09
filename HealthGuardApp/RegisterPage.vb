@@ -28,6 +28,8 @@ Public Class RegisterPage
         Me.Region = New Region(path)
     End Sub
 
+    Private passwordVisible As Boolean = False
+
     ' Optionally, handle the resizing of the form
     Protected Overrides Sub OnResize(e As EventArgs)
         MyBase.OnResize(e)
@@ -117,4 +119,23 @@ Public Class RegisterPage
         Hide()
     End Sub
 
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        If passwordVisible Then
+            RoundedTextBox2.UseSystemPasswordChar = True
+        Else
+            RoundedTextBox2.UseSystemPasswordChar = False
+        End If
+
+        passwordVisible = Not passwordVisible
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        If passwordVisible Then
+            RoundedTextBox3.UseSystemPasswordChar = True
+        Else
+            RoundedTextBox3.UseSystemPasswordChar = False
+        End If
+
+        passwordVisible = Not passwordVisible
+    End Sub
 End Class
