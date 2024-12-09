@@ -113,9 +113,10 @@ Public Class RegisterPage
                     MessageBox.Show($"Account successfully created! UserID: {UserId}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                     ' After creating the account, open InputInfoPage with new PatientID
-                    Dim inputInfoPage As New InputInfoPage()
-                    inputInfoPage.SetPatientId(PatientId)
+                    Dim inputInfoPage As New InputInfoPage(UserId)
                     inputInfoPage.Show()
+
+                    ' Hide the RegisterPage form after opening InputInfoPage
                     Me.Hide()
                 Else
                     ' Execute update
@@ -178,6 +179,4 @@ Public Class RegisterPage
             pictureBoxHide.BringToFront() ' Show "Show Password" icon
         End If
     End Sub
-
-
 End Class

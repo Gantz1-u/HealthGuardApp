@@ -41,6 +41,7 @@ Partial Class InputInfoPage
         Label2 = New Label()
         lbl_FirstName = New Label()
         Label1 = New Label()
+        lbl_PatientID = New Label()
         RoundedPanel1.SuspendLayout()
         RoundedPanel5.SuspendLayout()
         RoundedPanel6.SuspendLayout()
@@ -53,6 +54,7 @@ Partial Class InputInfoPage
         RoundedPanel1.Controls.Add(cmb_BloodType)
         RoundedPanel1.Controls.Add(cmb_Sex)
         RoundedPanel1.Controls.Add(RoundedPanel5)
+        RoundedPanel1.Controls.Add(lbl_PatientID)
         RoundedPanel1.Controls.Add(lbl_Age)
         RoundedPanel1.Controls.Add(Label3)
         RoundedPanel1.Controls.Add(Label7)
@@ -247,7 +249,7 @@ Partial Class InputInfoPage
         ' 
         lbl_FirstName.AutoSize = True
         lbl_FirstName.Font = New Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lbl_FirstName.Location = New Point(35, 61)
+        lbl_FirstName.Location = New Point(33, 61)
         lbl_FirstName.Name = "lbl_FirstName"
         lbl_FirstName.Size = New Size(246, 40)
         lbl_FirstName.TabIndex = 37
@@ -262,6 +264,16 @@ Partial Class InputInfoPage
         Label1.Size = New Size(259, 21)
         Label1.TabIndex = 38
         Label1.Text = "Tell us something about yourself"
+        ' 
+        ' lbl_PatientID
+        ' 
+        lbl_PatientID.AutoSize = True
+        lbl_PatientID.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lbl_PatientID.Location = New Point(35, 29)
+        lbl_PatientID.Name = "lbl_PatientID"
+        lbl_PatientID.Size = New Size(59, 17)
+        lbl_PatientID.TabIndex = 45
+        lbl_PatientID.Text = "PatientID"
         ' 
         ' InputInfoPage
         ' 
@@ -303,4 +315,5 @@ Partial Class InputInfoPage
     Friend WithEvents Label2 As Label
     Friend WithEvents lbl_FirstName As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents lbl_PatientID As Label
 End Class

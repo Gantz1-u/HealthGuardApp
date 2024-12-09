@@ -30,7 +30,7 @@ Public Class InputInfoPage
 
     ' Event handler for Date of Birth change to recalculate age
     Private Sub dtp_DateOfBirth_ValueChanged(sender As Object, e As EventArgs)
-        CalculateAge
+        CalculateAge()
     End Sub
 
     ' Load patient data based on PatientID (Optional)
@@ -66,10 +66,10 @@ Public Class InputInfoPage
     Private Sub RoundedButton3_Click(sender As Object, e As EventArgs) Handles RoundedButton3.Click
         ' Get the input data from controls
         Dim dateOfBirth = dtp_DateOfBirth.Value
-        Dim sex = cmb_Sex.SelectedItem.ToString
-        Dim bloodType = cmb_BloodType.SelectedItem.ToString
-        Dim parentGuardian = txt_ParentGuardian.Text.Trim
-        Dim address = txt_Address.Text.Trim
+        Dim sex = cmb_Sex.SelectedItem.ToString()
+        Dim bloodType = cmb_BloodType.SelectedItem.ToString()
+        Dim parentGuardian = txt_ParentGuardian.Text.Trim()
+        Dim address = txt_Address.Text.Trim()
 
         ' Validate required fields
         If String.IsNullOrEmpty(sex) OrElse String.IsNullOrEmpty(bloodType) OrElse String.IsNullOrEmpty(parentGuardian) OrElse String.IsNullOrEmpty(address) Then
@@ -89,7 +89,7 @@ Public Class InputInfoPage
 
         Try
             ' Open database connection
-            Dim connection = DB.Open
+            Dim connection = DB.Open()
             Using cmd As New MySqlCommand(query, connection)
                 ' Add parameters to the query
                 cmd.Parameters.AddWithValue("@DateOfBirth", dateOfBirth)
@@ -109,6 +109,5 @@ Public Class InputInfoPage
             DB.Close()
         End Try
     End Sub
-
 
 End Class
