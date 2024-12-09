@@ -75,9 +75,9 @@ Partial Class DermatologyPage
         Label3.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label3.Location = New Point(95, 379)
         Label3.Name = "Label3"
-        Label3.Size = New Size(115, 21)
+        Label3.Size = New Size(99, 21)
         Label3.TabIndex = 2
-        Label3.Text = "Dermatologist"
+        Label3.Text = "Orthopedist"
         ' 
         ' Label2
         ' 

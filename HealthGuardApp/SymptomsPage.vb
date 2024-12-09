@@ -35,6 +35,7 @@ Public Class SymptomsPage
     End Sub
 
     Private _selectedDoctor As String
+    Private _selectedDoctorID As String
 
     ' Public property to expose the selected doctor
     Public Property SelectedDoctor As String
@@ -43,6 +44,15 @@ Public Class SymptomsPage
         End Get
         Set(value As String)
             _selectedDoctor = value
+        End Set
+    End Property
+
+    Public Property SelectedDoctorID As String
+        Get
+            Return _selectedDoctorID
+        End Get
+        Set(value As String)
+            _selectedDoctorID = value
         End Set
     End Property
 
@@ -55,19 +65,24 @@ Public Class SymptomsPage
         Select Case clickedButton.Name
             Case "RoundedButton5"
                 SelectedDoctor = "Dr. Robert Anderson (Pediatrician)"
+                SelectedDoctorID = "3"
                 SpecialistPage.Show()
             Case "RoundedButton1"
                 SelectedDoctor = "Dr. Julie Grande (Dermatologist)"
-                DermatologyPage.Show()
+                SelectedDoctorID = "4"
+                PhysicalTherapy.Show()
             Case "RoundedButton2"
                 SelectedDoctor = "Dr. Joseph Shaffer (Physician)"
-                PhysicalTherapy.Show()
+                SelectedDoctorID = "5"
+                Psychiatry.Show()
             Case "RoundedButton4"
                 SelectedDoctor = "Dr. Tanya Lao (Psychiatrist)"
-                Psychiatry.Show()
+                SelectedDoctorID = "6"
+                Orthopedics.Show()
             Case "RoundedButton3"
                 SelectedDoctor = "Dr. Noel Hauge (Orthopedist)"
-                Orthopedics.Show()
+                SelectedDoctorID = "7"
+                DermatologyPage.Show()
             Case Else
                 MessageBox.Show("Unrecognized button clicked.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Exit Sub ' Stop the code here if unrecognized

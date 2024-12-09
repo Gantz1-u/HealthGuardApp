@@ -134,7 +134,8 @@ Public Class DoctorPrescription
             End Using
 
             MessageBox.Show("Medicine details saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
+            DoctorPrescriptionPatients.Show()
+            Me.Hide()
         Catch ex As Exception
             MessageBox.Show($"Error: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally

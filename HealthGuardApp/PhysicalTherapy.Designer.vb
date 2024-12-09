@@ -75,9 +75,9 @@ Partial Class PhysicalTherapy
         Label3.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label3.Location = New Point(110, 379)
         Label3.Name = "Label3"
-        Label3.Size = New Size(84, 21)
+        Label3.Size = New Size(115, 21)
         Label3.TabIndex = 5
-        Label3.Text = "Physiatrist"
+        Label3.Text = "Dermatologist"
         ' 
         ' Label2
         ' 
@@ -85,9 +85,9 @@ Partial Class PhysicalTherapy
         Label2.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label2.Location = New Point(63, 354)
         Label2.Name = "Label2"
-        Label2.Size = New Size(179, 25)
+        Label2.Size = New Size(190, 25)
         Label2.TabIndex = 4
-        Label2.Text = "Dr. Julie Pila Cronk"
+        Label2.Text = "Dr. Julie Pila Grande"
         ' 
         ' PictureBox1
         ' 

@@ -24,7 +24,9 @@ Partial Class DoctorAppointment
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DoctorAppointment))
         RoundedPanel1 = New RoundedPanel()
+        Label8 = New Label()
         RoundedPanel2 = New RoundedPanel()
+        PictureBox5 = New PictureBox()
         Label1 = New Label()
         PictureBox1 = New PictureBox()
         Label2 = New Label()
@@ -37,10 +39,9 @@ Partial Class DoctorAppointment
         RoundedPanel5 = New RoundedPanel()
         RoundedTextBox1 = New RoundedTextBox()
         PictureBox6 = New PictureBox()
-        Label8 = New Label()
-        PictureBox5 = New PictureBox()
         RoundedPanel1.SuspendLayout()
         RoundedPanel2.SuspendLayout()
+        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
@@ -48,7 +49,6 @@ Partial Class DoctorAppointment
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         RoundedPanel5.SuspendLayout()
         CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' RoundedPanel1
@@ -61,6 +61,16 @@ Partial Class DoctorAppointment
         RoundedPanel1.Name = "RoundedPanel1"
         RoundedPanel1.Size = New Size(360, 534)
         RoundedPanel1.TabIndex = 66
+        ' 
+        ' Label8
+        ' 
+        Label8.AutoSize = True
+        Label8.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label8.Location = New Point(11, 15)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(180, 20)
+        Label8.TabIndex = 12
+        Label8.Text = "Upcoming Appointments"
         ' 
         ' RoundedPanel2
         ' 
@@ -76,15 +86,25 @@ Partial Class DoctorAppointment
         RoundedPanel2.Size = New Size(337, 93)
         RoundedPanel2.TabIndex = 11
         ' 
+        ' PictureBox5
+        ' 
+        PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), Image)
+        PictureBox5.Location = New Point(65, 55)
+        PictureBox5.Name = "PictureBox5"
+        PictureBox5.Size = New Size(16, 17)
+        PictureBox5.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox5.TabIndex = 14
+        PictureBox5.TabStop = False
+        ' 
         ' Label1
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.Location = New Point(57, 18)
         Label1.Name = "Label1"
-        Label1.Size = New Size(111, 25)
+        Label1.Size = New Size(116, 25)
         Label1.TabIndex = 1
-        Label1.Text = "Amoxicillin"
+        Label1.Text = "12/14/2024"
         ' 
         ' PictureBox1
         ' 
@@ -102,9 +122,9 @@ Partial Class DoctorAppointment
         Label2.Font = New Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label2.Location = New Point(83, 55)
         Label2.Name = "Label2"
-        Label2.Size = New Size(117, 17)
+        Label2.Size = New Size(101, 17)
         Label2.TabIndex = 2
-        Label2.Text = "Dr. Ronald Dycoco"
+        Label2.Text = "Ashley Mahusay"
         ' 
         ' Label4
         ' 
@@ -112,9 +132,9 @@ Partial Class DoctorAppointment
         Label4.Font = New Font("Segoe UI", 9.75F)
         Label4.Location = New Point(225, 55)
         Label4.Name = "Label4"
-        Label4.Size = New Size(47, 17)
+        Label4.Size = New Size(63, 17)
         Label4.TabIndex = 3
-        Label4.Text = "7 Days"
+        Label4.Text = "10:00 AM"
         ' 
         ' Panel1
         ' 
@@ -203,26 +223,6 @@ Partial Class DoctorAppointment
         PictureBox6.TabIndex = 8
         PictureBox6.TabStop = False
         ' 
-        ' Label8
-        ' 
-        Label8.AutoSize = True
-        Label8.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label8.Location = New Point(11, 15)
-        Label8.Name = "Label8"
-        Label8.Size = New Size(180, 20)
-        Label8.TabIndex = 12
-        Label8.Text = "Upcoming Appointments"
-        ' 
-        ' PictureBox5
-        ' 
-        PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), Image)
-        PictureBox5.Location = New Point(65, 55)
-        PictureBox5.Name = "PictureBox5"
-        PictureBox5.Size = New Size(16, 17)
-        PictureBox5.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox5.TabIndex = 14
-        PictureBox5.TabStop = False
-        ' 
         ' DoctorAppointment
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -243,6 +243,7 @@ Partial Class DoctorAppointment
         RoundedPanel1.PerformLayout()
         RoundedPanel2.ResumeLayout(False)
         RoundedPanel2.PerformLayout()
+        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
@@ -251,7 +252,6 @@ Partial Class DoctorAppointment
         RoundedPanel5.ResumeLayout(False)
         RoundedPanel5.PerformLayout()
         CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 

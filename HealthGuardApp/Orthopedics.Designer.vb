@@ -87,9 +87,9 @@ Partial Class Orthopedics
         Label3.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label3.Location = New Point(103, 379)
         Label3.Name = "Label3"
-        Label3.Size = New Size(99, 21)
+        Label3.Size = New Size(92, 21)
         Label3.TabIndex = 2
-        Label3.Text = "Orthopedist"
+        Label3.Text = "Psychiatrist"
         ' 
         ' Label2
         ' 
@@ -97,9 +97,9 @@ Partial Class Orthopedics
         Label2.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label2.Location = New Point(43, 354)
         Label2.Name = "Label2"
-        Label2.Size = New Size(218, 25)
+        Label2.Size = New Size(214, 25)
         Label2.TabIndex = 1
-        Label2.Text = "Dr. Tanya Marquez Sale"
+        Label2.Text = "Dr. Tanya Marquez Lao"
         ' 
         ' PictureBox1
         ' 
