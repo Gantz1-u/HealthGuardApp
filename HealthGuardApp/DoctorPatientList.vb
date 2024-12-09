@@ -34,38 +34,43 @@ Public Class DoctorPatientList
         ApplyRoundedCorners() ' Reapply the rounded corners when resizing
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        DoctorMenuPage.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
-        DoctorMenuPage.Show()
-        Me.Hide()
-    End Sub
-
+    ' PictureBox click handlers for CirclePictureBox
     Private Sub CirclePictureBox1_Click(sender As Object, e As EventArgs) Handles CirclePictureBox1.Click
-        DoctorPatientData.Show()
-        Me.Hide()
+        ShowDoctorPatientData("1") ' Pass the selected patient ID to DoctorPatientData
     End Sub
 
     Private Sub CirclePictureBox2_Click(sender As Object, e As EventArgs) Handles CirclePictureBox2.Click
-        DoctorPatientData.Show()
-        Me.Hide()
+        ShowDoctorPatientData("2") ' Pass the selected patient ID to DoctorPatientData
     End Sub
 
     Private Sub CirclePictureBox3_Click(sender As Object, e As EventArgs) Handles CirclePictureBox3.Click
-        DoctorPatientData.Show()
-        Me.Hide()
+        ShowDoctorPatientData("3") ' Pass the selected patient ID to DoctorPatientData
     End Sub
 
     Private Sub CirclePictureBox4_Click(sender As Object, e As EventArgs) Handles CirclePictureBox4.Click
-        DoctorPatientData.Show()
-        Me.Hide()
+        ShowDoctorPatientData("4") ' Pass the selected patient ID to DoctorPatientData
     End Sub
 
     Private Sub CirclePictureBox5_Click(sender As Object, e As EventArgs) Handles CirclePictureBox5.Click
-        DoctorPatientData.Show()
+        ShowDoctorPatientData("5") ' Pass the selected patient ID to DoctorPatientData
+    End Sub
+
+    ' Method to show DoctorPatientData form and pass the selected patient ID
+    Private Sub ShowDoctorPatientData(patientID As String)
+        Dim doctorPatientDataForm As New DoctorPatientData(patientID)
+        doctorPatientDataForm.Show() ' Show the DoctorPatientData form
+        Me.Hide() ' Hide the current form
+    End Sub
+
+    ' Back button functionality
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        DoctorMenuPage.Show()
+        Me.Hide() ' Navigate back to the DoctorMenuPage
+    End Sub
+
+    ' Home button functionality
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        DoctorMenuPage.Show()
         Me.Hide()
     End Sub
 End Class
