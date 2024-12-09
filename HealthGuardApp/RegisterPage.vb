@@ -4,14 +4,11 @@ Imports MySql.Data.MySqlClient
 Public Class RegisterPage
     Inherits Form
 
-    ' Define the radius for the rounded corners
-    Private _cornerRadius As Integer = 50
+    Private ReadOnly _cornerRadius As Integer = 50
+    Private ReadOnly DB As New DBConnection()
 
-    ' Properties for UserID and UserRole
     Public Property UserId As Integer
     Public Property UserRole As String
-
-    Private DB As New DBConnection()
 
     Public Sub New()
         InitializeComponent()
@@ -22,48 +19,51 @@ Public Class RegisterPage
     ' Apply rounded corners to the form
     Private Sub ApplyRoundedCorners()
         Dim path As New GraphicsPath()
+        Dim width = Me.Width, height = Me.Height
+
         path.AddArc(0, 0, _cornerRadius, _cornerRadius, 180, 90)
-        path.AddArc(Me.Width - _cornerRadius, 0, _cornerRadius, _cornerRadius, 270, 90)
-        path.AddArc(Me.Width - _cornerRadius, Me.Height - _cornerRadius, _cornerRadius, _cornerRadius, 0, 90)
-        path.AddArc(0, Me.Height - _cornerRadius, _cornerRadius, _cornerRadius, 90, 90)
+        path.AddArc(width - _cornerRadius, 0, _cornerRadius, _cornerRadius, 270, 90)
+        path.AddArc(width - _cornerRadius, height - _cornerRadius, _cornerRadius, _cornerRadius, 0, 90)
+        path.AddArc(0, height - _cornerRadius, _cornerRadius, _cornerRadius, 90, 90)
         path.CloseFigure()
+
         Me.Region = New Region(path)
     End Sub
 
-    ' Set the UserID and UserRole
+    ' Set user details
     Public Sub SetUserDetails(newUserId As Integer, role As String)
         UserId = newUserId
         UserRole = role
     End Sub
 
-    ' Handle the button click for saving user data and opening InputInfoPage
+    ' Handle saving/updating user data
     Private Sub RoundedButton3_Click(sender As Object, e As EventArgs) Handles RoundedButton3.Click
-        ' Collect user inputs
-        Dim firstName = RoundedTextBox5.Text.Trim
-        Dim lastName = RoundedTextBox6.Text.Trim
-        Dim email = RoundedTextBox1.Text.Trim
-        Dim phoneNumber = RoundedTextBox7.Text.Trim
-        Dim password = RoundedTextBox2.Text.Trim
+        Dim firstName = RoundedTextBox5.Text.Trim()
+        Dim lastName = RoundedTextBox6.Text.Trim()
+        Dim email = RoundedTextBox1.Text.Trim()
+        Dim phoneNumber = RoundedTextBox7.Text.Trim()
+        Dim password = RoundedTextBox2.Text.Trim()
         Dim status = If(UserRole = "Patient", "Active", "Pending")
 
-        ' Validate required fields
-        If String.IsNullOrEmpty(firstName) OrElse String.IsNullOrEmpty(lastName) OrElse String.IsNullOrEmpty(phoneNumber) Then
+        If String.IsNullOrWhiteSpace(firstName) OrElse String.IsNullOrWhiteSpace(lastName) OrElse String.IsNullOrWhiteSpace(phoneNumber) Then
             MessageBox.Show("Please fill all required fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
-        ' Prepare query
-        Dim query As String = If(UserId = 0,
-                                  "INSERT INTO accounts (Role, FirstName, LastName, EmailUsername, Password, ContactNumber, Status, CreationDate) 
-                                  VALUES (@Role, @FirstName, @LastName, @Email, @Password, @PhoneNumber, @Status, NOW()); 
-                                  SELECT LAST_INSERT_ID();",
-                                  "UPDATE accounts SET Role = @Role, FirstName = @FirstName, LastName = @LastName, 
-                                  EmailUsername = @Email, Password = @Password, ContactNumber = @PhoneNumber, Status = @Status 
-                                  WHERE UserID = @UserId;")
+        SaveOrUpdateAccount(firstName, lastName, email, phoneNumber, password, status)
+    End Sub
+
+    ' Save or update account
+    Private Sub SaveOrUpdateAccount(firstName As String, lastName As String, email As String, phoneNumber As String, password As String, status As String)
+        Dim query = If(UserId = 0,
+            "INSERT INTO accounts (Role, FirstName, LastName, EmailUsername, Password, ContactNumber, Status, CreationDate) 
+             VALUES (@Role, @FirstName, @LastName, @Email, @Password, @PhoneNumber, @Status, NOW());
+             SELECT LAST_INSERT_ID();",
+            "UPDATE accounts SET Role = @Role, FirstName = @FirstName, LastName = @LastName, EmailUsername = @Email, 
+             Password = @Password, ContactNumber = @PhoneNumber, Status = @Status WHERE UserID = @UserId;")
 
         Try
-            Dim connection = DB.Open()
-            Using cmd As New MySqlCommand(query, connection)
+            Using connection = DB.Open(), cmd As New MySqlCommand(query, connection)
                 cmd.Parameters.AddWithValue("@Role", UserRole)
                 cmd.Parameters.AddWithValue("@FirstName", firstName)
                 cmd.Parameters.AddWithValue("@LastName", lastName)
@@ -76,20 +76,23 @@ Public Class RegisterPage
                     UserId = Convert.ToInt32(cmd.ExecuteScalar())
                     MessageBox.Show($"Account successfully created! UserID: {UserId}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-                    ' Open InputInfoPage without passing PatientID
-                    Dim inputInfoPage As New InputInfoPage()
-                    Try
-                        inputInfoPage.Show()
-                        Me.Hide() ' Optionally hide RegisterPage
-                    Catch ex As Exception
-                        MessageBox.Show($"Error opening InputInfoPage: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    End Try
+                    ' If the role is "Patient", insert a patient record
+                    If UserRole.ToLower() = "patient" Then
+                        Dim newPatientId = InsertPatient(connection)
+                        LinkPatientToAccount(connection, UserId, newPatientId)
+                        MessageBox.Show($"Patient record created and linked to the account. PatientID: {newPatientId}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    End If
                 Else
                     cmd.Parameters.AddWithValue("@UserId", UserId)
                     cmd.ExecuteNonQuery()
                     MessageBox.Show($"Account successfully updated! UserID: {UserId}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End Using
+
+            Dim inputInfoPage As New InputInfoPage()
+            inputInfoPage.Show()
+            Me.Hide()
+
         Catch ex As Exception
             MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
@@ -97,16 +100,35 @@ Public Class RegisterPage
         End Try
     End Sub
 
-    Private Sub RegisterPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If UserId > 0 Then
-            MessageBox.Show($"Updating details for UserID: {UserId}", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Else
-            MessageBox.Show("Creating a new account record.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
+    ' Insert patient if the role is patient
+    Private Function InsertPatient(connection As MySqlConnection) As Integer
+        Dim query = "INSERT INTO patients (FirstName, LastName) VALUES ('', ''); SELECT LAST_INSERT_ID();"
+
+        Using cmd As New MySqlCommand(query, connection)
+            Return Convert.ToInt32(cmd.ExecuteScalar())
+        End Using
+    End Function
+
+    ' Link patient record to the account
+    Private Sub LinkPatientToAccount(connection As MySqlConnection, userId As Integer, patientId As Integer)
+        Dim query = "UPDATE accounts SET PatientID = @PatientID WHERE UserID = @UserID;"
+
+        Using cmd As New MySqlCommand(query, connection)
+            cmd.Parameters.AddWithValue("@PatientID", patientId)
+            cmd.Parameters.AddWithValue("@UserID", userId)
+            cmd.ExecuteNonQuery()
+        End Using
     End Sub
 
+    ' Handle form load
+    Private Sub RegisterPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim message = If(UserId > 0, $"Updating details for UserID: {UserId}", "Creating a new account record.")
+        MessageBox.Show(message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
+
+    ' Navigate to LoginPage
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         LoginPage.Show()
-        Hide()
+        Me.Hide()
     End Sub
 End Class
