@@ -111,6 +111,12 @@ Public Class RegisterPage
                     ' Execute insert and retrieve new UserID
                     UserId = Convert.ToInt32(cmd.ExecuteScalar())
                     MessageBox.Show($"Account successfully created! UserID: {UserId}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                    ' After creating the account, open InputInfoPage with new PatientID
+                    Dim inputInfoPage As New InputInfoPage()
+                    inputInfoPage.SetPatientId(PatientId)
+                    inputInfoPage.Show()
+                    Me.Hide()
                 Else
                     ' Execute update
                     cmd.Parameters.AddWithValue("@UserId", UserId)
@@ -124,7 +130,6 @@ Public Class RegisterPage
             DB.Close()
         End Try
     End Sub
-
 
     Private Sub RegisterPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If UserId > 0 Then

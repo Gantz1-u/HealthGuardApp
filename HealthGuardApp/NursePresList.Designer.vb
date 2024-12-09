@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class PatientList
+Partial Class NursePresList
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class PatientList
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PatientList))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NursePresList))
         RoundedPanel1 = New RoundedPanel()
         RoundedPanel4 = New RoundedPanel()
         RoundedPanel2 = New RoundedPanel()
@@ -71,7 +71,7 @@ Partial Class PatientList
         RoundedPanel4.Location = New Point(11, 138)
         RoundedPanel4.Name = "RoundedPanel4"
         RoundedPanel4.Size = New Size(355, 555)
-        RoundedPanel4.TabIndex = 67
+        RoundedPanel4.TabIndex = 70
         ' 
         ' RoundedPanel2
         ' 
@@ -155,7 +155,7 @@ Partial Class PatientList
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(38, 36)
         PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox1.TabIndex = 66
+        PictureBox1.TabIndex = 69
         PictureBox1.TabStop = False
         ' 
         ' Panel1
@@ -168,7 +168,7 @@ Partial Class PatientList
         Panel1.Location = New Point(-9, 0)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(400, 68)
-        Panel1.TabIndex = 65
+        Panel1.TabIndex = 68
         ' 
         ' Label1
         ' 
@@ -204,19 +204,17 @@ Partial Class PatientList
         PictureBox4.TabIndex = 23
         PictureBox4.TabStop = False
         ' 
-        ' PatientList
+        ' NursePresList
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.Black
-        BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(400, 750)
         Controls.Add(RoundedPanel1)
-        DoubleBuffered = True
         FormBorderStyle = FormBorderStyle.None
-        Name = "PatientList"
+        Name = "NursePresList"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "PersonalInfo"
+        Text = "NursePresList"
         RoundedPanel1.ResumeLayout(False)
         RoundedPanel4.ResumeLayout(False)
         RoundedPanel2.ResumeLayout(False)
@@ -233,11 +231,6 @@ Partial Class PatientList
     End Sub
 
     Friend WithEvents RoundedPanel1 As RoundedPanel
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label1 As Label
-    Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents RoundedPanel4 As RoundedPanel
     Friend WithEvents RoundedPanel2 As RoundedPanel
     Friend WithEvents Label3 As Label
@@ -246,4 +239,9 @@ Partial Class PatientList
     Friend WithEvents RoundedPanel3 As RoundedPanel
     Friend WithEvents RoundedTextBox1 As RoundedTextBox
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
 End Class

@@ -500,9 +500,12 @@ Partial Class SchedulePage
         dtp_AppointmentDate.CustomFormat = "yyyy-MM-dd"
         dtp_AppointmentDate.Format = DateTimePickerFormat.Custom
         dtp_AppointmentDate.Location = New Point(33, 203)
+        dtp_AppointmentDate.MaxDate = New Date(2030, 12, 31, 0, 0, 0, 0)
+        dtp_AppointmentDate.MinDate = New Date(2024, 12, 10, 0, 0, 0, 0)
         dtp_AppointmentDate.Name = "dtp_AppointmentDate"
         dtp_AppointmentDate.Size = New Size(313, 23)
         dtp_AppointmentDate.TabIndex = 95
+        dtp_AppointmentDate.Value = New Date(2024, 12, 10, 0, 0, 0, 0)
         ' 
         ' btn_9
         ' 

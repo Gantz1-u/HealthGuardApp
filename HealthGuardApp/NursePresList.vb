@@ -1,6 +1,6 @@
 ﻿Imports System.Drawing.Drawing2D
 
-Public Class NurseMenuPage
+Public Class NursePresList
     Inherits Form
 
     ' Define the radius for the rounded corners
@@ -34,21 +34,18 @@ Public Class NurseMenuPage
         ApplyRoundedCorners() ' Reapply the rounded corners when resizing
     End Sub
 
-    Private Sub RoundedButton1_Click(sender As Object, e As EventArgs) Handles RoundedButton1.Click
-        PatientList.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub RoundedButton2_Click(sender As Object, e As EventArgs) Handles RoundedButton2.Click
-        NursePresList.Show()
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        NurseMenuPage.Show()
         Me.Hide()
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        LoginPage.LoggedInUserID = 0
+        NurseMenuPage.Show()
+        Me.Hide()
+    End Sub
 
-        ' Show the LoginPage and hide the current form
-        LoginPage.Show()
-        Hide()
+    Private Sub CirclePictureBox1_Click(sender As Object, e As EventArgs) Handles CirclePictureBox1.Click
+        doctor_prescription.Show()
+        Me.Hide()
     End Sub
 End Class

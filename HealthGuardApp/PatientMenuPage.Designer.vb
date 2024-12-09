@@ -200,7 +200,7 @@ Partial Class PatientMenuPage
         ' 
         PictureBox2.BackColor = Color.Transparent
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(-5, 27)
+        PictureBox2.Location = New Point(-9, 27)
         PictureBox2.Name = "PictureBox2"
         PictureBox2.Size = New Size(387, 300)
         PictureBox2.SizeMode = PictureBoxSizeMode.Zoom

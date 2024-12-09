@@ -35,17 +35,13 @@ Public Class PaatientData
         ApplyRoundedCorners() ' Reapply the rounded corners when resizing
     End Sub
 
-    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
-        DoctorPatientList.Show()
-        Me.Hide()
-    End Sub
-
     Private Sub PaatientData_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Assuming you have a patientID value you want to pass in
         Dim patientID As Integer = 1 ' Set the correct PatientID dynamically
         LoadPatientData(patientID)
     End Sub
 
+    ' Fixed method to handle loading patient data
     Private Sub LoadPatientData(patientID As Integer)
         ' Initialize DB connection
         Dim conn As New DBConnection()
@@ -54,11 +50,11 @@ Public Class PaatientData
         conn.Open()
 
         ' SQL query to retrieve patient data based on the PatientID
-        Dim query As String = "SELECT PatientID, FirstName, MiddleName, LastName, Sex, DateOfBirth, Age, BloodType, Phone, ParentGuardian, Email, Address, PrimaryDiagnoses FROM Patients WHERE PatientID = @1"
-        Dim cmd As New MySqlCommand(query, conn.Open()) ' Ensure the connection is opened
+        Dim query As String = "SELECT PatientID, FirstName, MiddleName, LastName, Sex, DateOfBirth, Age, BloodType, Phone, ParentGuardian, Email, Address, PrimaryDiagnoses FROM Patients WHERE PatientID = @PatientID"
+        Dim cmd As New MySqlCommand(query, conn.Open()) ' Use the connection directly
 
         ' Use parameterized query to prevent SQL injection
-        cmd.Parameters.AddWithValue("@1", patientID)
+        cmd.Parameters.AddWithValue("@PatientID", patientID)
 
         Try
             ' Execute the query and read the data
@@ -89,5 +85,17 @@ Public Class PaatientData
             ' Always close the connection when done
             conn.Close()
         End Try
+    End Sub
+
+    ' Corrected method call to Hide() 
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        NurseMenuPage.Show()
+        Me.Hide()
+    End Sub
+
+    ' Corrected method call to Hide() 
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        PatientList.Show()
+        Me.Hide() ' Fix: Use Me.Hide() instead of Me.hide
     End Sub
 End Class

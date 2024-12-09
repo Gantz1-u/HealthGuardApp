@@ -33,7 +33,6 @@ Public Class SchedulePage
         AppointmentDate = Nothing
         AppointmentTime = String.Empty
         AppointmentNote = String.Empty
-        dtp_AppointmentDate.Value = Date.Today
         txt_Note.Clear()
 
         If lastSelectedButton IsNot Nothing Then
