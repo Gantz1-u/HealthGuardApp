@@ -83,11 +83,11 @@ Partial Class Psychiatry
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(85, 354)
+        Label2.Location = New Point(37, 354)
         Label2.Name = "Label2"
-        Label2.Size = New Size(135, 25)
+        Label2.Size = New Size(231, 25)
         Label2.TabIndex = 1
-        Label2.Text = "Dr. Brian Dilig"
+        Label2.Text = "Dr. Joseph Palma Shaffer"
         ' 
         ' PictureBox1
         ' 

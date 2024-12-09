@@ -127,17 +127,6 @@ Public Class LoginPage
         End Try
     End Sub
 
-    ' Toggle password visibility
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        If passwordVisible Then
-            RoundedTextBox3.UseSystemPasswordChar = True
-        Else
-            RoundedTextBox3.UseSystemPasswordChar = False
-        End If
-
-        passwordVisible = Not passwordVisible
-    End Sub
-
     ' Prevent Enter key in RoundedTextBox1
     Private Sub RoundedTextBox1_KeyDown(sender As Object, e As KeyEventArgs)
         If e.KeyCode = Keys.Enter Then
@@ -164,5 +153,33 @@ Public Class LoginPage
         MessageBox.Show("You have logged out successfully.", "Logged Out", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Me.Show() ' Show login page after logging out
     End Sub
+
+    ' Boolean variable to track password visibility
+    Private isPasswordVisible As Boolean = False
+
+    ' Toggle password visibility on PictureBox3 click
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        TogglePasswordVisibility()
+    End Sub
+
+    ' Toggle password visibility on PictureBox2 click
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        TogglePasswordVisibility()
+    End Sub
+
+    ' Method to toggle password visibility
+    Private Sub TogglePasswordVisibility()
+        isPasswordVisible = Not isPasswordVisible
+
+        ' Update password character visibility and PictureBox order
+        RoundedTextBox3.UseSystemPasswordChar = Not isPasswordVisible
+        If isPasswordVisible Then
+            PictureBox2.BringToFront() ' Show PictureBox2 when password is visible
+        Else
+            PictureBox3.BringToFront() ' Show PictureBox3 when password is hidden
+        End If
+    End Sub
+
+
 
 End Class

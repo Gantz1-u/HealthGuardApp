@@ -33,6 +33,7 @@
         RoundedPanel4 = New RoundedPanel()
         RoundedTextBox4 = New RoundedTextBox()
         RoundedPanel2 = New RoundedPanel()
+        PictureBox4 = New PictureBox()
         RoundedTextBox2 = New RoundedTextBox()
         PictureBox3 = New PictureBox()
         RoundedPanel5 = New RoundedPanel()
@@ -41,6 +42,7 @@
         LinkLabel1 = New LinkLabel()
         Label5 = New Label()
         RoundedPanel3 = New RoundedPanel()
+        PictureBox5 = New PictureBox()
         RoundedTextBox3 = New RoundedTextBox()
         PictureBox2 = New PictureBox()
         RoundedPanel8 = New RoundedPanel()
@@ -52,9 +54,11 @@
         RoundedPanel6.SuspendLayout()
         RoundedPanel4.SuspendLayout()
         RoundedPanel2.SuspendLayout()
+        CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         RoundedPanel5.SuspendLayout()
         RoundedPanel3.SuspendLayout()
+        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         RoundedPanel8.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
@@ -142,6 +146,7 @@
         ' RoundedPanel2
         ' 
         RoundedPanel2.BackColor = SystemColors.Window
+        RoundedPanel2.Controls.Add(PictureBox4)
         RoundedPanel2.Controls.Add(RoundedTextBox2)
         RoundedPanel2.Controls.Add(PictureBox3)
         RoundedPanel2.CornerRadius = 20
@@ -149,6 +154,18 @@
         RoundedPanel2.Name = "RoundedPanel2"
         RoundedPanel2.Size = New Size(331, 48)
         RoundedPanel2.TabIndex = 44
+        ' 
+        ' PictureBox4
+        ' 
+        PictureBox4.BackColor = SystemColors.Window
+        PictureBox4.Cursor = Cursors.Hand
+        PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
+        PictureBox4.Location = New Point(292, 17)
+        PictureBox4.Name = "PictureBox4"
+        PictureBox4.Size = New Size(19, 16)
+        PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox4.TabIndex = 48
+        PictureBox4.TabStop = False
         ' 
         ' RoundedTextBox2
         ' 
@@ -239,6 +256,7 @@
         ' RoundedPanel3
         ' 
         RoundedPanel3.BackColor = SystemColors.Window
+        RoundedPanel3.Controls.Add(PictureBox5)
         RoundedPanel3.Controls.Add(RoundedTextBox3)
         RoundedPanel3.Controls.Add(PictureBox2)
         RoundedPanel3.CornerRadius = 20
@@ -246,6 +264,18 @@
         RoundedPanel3.Name = "RoundedPanel3"
         RoundedPanel3.Size = New Size(331, 48)
         RoundedPanel3.TabIndex = 40
+        ' 
+        ' PictureBox5
+        ' 
+        PictureBox5.BackColor = SystemColors.Window
+        PictureBox5.Cursor = Cursors.Hand
+        PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), Image)
+        PictureBox5.Location = New Point(292, 17)
+        PictureBox5.Name = "PictureBox5"
+        PictureBox5.Size = New Size(19, 16)
+        PictureBox5.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox5.TabIndex = 49
+        PictureBox5.TabStop = False
         ' 
         ' RoundedTextBox3
         ' 
@@ -334,11 +364,13 @@
         RoundedPanel4.PerformLayout()
         RoundedPanel2.ResumeLayout(False)
         RoundedPanel2.PerformLayout()
+        CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         RoundedPanel5.ResumeLayout(False)
         RoundedPanel5.PerformLayout()
         RoundedPanel3.ResumeLayout(False)
         RoundedPanel3.PerformLayout()
+        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         RoundedPanel8.ResumeLayout(False)
         RoundedPanel8.PerformLayout()
@@ -368,4 +400,6 @@
     Friend WithEvents RoundedTextBox1 As RoundedTextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents PictureBox5 As PictureBox
 End Class

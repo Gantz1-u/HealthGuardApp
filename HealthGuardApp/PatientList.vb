@@ -44,12 +44,30 @@ Public Class PatientList
         Me.Hide()
     End Sub
 
-    Private Sub PatientList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
     Private Sub CirclePictureBox1_Click(sender As Object, e As EventArgs) Handles CirclePictureBox1.Click
         PaatientData.Show
-        Hide
+        Me.Hide()
     End Sub
+
+    Private Sub CirclePictureBox2_Click(sender As Object, e As EventArgs) Handles CirclePictureBox2.Click
+        PaatientData.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub CirclePictureBox3_Click(sender As Object, e As EventArgs) Handles CirclePictureBox3.Click
+        PaatientData.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub CirclePictureBox4_Click(sender As Object, e As EventArgs) Handles CirclePictureBox4.Click
+        PaatientData.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub CirclePictureBox5_Click(sender As Object, e As EventArgs) Handles CirclePictureBox5.Click
+        PaatientData.Show()
+        Me.Hide()
+    End Sub
+
+
 End Class

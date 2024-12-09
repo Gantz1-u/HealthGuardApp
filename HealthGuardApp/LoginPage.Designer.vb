@@ -34,6 +34,7 @@
         RoundedPanel3 = New RoundedPanel()
         RoundedTextBox1 = New RoundedTextBox()
         RoundedPanel2 = New RoundedPanel()
+        PictureBox3 = New PictureBox()
         RoundedTextBox3 = New RoundedTextBox()
         PictureBox2 = New PictureBox()
         RoundedPanel1 = New RoundedPanel()
@@ -41,6 +42,7 @@
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         RoundedPanel3.SuspendLayout()
         RoundedPanel2.SuspendLayout()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         RoundedPanel1.SuspendLayout()
         SuspendLayout()
@@ -146,6 +148,7 @@
         ' RoundedPanel2
         ' 
         RoundedPanel2.BackColor = SystemColors.Window
+        RoundedPanel2.Controls.Add(PictureBox3)
         RoundedPanel2.Controls.Add(RoundedTextBox3)
         RoundedPanel2.Controls.Add(PictureBox2)
         RoundedPanel2.CornerRadius = 20
@@ -153,6 +156,18 @@
         RoundedPanel2.Name = "RoundedPanel2"
         RoundedPanel2.Size = New Size(331, 48)
         RoundedPanel2.TabIndex = 25
+        ' 
+        ' PictureBox3
+        ' 
+        PictureBox3.BackColor = SystemColors.Window
+        PictureBox3.Cursor = Cursors.Hand
+        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
+        PictureBox3.Location = New Point(292, 17)
+        PictureBox3.Name = "PictureBox3"
+        PictureBox3.Size = New Size(19, 16)
+        PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox3.TabIndex = 26
+        PictureBox3.TabStop = False
         ' 
         ' RoundedTextBox3
         ' 
@@ -212,6 +227,7 @@
         RoundedPanel3.PerformLayout()
         RoundedPanel2.ResumeLayout(False)
         RoundedPanel2.PerformLayout()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         RoundedPanel1.ResumeLayout(False)
         RoundedPanel1.PerformLayout()
@@ -230,4 +246,5 @@
     Friend WithEvents RoundedTextBox3 As RoundedTextBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents RoundedPanel1 As RoundedPanel
+    Friend WithEvents PictureBox3 As PictureBox
 End Class

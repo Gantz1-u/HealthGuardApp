@@ -83,11 +83,11 @@ Partial Class SpecialistPage
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(64, 354)
+        Label2.Location = New Point(34, 354)
         Label2.Name = "Label2"
-        Label2.Size = New Size(176, 25)
+        Label2.Size = New Size(236, 25)
         Label2.TabIndex = 1
-        Label2.Text = "Dr. Ronald Dycoco"
+        Label2.Text = "Dr. Robert Luis Anderson"
         ' 
         ' PictureBox1
         ' 

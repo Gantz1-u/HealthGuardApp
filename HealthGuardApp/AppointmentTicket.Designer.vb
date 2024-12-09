@@ -25,7 +25,6 @@ Partial Class AppointmentTicket
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AppointmentTicket))
         RoundedPanel1 = New RoundedPanel()
         RoundedPanel2 = New RoundedPanel()
-        RichTextBox1 = New RichTextBox()
         Label5 = New Label()
         Label4 = New Label()
         Label2 = New Label()
@@ -40,6 +39,7 @@ Partial Class AppointmentTicket
         PictureBox3 = New PictureBox()
         RoundedButton2 = New CustomControls.RJControls.RoundedButton()
         RoundedButton1 = New CustomControls.RJControls.RoundedButton()
+        Label6 = New Label()
         RoundedPanel1.SuspendLayout()
         RoundedPanel2.SuspendLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
@@ -66,7 +66,7 @@ Partial Class AppointmentTicket
         ' RoundedPanel2
         ' 
         RoundedPanel2.BackColor = Color.LightCyan
-        RoundedPanel2.Controls.Add(RichTextBox1)
+        RoundedPanel2.Controls.Add(Label6)
         RoundedPanel2.Controls.Add(Label5)
         RoundedPanel2.Controls.Add(Label4)
         RoundedPanel2.Controls.Add(Label2)
@@ -79,14 +79,6 @@ Partial Class AppointmentTicket
         RoundedPanel2.Name = "RoundedPanel2"
         RoundedPanel2.Size = New Size(345, 312)
         RoundedPanel2.TabIndex = 38
-        ' 
-        ' RichTextBox1
-        ' 
-        RichTextBox1.Location = New Point(66, 206)
-        RichTextBox1.Name = "RichTextBox1"
-        RichTextBox1.Size = New Size(263, 82)
-        RichTextBox1.TabIndex = 4
-        RichTextBox1.Text = ""
         ' 
         ' Label5
         ' 
@@ -267,6 +259,17 @@ Partial Class AppointmentTicket
         RoundedButton1.TextColor = Color.Black
         RoundedButton1.UseVisualStyleBackColor = False
         ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.BackColor = Color.Transparent
+        Label6.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold)
+        Label6.Location = New Point(12, 237)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(101, 20)
+        Label6.TabIndex = 4
+        Label6.Text = "Doctor Name"
+        ' 
         ' AppointmentTicket
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -306,5 +309,5 @@ Partial Class AppointmentTicket
     Friend WithEvents Label3 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents Label6 As Label
 End Class

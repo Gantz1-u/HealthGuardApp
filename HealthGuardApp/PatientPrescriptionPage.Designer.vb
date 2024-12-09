@@ -57,9 +57,9 @@ Partial Class PatientPrescriptionPage
         ' 
         RoundedPanel1.BackgroundImage = CType(resources.GetObject("RoundedPanel1.BackgroundImage"), Image)
         RoundedPanel1.BackgroundImageLayout = ImageLayout.Stretch
+        RoundedPanel1.Controls.Add(RoundedPanel2)
         RoundedPanel1.Controls.Add(Panel1)
         RoundedPanel1.Controls.Add(PictureBox2)
-        RoundedPanel1.Controls.Add(RoundedPanel2)
         RoundedPanel1.CornerRadius = 20
         RoundedPanel1.Location = New Point(12, 26)
         RoundedPanel1.Name = "RoundedPanel1"

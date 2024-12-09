@@ -83,11 +83,11 @@ Partial Class DermatologyPage
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(74, 354)
+        Label2.Location = New Point(46, 354)
         Label2.Name = "Label2"
-        Label2.Size = New Size(157, 25)
+        Label2.Size = New Size(212, 25)
         Label2.TabIndex = 1
-        Label2.Text = "Dr. Christian Pila"
+        Label2.Text = "Dr. Noel Carino Hauge"
         ' 
         ' PictureBox1
         ' 

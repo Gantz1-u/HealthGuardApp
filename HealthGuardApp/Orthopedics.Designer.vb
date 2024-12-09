@@ -85,28 +85,28 @@ Partial Class Orthopedics
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(94, 379)
+        Label3.Location = New Point(103, 379)
         Label3.Name = "Label3"
-        Label3.Size = New Size(117, 21)
+        Label3.Size = New Size(99, 21)
         Label3.TabIndex = 2
-        Label3.Text = "Orthopediatist"
+        Label3.Text = "Orthopedist"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(45, 354)
+        Label2.Location = New Point(43, 354)
         Label2.Name = "Label2"
-        Label2.Size = New Size(214, 25)
+        Label2.Size = New Size(218, 25)
         Label2.TabIndex = 1
-        Label2.Text = "Dr. Emilou Quimiguing"
+        Label2.Text = "Dr. Tanya Marquez Sale"
         ' 
         ' PictureBox1
         ' 
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(20, 55)
+        PictureBox1.Location = New Point(20, 0)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(264, 286)
+        PictureBox1.Size = New Size(264, 424)
         PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False

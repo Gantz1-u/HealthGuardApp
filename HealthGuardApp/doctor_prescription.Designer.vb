@@ -25,10 +25,8 @@ Partial Class doctor_prescription
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(doctor_prescription))
         RoundedPanel1 = New RoundedPanel()
         RoundedPanel2 = New RoundedPanel()
-        RoundedButton1 = New CustomControls.RJControls.RoundedButton()
         RoundedPanel3 = New RoundedPanel()
         PictureBox6 = New PictureBox()
-        Button1 = New Button()
         PictureBox5 = New PictureBox()
         Label7 = New Label()
         Label2 = New Label()
@@ -74,38 +72,17 @@ Partial Class doctor_prescription
         ' RoundedPanel2
         ' 
         RoundedPanel2.BackColor = SystemColors.ButtonFace
-        RoundedPanel2.Controls.Add(RoundedButton1)
         RoundedPanel2.Controls.Add(RoundedPanel3)
         RoundedPanel2.CornerRadius = 20
         RoundedPanel2.Location = New Point(7, 199)
         RoundedPanel2.Name = "RoundedPanel2"
-        RoundedPanel2.Size = New Size(363, 339)
+        RoundedPanel2.Size = New Size(363, 498)
         RoundedPanel2.TabIndex = 70
-        ' 
-        ' RoundedButton1
-        ' 
-        RoundedButton1.BackColor = SystemColors.ButtonHighlight
-        RoundedButton1.BackgroundColor = SystemColors.ButtonHighlight
-        RoundedButton1.BorderColor = Color.PaleVioletRed
-        RoundedButton1.BorderRadius = 9
-        RoundedButton1.BorderSize = 0
-        RoundedButton1.FlatAppearance.BorderSize = 0
-        RoundedButton1.FlatAppearance.MouseOverBackColor = Color.SteelBlue
-        RoundedButton1.FlatStyle = FlatStyle.Flat
-        RoundedButton1.ForeColor = Color.Black
-        RoundedButton1.Location = New Point(9, 149)
-        RoundedButton1.Name = "RoundedButton1"
-        RoundedButton1.Size = New Size(345, 40)
-        RoundedButton1.TabIndex = 12
-        RoundedButton1.Text = "EDIT"
-        RoundedButton1.TextColor = Color.Black
-        RoundedButton1.UseVisualStyleBackColor = False
         ' 
         ' RoundedPanel3
         ' 
         RoundedPanel3.BackColor = SystemColors.ButtonHighlight
         RoundedPanel3.Controls.Add(PictureBox6)
-        RoundedPanel3.Controls.Add(Button1)
         RoundedPanel3.Controls.Add(PictureBox5)
         RoundedPanel3.Controls.Add(Label7)
         RoundedPanel3.Controls.Add(Label2)
@@ -131,15 +108,6 @@ Partial Class doctor_prescription
         PictureBox6.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox6.TabIndex = 18
         PictureBox6.TabStop = False
-        ' 
-        ' Button1
-        ' 
-        Button1.Location = New Point(205, 10)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(117, 21)
-        Button1.TabIndex = 17
-        Button1.Text = "Mark Complete"
-        Button1.UseVisualStyleBackColor = True
         ' 
         ' PictureBox5
         ' 
@@ -344,10 +312,8 @@ Partial Class doctor_prescription
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents RoundedPanel2 As RoundedPanel
-    Friend WithEvents RoundedButton1 As CustomControls.RJControls.RoundedButton
     Friend WithEvents RoundedPanel3 As RoundedPanel
     Friend WithEvents PictureBox6 As PictureBox
-    Friend WithEvents Button1 As Button
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label2 As Label

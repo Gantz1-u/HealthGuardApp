@@ -143,4 +143,41 @@ Public Class RegisterPage
         LoginPage.Show()
         Hide()
     End Sub
+
+    ' Boolean variables to track visibility for Password and Confirm Password
+    Private isPasswordVisible As Boolean = False
+    Private isConfirmPasswordVisible As Boolean = False
+
+    ' Toggle visibility for the Password field
+    Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
+        TogglePasswordVisibility(RoundedTextBox3, PictureBox2, PictureBox5, isPasswordVisible)
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        TogglePasswordVisibility(RoundedTextBox3, PictureBox2, PictureBox5, isPasswordVisible)
+    End Sub
+
+    ' Toggle visibility for the Confirm Password field
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        TogglePasswordVisibility(RoundedTextBox2, PictureBox3, PictureBox4, isConfirmPasswordVisible)
+    End Sub
+
+    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+        TogglePasswordVisibility(RoundedTextBox2, PictureBox3, PictureBox4, isConfirmPasswordVisible)
+    End Sub
+
+    ' General method to toggle visibility
+    Private Sub TogglePasswordVisibility(textBox As TextBox, pictureBoxShow As PictureBox, pictureBoxHide As PictureBox, ByRef isVisible As Boolean)
+        isVisible = Not isVisible
+
+        ' Update password character visibility and PictureBox order
+        textBox.UseSystemPasswordChar = Not isVisible
+        If isVisible Then
+            pictureBoxShow.BringToFront() ' Show "Hide Password" icon
+        Else
+            pictureBoxHide.BringToFront() ' Show "Show Password" icon
+        End If
+    End Sub
+
+
 End Class

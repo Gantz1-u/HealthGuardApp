@@ -46,6 +46,26 @@ Public Class NursePresList
 
     Private Sub CirclePictureBox1_Click(sender As Object, e As EventArgs) Handles CirclePictureBox1.Click
         doctor_prescription.Show
-        Hide
+        Me.Hide()
+    End Sub
+
+    Private Sub CirclePictureBox2_Click(sender As Object, e As EventArgs) Handles CirclePictureBox2.Click
+        doctor_prescription.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub CirclePictureBox3_Click(sender As Object, e As EventArgs) Handles CirclePictureBox3.Click
+        doctor_prescription.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub CirclePictureBox4_Click(sender As Object, e As EventArgs) Handles CirclePictureBox4.Click
+        doctor_prescription.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub CirclePictureBox5_Click(sender As Object, e As EventArgs) Handles CirclePictureBox5.Click
+        doctor_prescription.Show()
+        Me.Hide()
     End Sub
 End Class
