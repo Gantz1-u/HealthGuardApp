@@ -25,11 +25,11 @@ Partial Class DoctorPrescription
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DoctorPrescription))
         PictureBox2 = New PictureBox()
         RoundedPanel1 = New RoundedPanel()
-        RoundedTextBox5 = New RoundedTextBox()
-        RoundedTextBox4 = New RoundedTextBox()
-        RoundedTextBox3 = New RoundedTextBox()
-        RoundedTextBox2 = New RoundedTextBox()
-        RoundedTextBox1 = New RoundedTextBox()
+        txt_Instruction = New RoundedTextBox()
+        txt_Duration = New RoundedTextBox()
+        txt_Frequency = New RoundedTextBox()
+        txt_Dosage = New RoundedTextBox()
+        txt_MedicineName = New RoundedTextBox()
         Label6 = New Label()
         Label5 = New Label()
         Label4 = New Label()
@@ -41,6 +41,7 @@ Partial Class DoctorPrescription
         Label3 = New Label()
         PictureBox3 = New PictureBox()
         PictureBox4 = New PictureBox()
+        lbl_SelectedPatient = New Label()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         RoundedPanel1.SuspendLayout()
         Panel1.SuspendLayout()
@@ -62,11 +63,11 @@ Partial Class DoctorPrescription
         ' 
         ' RoundedPanel1
         ' 
-        RoundedPanel1.Controls.Add(RoundedTextBox5)
-        RoundedPanel1.Controls.Add(RoundedTextBox4)
-        RoundedPanel1.Controls.Add(RoundedTextBox3)
-        RoundedPanel1.Controls.Add(RoundedTextBox2)
-        RoundedPanel1.Controls.Add(RoundedTextBox1)
+        RoundedPanel1.Controls.Add(txt_Instruction)
+        RoundedPanel1.Controls.Add(txt_Duration)
+        RoundedPanel1.Controls.Add(txt_Frequency)
+        RoundedPanel1.Controls.Add(txt_Dosage)
+        RoundedPanel1.Controls.Add(txt_MedicineName)
         RoundedPanel1.Controls.Add(Label6)
         RoundedPanel1.Controls.Add(Label5)
         RoundedPanel1.Controls.Add(Label4)
@@ -80,45 +81,45 @@ Partial Class DoctorPrescription
         RoundedPanel1.Size = New Size(364, 266)
         RoundedPanel1.TabIndex = 13
         ' 
-        ' RoundedTextBox5
+        ' txt_Instruction
         ' 
-        RoundedTextBox5.BackColor = Color.White
-        RoundedTextBox5.Location = New Point(95, 120)
-        RoundedTextBox5.Name = "RoundedTextBox5"
-        RoundedTextBox5.Size = New Size(221, 23)
-        RoundedTextBox5.TabIndex = 24
+        txt_Instruction.BackColor = Color.White
+        txt_Instruction.Location = New Point(95, 120)
+        txt_Instruction.Name = "txt_Instruction"
+        txt_Instruction.Size = New Size(221, 23)
+        txt_Instruction.TabIndex = 24
         ' 
-        ' RoundedTextBox4
+        ' txt_Duration
         ' 
-        RoundedTextBox4.BackColor = Color.White
-        RoundedTextBox4.Location = New Point(75, 94)
-        RoundedTextBox4.Name = "RoundedTextBox4"
-        RoundedTextBox4.Size = New Size(221, 23)
-        RoundedTextBox4.TabIndex = 23
+        txt_Duration.BackColor = Color.White
+        txt_Duration.Location = New Point(75, 94)
+        txt_Duration.Name = "txt_Duration"
+        txt_Duration.Size = New Size(221, 23)
+        txt_Duration.TabIndex = 23
         ' 
-        ' RoundedTextBox3
+        ' txt_Frequency
         ' 
-        RoundedTextBox3.BackColor = Color.White
-        RoundedTextBox3.Location = New Point(87, 65)
-        RoundedTextBox3.Name = "RoundedTextBox3"
-        RoundedTextBox3.Size = New Size(221, 23)
-        RoundedTextBox3.TabIndex = 22
+        txt_Frequency.BackColor = Color.White
+        txt_Frequency.Location = New Point(87, 65)
+        txt_Frequency.Name = "txt_Frequency"
+        txt_Frequency.Size = New Size(221, 23)
+        txt_Frequency.TabIndex = 22
         ' 
-        ' RoundedTextBox2
+        ' txt_Dosage
         ' 
-        RoundedTextBox2.BackColor = Color.White
-        RoundedTextBox2.Location = New Point(75, 40)
-        RoundedTextBox2.Name = "RoundedTextBox2"
-        RoundedTextBox2.Size = New Size(221, 23)
-        RoundedTextBox2.TabIndex = 21
+        txt_Dosage.BackColor = Color.White
+        txt_Dosage.Location = New Point(75, 40)
+        txt_Dosage.Name = "txt_Dosage"
+        txt_Dosage.Size = New Size(221, 23)
+        txt_Dosage.TabIndex = 21
         ' 
-        ' RoundedTextBox1
+        ' txt_MedicineName
         ' 
-        RoundedTextBox1.BackColor = Color.White
-        RoundedTextBox1.Location = New Point(125, 16)
-        RoundedTextBox1.Name = "RoundedTextBox1"
-        RoundedTextBox1.Size = New Size(221, 23)
-        RoundedTextBox1.TabIndex = 20
+        txt_MedicineName.BackColor = Color.White
+        txt_MedicineName.Location = New Point(124, 16)
+        txt_MedicineName.Name = "txt_MedicineName"
+        txt_MedicineName.Size = New Size(221, 23)
+        txt_MedicineName.TabIndex = 20
         ' 
         ' Label6
         ' 
@@ -249,6 +250,16 @@ Partial Class DoctorPrescription
         PictureBox4.TabIndex = 2
         PictureBox4.TabStop = False
         ' 
+        ' lbl_SelectedPatient
+        ' 
+        lbl_SelectedPatient.AutoSize = True
+        lbl_SelectedPatient.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lbl_SelectedPatient.Location = New Point(74, 104)
+        lbl_SelectedPatient.Name = "lbl_SelectedPatient"
+        lbl_SelectedPatient.Size = New Size(185, 25)
+        lbl_SelectedPatient.TabIndex = 15
+        lbl_SelectedPatient.Text = "FirstName LastName"
+        ' 
         ' DoctorPrescription
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -259,6 +270,7 @@ Partial Class DoctorPrescription
         Controls.Add(PictureBox2)
         Controls.Add(RoundedPanel1)
         Controls.Add(Panel1)
+        Controls.Add(lbl_SelectedPatient)
         DoubleBuffered = True
         FormBorderStyle = FormBorderStyle.None
         Name = "DoctorPrescription"
@@ -271,6 +283,7 @@ Partial Class DoctorPrescription
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents PictureBox2 As PictureBox
@@ -282,21 +295,14 @@ Partial Class DoctorPrescription
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents RoundedButton2 As CustomControls.RJControls.RoundedButton
-    Friend WithEvents RoundedTextBox5 As RoundedTextBox
-    Friend WithEvents RoundedTextBox4 As RoundedTextBox
-    Friend WithEvents RoundedTextBox3 As RoundedTextBox
-    Friend WithEvents RoundedTextBox2 As RoundedTextBox
-    Friend WithEvents RoundedTextBox1 As RoundedTextBox
+    Friend WithEvents txt_Instruction As RoundedTextBox
+    Friend WithEvents txt_Duration As RoundedTextBox
+    Friend WithEvents txt_Frequency As RoundedTextBox
+    Friend WithEvents txt_Dosage As RoundedTextBox
+    Friend WithEvents txt_MedicineName As RoundedTextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label2 As Label
-
-    Private Sub DoctorPrescription_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
-    Private Sub RoundedTextBox1_TextChanged(sender As Object, e As EventArgs) Handles RoundedTextBox1.TextChanged
-
-    End Sub
+    Friend WithEvents lbl_SelectedPatient As Label
 End Class

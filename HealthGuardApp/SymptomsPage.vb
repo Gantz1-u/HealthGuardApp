@@ -54,19 +54,19 @@ Public Class SymptomsPage
         ' Set the selected doctor based on the button clicked
         Select Case clickedButton.Name
             Case "RoundedButton5"
-                SelectedDoctor = "Dr. Robert Anderson(Pediatrician)"
+                SelectedDoctor = "Dr. Robert Anderson (Pediatrician)"
                 SpecialistPage.Show()
             Case "RoundedButton1"
-                SelectedDoctor = "Dr. Julie Cronk(Dermatologist)"
+                SelectedDoctor = "Dr. Julie Grande (Dermatologist)"
                 DermatologyPage.Show()
             Case "RoundedButton2"
-                SelectedDoctor = "Dr. Joseph Shaffer(Physician)"
+                SelectedDoctor = "Dr. Joseph Shaffer (Physician)"
                 PhysicalTherapy.Show()
             Case "RoundedButton4"
-                SelectedDoctor = "Dr. Tanya Sale(Psychiatrist)"
+                SelectedDoctor = "Dr. Tanya Lao (Psychiatrist)"
                 Psychiatry.Show()
             Case "RoundedButton3"
-                SelectedDoctor = "Dr. Noel Hauge(Orthopedist)"
+                SelectedDoctor = "Dr. Noel Hauge (Orthopedist)"
                 Orthopedics.Show()
             Case Else
                 MessageBox.Show("Unrecognized button clicked.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
