@@ -25,6 +25,7 @@ Partial Class AppointmentTicket
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AppointmentTicket))
         RoundedPanel1 = New RoundedPanel()
         RoundedPanel2 = New RoundedPanel()
+        Label6 = New Label()
         Label5 = New Label()
         Label4 = New Label()
         Label2 = New Label()
@@ -37,9 +38,9 @@ Partial Class AppointmentTicket
         Label3 = New Label()
         PictureBox1 = New PictureBox()
         PictureBox3 = New PictureBox()
+        lbl_LoggedInUser = New Label()
         RoundedButton2 = New CustomControls.RJControls.RoundedButton()
         RoundedButton1 = New CustomControls.RJControls.RoundedButton()
-        Label6 = New Label()
         RoundedPanel1.SuspendLayout()
         RoundedPanel2.SuspendLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
@@ -79,6 +80,17 @@ Partial Class AppointmentTicket
         RoundedPanel2.Name = "RoundedPanel2"
         RoundedPanel2.Size = New Size(345, 312)
         RoundedPanel2.TabIndex = 38
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.BackColor = Color.Transparent
+        Label6.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold)
+        Label6.Location = New Point(12, 237)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(101, 20)
+        Label6.TabIndex = 4
+        Label6.Text = "Doctor Name"
         ' 
         ' Label5
         ' 
@@ -176,6 +188,7 @@ Partial Class AppointmentTicket
         Panel1.Controls.Add(Label3)
         Panel1.Controls.Add(PictureBox1)
         Panel1.Controls.Add(PictureBox3)
+        Panel1.Controls.Add(lbl_LoggedInUser)
         Panel1.Location = New Point(-9, 0)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(400, 68)
@@ -214,6 +227,17 @@ Partial Class AppointmentTicket
         PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox3.TabIndex = 23
         PictureBox3.TabStop = False
+        ' 
+        ' lbl_LoggedInUser
+        ' 
+        lbl_LoggedInUser.AutoSize = True
+        lbl_LoggedInUser.BackColor = Color.Transparent
+        lbl_LoggedInUser.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold)
+        lbl_LoggedInUser.Location = New Point(220, 20)
+        lbl_LoggedInUser.Name = "lbl_LoggedInUser"
+        lbl_LoggedInUser.Size = New Size(0, 20)
+        lbl_LoggedInUser.TabIndex = 0
+        lbl_LoggedInUser.Visible = False
         ' 
         ' RoundedButton2
         ' 
@@ -259,17 +283,6 @@ Partial Class AppointmentTicket
         RoundedButton1.TextColor = Color.Black
         RoundedButton1.UseVisualStyleBackColor = False
         ' 
-        ' Label6
-        ' 
-        Label6.AutoSize = True
-        Label6.BackColor = Color.Transparent
-        Label6.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold)
-        Label6.Location = New Point(12, 237)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(101, 20)
-        Label6.TabIndex = 4
-        Label6.Text = "Doctor Name"
-        ' 
         ' AppointmentTicket
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -288,6 +301,7 @@ Partial Class AppointmentTicket
         RoundedPanel2.PerformLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
@@ -310,4 +324,5 @@ Partial Class AppointmentTicket
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents Label6 As Label
+    Friend WithEvents lbl_LoggedInUser As Label
 End Class

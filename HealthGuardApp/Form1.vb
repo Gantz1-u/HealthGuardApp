@@ -33,33 +33,49 @@ Public Class Form1
         ApplyRoundedCorners()
     End Sub
 
-    ' Button click handlers for creating accounts
-    Private Sub RoleButton_Click(sender As Object, e As EventArgs) Handles RoundedButton1.Click, RoundedButton2.Click, RoundedButton3.Click
-        selectedRole = CType(sender, Button).Text
+    ' Handle Patient Role Button Click
+    Private Sub RoundedButton1_Click(sender As Object, e As EventArgs) Handles RoundedButton1.Click
+        selectedRole = "Patient"
+        CreateAccount(selectedRole)
+    End Sub
+
+    ' Handle Nurse Role Button Click
+    Private Sub RoundedButton2_Click(sender As Object, e As EventArgs) Handles RoundedButton2.Click
+        selectedRole = "Nurse"
+        CreateAccount(selectedRole)
+    End Sub
+
+    ' Handle Doctor Role Button Click
+    Private Sub RoundedButton3_Click(sender As Object, e As EventArgs) Handles RoundedButton3.Click
+        selectedRole = "Doctor"
         CreateAccount(selectedRole)
     End Sub
 
     ' Create account and optionally link it to a patient
     Private Sub CreateAccount(role As String)
         Dim newUserId As Integer
-        Dim newPatientId As Integer
+        Dim newPatientId As Integer = 0 ' Default value in case it's not a patient
+        Dim connection As MySqlConnection = DB.Open()
 
         Try
-            Using connection = DB.Open()
-                ' Insert account
-                newUserId = InsertAccount(connection, role)
+            ' Insert account
+            newUserId = InsertAccount(connection, role)
 
-                ' Insert patient if role is "Patient"
-                If role.ToLower() = "patient" Then
-                    newPatientId = InsertPatient(connection)
-                    LinkPatientToAccount(connection, newUserId, newPatientId)
-                    MessageBox.Show($"Patient account created. UserID: {newUserId}, PatientID: {newPatientId}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Else
-                    MessageBox.Show($"Account created. UserID: {newUserId}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                End If
-            End Using
+            ' Insert patient if role is "Patient"
+            If role.ToLower() = "patient" Then
+                newPatientId = InsertPatient(connection)
+                LinkPatientToAccount(connection, newUserId, newPatientId)
+                MessageBox.Show($"Patient account created. UserID: {newUserId}, PatientID: {newPatientId}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                MessageBox.Show($"Account created. UserID: {newUserId}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
         Catch ex As Exception
             MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            ' Close connection manually
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
         End Try
 
         ' Open RegisterPage
@@ -76,29 +92,26 @@ Public Class Form1
         Dim query = "INSERT INTO accounts (Role, Status, CreationDate) VALUES (@Role, @Status, NOW()); SELECT LAST_INSERT_ID();"
         Dim status = If(role.ToLower() = "patient", "Active", "Pending")
 
-        Using cmd As New MySqlCommand(query, connection)
-            cmd.Parameters.AddWithValue("@Role", role)
-            cmd.Parameters.AddWithValue("@Status", status)
-            Return Convert.ToInt32(cmd.ExecuteScalar())
-        End Using
+        Dim cmd As New MySqlCommand(query, connection)
+        cmd.Parameters.AddWithValue("@Role", role)
+        cmd.Parameters.AddWithValue("@Status", status)
+        Return Convert.ToInt32(cmd.ExecuteScalar())
     End Function
 
     Private Function InsertPatient(connection As MySqlConnection) As Integer
         Dim query = "INSERT INTO patients (FirstName, LastName) VALUES ('', ''); SELECT LAST_INSERT_ID();"
 
-        Using cmd As New MySqlCommand(query, connection)
-            Return Convert.ToInt32(cmd.ExecuteScalar())
-        End Using
+        Dim cmd As New MySqlCommand(query, connection)
+        Return Convert.ToInt32(cmd.ExecuteScalar())
     End Function
 
     Private Sub LinkPatientToAccount(connection As MySqlConnection, userId As Integer, patientId As Integer)
         Dim query = "UPDATE accounts SET PatientID = @PatientID WHERE UserID = @UserID;"
 
-        Using cmd As New MySqlCommand(query, connection)
-            cmd.Parameters.AddWithValue("@PatientID", patientId)
-            cmd.Parameters.AddWithValue("@UserID", userId)
-            cmd.ExecuteNonQuery()
-        End Using
+        Dim cmd As New MySqlCommand(query, connection)
+        cmd.Parameters.AddWithValue("@PatientID", patientId)
+        cmd.Parameters.AddWithValue("@UserID", userId)
+        cmd.ExecuteNonQuery()
     End Sub
 
     ' Navigate to LoginPage

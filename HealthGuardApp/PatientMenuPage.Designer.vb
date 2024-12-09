@@ -121,7 +121,7 @@ Partial Class PatientMenuPage
         ' 
         lbl_LoggedInUser.AutoSize = True
         lbl_LoggedInUser.Font = New Font("Segoe UI Semibold", 8.25F, FontStyle.Bold Or FontStyle.Underline, GraphicsUnit.Point, CByte(0))
-        lbl_LoggedInUser.Location = New Point(228, 26)
+        lbl_LoggedInUser.Location = New Point(221, 26)
         lbl_LoggedInUser.Name = "lbl_LoggedInUser"
         lbl_LoggedInUser.Size = New Size(109, 13)
         lbl_LoggedInUser.TabIndex = 22

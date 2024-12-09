@@ -43,4 +43,9 @@ Public Class PatientPrescriptionPage
         PatientMenuPage.Show()
         Me.Hide()
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        MessageBox.Show("Medicine completed!")
+        RoundedPanel3.Visible = False
+    End Sub
 End Class

@@ -55,40 +55,51 @@ Public Class RegisterPage
 
     ' Save or update account
     Private Sub SaveOrUpdateAccount(firstName As String, lastName As String, email As String, phoneNumber As String, password As String, status As String)
-        Dim query = If(UserId = 0,
-            "INSERT INTO accounts (Role, FirstName, LastName, EmailUsername, Password, ContactNumber, Status, CreationDate) 
-             VALUES (@Role, @FirstName, @LastName, @Email, @Password, @PhoneNumber, @Status, NOW());
-             SELECT LAST_INSERT_ID();",
-            "UPDATE accounts SET Role = @Role, FirstName = @FirstName, LastName = @LastName, EmailUsername = @Email, 
-             Password = @Password, ContactNumber = @PhoneNumber, Status = @Status WHERE UserID = @UserId;")
+        ' The query will either INSERT or UPDATE based on whether UserId is set
+        Dim query As String
+        If UserId = 0 Then
+            ' New Account Creation
+            query = "INSERT INTO accounts (Role, FirstName, LastName, EmailUsername, Password, ContactNumber, Status, CreationDate) 
+                     VALUES (@Role, @FirstName, @LastName, @Email, @Password, @PhoneNumber, @Status, NOW());
+                     SELECT LAST_INSERT_ID();"
+        Else
+            ' Account Update
+            query = "UPDATE accounts 
+                     SET Role = @Role, FirstName = @FirstName, LastName = @LastName, EmailUsername = @Email, 
+                         Password = @Password, ContactNumber = @PhoneNumber, Status = @Status 
+                     WHERE UserID = @UserId;"
+        End If
 
+        Dim connection As MySqlConnection = DB.Open()
+        Dim cmd As New MySqlCommand(query, connection)
         Try
-            Using connection = DB.Open(), cmd As New MySqlCommand(query, connection)
-                cmd.Parameters.AddWithValue("@Role", UserRole)
-                cmd.Parameters.AddWithValue("@FirstName", firstName)
-                cmd.Parameters.AddWithValue("@LastName", lastName)
-                cmd.Parameters.AddWithValue("@Email", email)
-                cmd.Parameters.AddWithValue("@Password", password)
-                cmd.Parameters.AddWithValue("@PhoneNumber", phoneNumber)
-                cmd.Parameters.AddWithValue("@Status", status)
+            cmd.Parameters.AddWithValue("@Role", UserRole)
+            cmd.Parameters.AddWithValue("@FirstName", firstName)
+            cmd.Parameters.AddWithValue("@LastName", lastName)
+            cmd.Parameters.AddWithValue("@Email", email)
+            cmd.Parameters.AddWithValue("@Password", password)
+            cmd.Parameters.AddWithValue("@PhoneNumber", phoneNumber)
+            cmd.Parameters.AddWithValue("@Status", status)
 
-                If UserId = 0 Then
-                    UserId = Convert.ToInt32(cmd.ExecuteScalar())
-                    MessageBox.Show($"Account successfully created! UserID: {UserId}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ' If creating a new user, get the UserId
+            If UserId = 0 Then
+                UserId = Convert.ToInt32(cmd.ExecuteScalar())  ' Get the newly inserted UserId
+                MessageBox.Show($"Account successfully created! UserID: {UserId}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-                    ' If the role is "Patient", insert a patient record
-                    If UserRole.ToLower() = "patient" Then
-                        Dim newPatientId = InsertPatient(connection)
-                        LinkPatientToAccount(connection, UserId, newPatientId)
-                        MessageBox.Show($"Patient record created and linked to the account. PatientID: {newPatientId}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    End If
-                Else
-                    cmd.Parameters.AddWithValue("@UserId", UserId)
-                    cmd.ExecuteNonQuery()
-                    MessageBox.Show($"Account successfully updated! UserID: {UserId}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                ' If the role is "Patient", insert a patient record and link it
+                If UserRole.ToLower() = "patient" Then
+                    Dim newPatientId = InsertPatient(connection)
+                    LinkPatientToAccount(connection, UserId, newPatientId)
+                    MessageBox.Show($"Patient record created and linked to the account. PatientID: {newPatientId}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
-            End Using
+            Else
+                ' If updating, set the UserId parameter and execute the update
+                cmd.Parameters.AddWithValue("@UserId", UserId)
+                cmd.ExecuteNonQuery()
+                MessageBox.Show($"Account successfully updated! UserID: {UserId}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
 
+            ' Navigate to another page after saving/updating
             Dim inputInfoPage As New InputInfoPage()
             inputInfoPage.Show()
             Me.Hide()
@@ -96,7 +107,10 @@ Public Class RegisterPage
         Catch ex As Exception
             MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
-            DB.Close()
+            ' Close the connection manually
+            If connection.State = ConnectionState.Open Then
+                connection.Close()
+            End If
         End Try
     End Sub
 
@@ -104,20 +118,18 @@ Public Class RegisterPage
     Private Function InsertPatient(connection As MySqlConnection) As Integer
         Dim query = "INSERT INTO patients (FirstName, LastName) VALUES ('', ''); SELECT LAST_INSERT_ID();"
 
-        Using cmd As New MySqlCommand(query, connection)
-            Return Convert.ToInt32(cmd.ExecuteScalar())
-        End Using
+        Dim cmd As New MySqlCommand(query, connection)
+        Return Convert.ToInt32(cmd.ExecuteScalar())
     End Function
 
     ' Link patient record to the account
     Private Sub LinkPatientToAccount(connection As MySqlConnection, userId As Integer, patientId As Integer)
         Dim query = "UPDATE accounts SET PatientID = @PatientID WHERE UserID = @UserID;"
 
-        Using cmd As New MySqlCommand(query, connection)
-            cmd.Parameters.AddWithValue("@PatientID", patientId)
-            cmd.Parameters.AddWithValue("@UserID", userId)
-            cmd.ExecuteNonQuery()
-        End Using
+        Dim cmd As New MySqlCommand(query, connection)
+        cmd.Parameters.AddWithValue("@PatientID", patientId)
+        cmd.Parameters.AddWithValue("@UserID", userId)
+        cmd.ExecuteNonQuery()
     End Sub
 
     ' Handle form load

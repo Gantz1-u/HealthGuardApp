@@ -95,9 +95,6 @@ Public Class LoginPage
                         Exit Sub
                     End If
 
-                    ' Debug: Show the UserID, Role, and Status
-                    MessageBox.Show($"Logged-in User ID: {LoggedInUserID}, Role: {userRole}, Status: {userStatus}", "Debug", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
                     ' Open the corresponding menu based on the user's role
                     Select Case userRole.ToLower
                         Case "patient"

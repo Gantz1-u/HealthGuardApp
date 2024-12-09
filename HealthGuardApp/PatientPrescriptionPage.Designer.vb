@@ -24,11 +24,6 @@ Partial Class PatientPrescriptionPage
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PatientPrescriptionPage))
         RoundedPanel1 = New RoundedPanel()
-        Panel1 = New Panel()
-        Label3 = New Label()
-        PictureBox3 = New PictureBox()
-        PictureBox4 = New PictureBox()
-        PictureBox2 = New PictureBox()
         RoundedPanel2 = New RoundedPanel()
         RoundedPanel3 = New RoundedPanel()
         Button1 = New Button()
@@ -42,15 +37,20 @@ Partial Class PatientPrescriptionPage
         RoundedPanel5 = New RoundedPanel()
         Label4 = New Label()
         Label5 = New Label()
+        Panel1 = New Panel()
+        Label3 = New Label()
+        PictureBox3 = New PictureBox()
+        PictureBox4 = New PictureBox()
+        PictureBox2 = New PictureBox()
         RoundedPanel1.SuspendLayout()
-        Panel1.SuspendLayout()
-        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         RoundedPanel2.SuspendLayout()
         RoundedPanel3.SuspendLayout()
         CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        Panel1.SuspendLayout()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' RoundedPanel1
@@ -65,64 +65,6 @@ Partial Class PatientPrescriptionPage
         RoundedPanel1.Name = "RoundedPanel1"
         RoundedPanel1.Size = New Size(376, 712)
         RoundedPanel1.TabIndex = 0
-        ' 
-        ' Panel1
-        ' 
-        Panel1.BackColor = Color.Transparent
-        Panel1.BorderStyle = BorderStyle.FixedSingle
-        Panel1.Controls.Add(Label3)
-        Panel1.Controls.Add(PictureBox3)
-        Panel1.Controls.Add(PictureBox4)
-        Panel1.Location = New Point(-9, 0)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(400, 68)
-        Panel1.TabIndex = 69
-        ' 
-        ' Label3
-        ' 
-        Label3.BackColor = Color.Transparent
-        Label3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(322, 42)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(47, 16)
-        Label3.TabIndex = 25
-        Label3.Text = "HOME"
-        Label3.TextAlign = ContentAlignment.TopCenter
-        ' 
-        ' PictureBox3
-        ' 
-        PictureBox3.BackColor = Color.Transparent
-        PictureBox3.Cursor = Cursors.Hand
-        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
-        PictureBox3.Location = New Point(325, 15)
-        PictureBox3.Name = "PictureBox3"
-        PictureBox3.Size = New Size(40, 25)
-        PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox3.TabIndex = 24
-        PictureBox3.TabStop = False
-        ' 
-        ' PictureBox4
-        ' 
-        PictureBox4.BackColor = Color.Transparent
-        PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
-        PictureBox4.Location = New Point(-9, -12)
-        PictureBox4.Name = "PictureBox4"
-        PictureBox4.Size = New Size(145, 90)
-        PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox4.TabIndex = 23
-        PictureBox4.TabStop = False
-        ' 
-        ' PictureBox2
-        ' 
-        PictureBox2.BackColor = Color.Transparent
-        PictureBox2.Cursor = Cursors.Hand
-        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(13, 81)
-        PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(38, 36)
-        PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox2.TabIndex = 70
-        PictureBox2.TabStop = False
         ' 
         ' RoundedPanel2
         ' 
@@ -263,6 +205,64 @@ Partial Class PatientPrescriptionPage
         Label5.TabIndex = 12
         Label5.Text = "500 mg"
         ' 
+        ' Panel1
+        ' 
+        Panel1.BackColor = Color.Transparent
+        Panel1.BorderStyle = BorderStyle.FixedSingle
+        Panel1.Controls.Add(Label3)
+        Panel1.Controls.Add(PictureBox3)
+        Panel1.Controls.Add(PictureBox4)
+        Panel1.Location = New Point(-9, 0)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(400, 68)
+        Panel1.TabIndex = 69
+        ' 
+        ' Label3
+        ' 
+        Label3.BackColor = Color.Transparent
+        Label3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label3.Location = New Point(322, 42)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(47, 16)
+        Label3.TabIndex = 25
+        Label3.Text = "HOME"
+        Label3.TextAlign = ContentAlignment.TopCenter
+        ' 
+        ' PictureBox3
+        ' 
+        PictureBox3.BackColor = Color.Transparent
+        PictureBox3.Cursor = Cursors.Hand
+        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
+        PictureBox3.Location = New Point(325, 15)
+        PictureBox3.Name = "PictureBox3"
+        PictureBox3.Size = New Size(40, 25)
+        PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox3.TabIndex = 24
+        PictureBox3.TabStop = False
+        ' 
+        ' PictureBox4
+        ' 
+        PictureBox4.BackColor = Color.Transparent
+        PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
+        PictureBox4.Location = New Point(-9, -12)
+        PictureBox4.Name = "PictureBox4"
+        PictureBox4.Size = New Size(145, 90)
+        PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox4.TabIndex = 23
+        PictureBox4.TabStop = False
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.BackColor = Color.Transparent
+        PictureBox2.Cursor = Cursors.Hand
+        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
+        PictureBox2.Location = New Point(13, 81)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(38, 36)
+        PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox2.TabIndex = 70
+        PictureBox2.TabStop = False
+        ' 
         ' PatientPrescriptionPage
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -277,15 +277,15 @@ Partial Class PatientPrescriptionPage
         StartPosition = FormStartPosition.CenterScreen
         Text = "PatientPrescriptionPage"
         RoundedPanel1.ResumeLayout(False)
-        Panel1.ResumeLayout(False)
-        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         RoundedPanel2.ResumeLayout(False)
         RoundedPanel3.ResumeLayout(False)
         RoundedPanel3.PerformLayout()
         CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        Panel1.ResumeLayout(False)
+        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 

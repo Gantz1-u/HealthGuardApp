@@ -34,40 +34,42 @@ Public Class PatientList
         ApplyRoundedCorners() ' Reapply the rounded corners when resizing
     End Sub
 
-    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
-        NurseMenuPage.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        NurseMenuPage.Show()
-        Me.Hide()
-    End Sub
-
+    ' PictureBox click handlers for CirclePictureBox
     Private Sub CirclePictureBox1_Click(sender As Object, e As EventArgs) Handles CirclePictureBox1.Click
-        PaatientData.Show
-        Me.Hide()
+        ShowPatientData("1") ' Pass the selected patient ID to PatientData
     End Sub
 
     Private Sub CirclePictureBox2_Click(sender As Object, e As EventArgs) Handles CirclePictureBox2.Click
-        PaatientData.Show()
-        Me.Hide()
+        ShowPatientData("2") ' Pass the selected patient ID to PatientData
     End Sub
 
     Private Sub CirclePictureBox3_Click(sender As Object, e As EventArgs) Handles CirclePictureBox3.Click
-        PaatientData.Show()
-        Me.Hide()
+        ShowPatientData("3") ' Pass the selected patient ID to PatientData
     End Sub
 
     Private Sub CirclePictureBox4_Click(sender As Object, e As EventArgs) Handles CirclePictureBox4.Click
-        PaatientData.Show()
-        Me.Hide()
+        ShowPatientData("4") ' Pass the selected patient ID to PatientData
     End Sub
 
     Private Sub CirclePictureBox5_Click(sender As Object, e As EventArgs) Handles CirclePictureBox5.Click
-        PaatientData.Show()
-        Me.Hide()
+        ShowPatientData("5") ' Pass the selected patient ID to PatientData
     End Sub
 
+    ' Method to show PatientData form and pass the selected patient ID
+    Private Sub ShowPatientData(patientID As String)
+        Dim patientDataForm As New PatientData(patientID)
+        patientDataForm.Show() ' Show the PatientData form
+        Me.Hide() ' Hide the current form
+    End Sub
 
+    Private Sub Back_PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        NurseMenuPage.Show()
+        Me.Close() ' You can replace this with code to show the previous form or navigate as required
+    End Sub
+
+    ' Home button functionality
+    Private Sub Home_PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        NurseMenuPage.Show()
+        Me.Hide()
+    End Sub
 End Class

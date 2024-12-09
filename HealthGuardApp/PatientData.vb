@@ -1,14 +1,17 @@
 ﻿Imports System.Drawing.Drawing2D
 Imports MySql.Data.MySqlClient
 
-Public Class PaatientData
+Public Class PatientData
     Inherits Form
 
     ' Define the radius for the rounded corners
     Private _cornerRadius As Integer = 50
+    Private _patientID As String
 
-    Public Sub New()
+    ' Constructor that accepts patientID
+    Public Sub New(patientID As String)
         InitializeComponent()
+        _patientID = patientID ' Store the selected patient ID
         ' Optionally, you can set the form's border style to None to get rid of the default border
         Me.FormBorderStyle = FormBorderStyle.None
         ' Call this method to apply rounded corners to the form
@@ -35,15 +38,19 @@ Public Class PaatientData
         ApplyRoundedCorners() ' Reapply the rounded corners when resizing
     End Sub
 
-    Private Sub PaatientData_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Assuming you have a patientID value you want to pass in
-        Dim patientID As Integer = 1 ' Set the correct PatientID dynamically
-        LoadPatientData(patientID)
+    ' Load patient data when the form loads
+    Private Sub PatientData_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If Not String.IsNullOrEmpty(_patientID) Then
+            ' Load the patient data based on the selected patient ID
+            LoadPatientData(_patientID)
+        Else
+            MessageBox.Show("No patient selected.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
     End Sub
 
     ' Fixed method to handle loading patient data
-    Private Sub LoadPatientData(patientID As Integer)
-        ' Initialize DB connection
+    Private Sub LoadPatientData(patientID As String)
+        ' Initialize DB connection using your custom DBConnection class
         Dim conn As New DBConnection()
 
         ' Open the database connection
@@ -51,6 +58,8 @@ Public Class PaatientData
 
         ' SQL query to retrieve patient data based on the PatientID
         Dim query As String = "SELECT PatientID, FirstName, MiddleName, LastName, Sex, DateOfBirth, Age, BloodType, Phone, ParentGuardian, Email, Address, PrimaryDiagnoses FROM Patients WHERE PatientID = @PatientID"
+
+        ' Create the command using the connection
         Dim cmd As New MySqlCommand(query, conn.Open()) ' Use the connection directly
 
         ' Use parameterized query to prevent SQL injection
@@ -87,15 +96,15 @@ Public Class PaatientData
         End Try
     End Sub
 
-    ' Corrected method call to Hide() 
-    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
-        NurseMenuPage.Show()
-        Me.Hide()
+    ' Back button functionality
+    Private Sub Back_PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        PatientList.Show()
+        Me.Hide() ' You can replace this with code to show the previous form or navigate as required
     End Sub
 
-    ' Corrected method call to Hide() 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        PatientList.Show()
-        Me.Hide() ' Fix: Use Me.Hide() instead of Me.hide
+    ' Home button functionality
+    Private Sub Home_PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        NurseMenuPage.Show()
+        Me.Hide()
     End Sub
 End Class

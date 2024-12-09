@@ -73,6 +73,8 @@ Public Class InputInfoPage
         Finally
             DB.Close()
         End Try
+        LoginPage.Show()
+        Me.Hide()
     End Sub
 
     ' Validate inputs

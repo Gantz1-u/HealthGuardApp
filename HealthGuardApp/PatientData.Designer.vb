@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class PaatientData
+Partial Class PatientData
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,13 +22,8 @@ Partial Class PaatientData
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PaatientData))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PatientData))
         RoundedPanel1 = New RoundedPanel()
-        PictureBox1 = New PictureBox()
-        Panel1 = New Panel()
-        Label1 = New Label()
-        PictureBox3 = New PictureBox()
-        PictureBox4 = New PictureBox()
         RoundedPanel2 = New RoundedPanel()
         lbl_PrimaryDiagnoses = New Label()
         lbl_Age = New Label()
@@ -51,12 +46,20 @@ Partial Class PaatientData
         Label8 = New Label()
         lbl_FirstName = New Label()
         Label11 = New Label()
+        PictureBox1 = New PictureBox()
+        Panel1 = New Panel()
+        Label1 = New Label()
+        PictureBox3 = New PictureBox()
+        PictureBox4 = New PictureBox()
+        Label2 = New Label()
+        Label12 = New Label()
+        Label13 = New Label()
         RoundedPanel1.SuspendLayout()
+        RoundedPanel2.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
-        RoundedPanel2.SuspendLayout()
         SuspendLayout()
         ' 
         ' RoundedPanel1
@@ -72,64 +75,6 @@ Partial Class PaatientData
         RoundedPanel1.Size = New Size(376, 712)
         RoundedPanel1.TabIndex = 0
         ' 
-        ' PictureBox1
-        ' 
-        PictureBox1.BackColor = Color.Transparent
-        PictureBox1.Cursor = Cursors.Hand
-        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(13, 81)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(38, 36)
-        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox1.TabIndex = 68
-        PictureBox1.TabStop = False
-        ' 
-        ' Panel1
-        ' 
-        Panel1.BackColor = Color.Transparent
-        Panel1.BorderStyle = BorderStyle.FixedSingle
-        Panel1.Controls.Add(Label1)
-        Panel1.Controls.Add(PictureBox3)
-        Panel1.Controls.Add(PictureBox4)
-        Panel1.Location = New Point(-9, 0)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(400, 68)
-        Panel1.TabIndex = 67
-        ' 
-        ' Label1
-        ' 
-        Label1.BackColor = Color.Transparent
-        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(322, 42)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(47, 16)
-        Label1.TabIndex = 25
-        Label1.Text = "HOME"
-        Label1.TextAlign = ContentAlignment.TopCenter
-        ' 
-        ' PictureBox3
-        ' 
-        PictureBox3.BackColor = Color.Transparent
-        PictureBox3.Cursor = Cursors.Hand
-        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
-        PictureBox3.Location = New Point(325, 15)
-        PictureBox3.Name = "PictureBox3"
-        PictureBox3.Size = New Size(40, 25)
-        PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox3.TabIndex = 24
-        PictureBox3.TabStop = False
-        ' 
-        ' PictureBox4
-        ' 
-        PictureBox4.BackColor = Color.Transparent
-        PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
-        PictureBox4.Location = New Point(-9, -12)
-        PictureBox4.Name = "PictureBox4"
-        PictureBox4.Size = New Size(145, 90)
-        PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox4.TabIndex = 23
-        PictureBox4.TabStop = False
-        ' 
         ' RoundedPanel2
         ' 
         RoundedPanel2.BackColor = Color.White
@@ -141,8 +86,11 @@ Partial Class PaatientData
         RoundedPanel2.Controls.Add(lbl_Email)
         RoundedPanel2.Controls.Add(Label4)
         RoundedPanel2.Controls.Add(lbl_ContactNumber)
+        RoundedPanel2.Controls.Add(Label2)
         RoundedPanel2.Controls.Add(Label5)
         RoundedPanel2.Controls.Add(lbl_ParentGuardian)
+        RoundedPanel2.Controls.Add(Label13)
+        RoundedPanel2.Controls.Add(Label12)
         RoundedPanel2.Controls.Add(Label6)
         RoundedPanel2.Controls.Add(lbl_Address)
         RoundedPanel2.Controls.Add(Label7)
@@ -367,7 +315,95 @@ Partial Class PaatientData
         Label11.TabIndex = 46
         Label11.Text = "Email"
         ' 
-        ' PaatientData
+        ' PictureBox1
+        ' 
+        PictureBox1.BackColor = Color.Transparent
+        PictureBox1.Cursor = Cursors.Hand
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(13, 81)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(38, 36)
+        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox1.TabIndex = 68
+        PictureBox1.TabStop = False
+        ' 
+        ' Panel1
+        ' 
+        Panel1.BackColor = Color.Transparent
+        Panel1.BorderStyle = BorderStyle.FixedSingle
+        Panel1.Controls.Add(Label1)
+        Panel1.Controls.Add(PictureBox3)
+        Panel1.Controls.Add(PictureBox4)
+        Panel1.Location = New Point(-9, 0)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(400, 68)
+        Panel1.TabIndex = 67
+        ' 
+        ' Label1
+        ' 
+        Label1.BackColor = Color.Transparent
+        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Location = New Point(322, 42)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(47, 16)
+        Label1.TabIndex = 25
+        Label1.Text = "HOME"
+        Label1.TextAlign = ContentAlignment.TopCenter
+        ' 
+        ' PictureBox3
+        ' 
+        PictureBox3.BackColor = Color.Transparent
+        PictureBox3.Cursor = Cursors.Hand
+        PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
+        PictureBox3.Location = New Point(325, 15)
+        PictureBox3.Name = "PictureBox3"
+        PictureBox3.Size = New Size(40, 25)
+        PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox3.TabIndex = 24
+        PictureBox3.TabStop = False
+        ' 
+        ' PictureBox4
+        ' 
+        PictureBox4.BackColor = Color.Transparent
+        PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
+        PictureBox4.Location = New Point(-9, -12)
+        PictureBox4.Name = "PictureBox4"
+        PictureBox4.Size = New Size(145, 90)
+        PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox4.TabIndex = 23
+        PictureBox4.TabStop = False
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold)
+        Label2.Location = New Point(191, 152)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(77, 17)
+        Label2.TabIndex = 40
+        Label2.Text = "Blood Type"
+        ' 
+        ' Label12
+        ' 
+        Label12.AutoSize = True
+        Label12.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold)
+        Label12.Location = New Point(191, 221)
+        Label12.Name = "Label12"
+        Label12.Size = New Size(32, 17)
+        Label12.TabIndex = 41
+        Label12.Text = "Age"
+        ' 
+        ' Label13
+        ' 
+        Label13.AutoSize = True
+        Label13.Font = New Font("Segoe UI", 9.75F, FontStyle.Bold)
+        Label13.Location = New Point(194, 287)
+        Label13.Name = "Label13"
+        Label13.Size = New Size(125, 17)
+        Label13.TabIndex = 41
+        Label13.Text = "Primary Diagnoses"
+        ' 
+        ' PatientData
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
@@ -377,16 +413,16 @@ Partial Class PaatientData
         Controls.Add(RoundedPanel1)
         DoubleBuffered = True
         FormBorderStyle = FormBorderStyle.None
-        Name = "PaatientData"
+        Name = "PatientData"
         StartPosition = FormStartPosition.CenterScreen
         Text = "PaatientData"
         RoundedPanel1.ResumeLayout(False)
+        RoundedPanel2.ResumeLayout(False)
+        RoundedPanel2.PerformLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         Panel1.ResumeLayout(False)
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
-        RoundedPanel2.ResumeLayout(False)
-        RoundedPanel2.PerformLayout()
         ResumeLayout(False)
     End Sub
 
@@ -418,4 +454,7 @@ Partial Class PaatientData
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label12 As Label
 End Class

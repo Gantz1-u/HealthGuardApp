@@ -6,46 +6,18 @@ Public Class AppointmentTicket
     ' Define the radius for the rounded corners
     Private _cornerRadius As Integer = 50
 
-    Public Sub Old()
-        InitializeComponent()
-        ' Optionally, you can set the form's border style to None to get rid of the default border
-        Me.FormBorderStyle = FormBorderStyle.None
-        ' Call this method to apply rounded corners to the form
-        ApplyRoundedCorners()
-    End Sub
+    ' Store the appointment details for the entire session
+    Private savedAppointmentDate As Date
+    Private savedAppointmentTime As String
+    Private savedAppointmentNote As String
+    Private savedDoctor As String
 
-    ' This method applies the rounded corners to the form
-    Private Sub ApplyRoundedCorners()
-        Dim path As New GraphicsPath()
-        ' Create a rounded rectangle path
-        path.AddArc(0, 0, _cornerRadius, _cornerRadius, 180, 90) ' Top-left corner
-        path.AddArc(Me.Width - _cornerRadius, 0, _cornerRadius, _cornerRadius, 270, 90) ' Top-right corner
-        path.AddArc(Me.Width - _cornerRadius, Me.Height - _cornerRadius, _cornerRadius, _cornerRadius, 0, 90) ' Bottom-right corner
-        path.AddArc(0, Me.Height - _cornerRadius, _cornerRadius, _cornerRadius, 90, 90) ' Bottom-left corner
-        path.CloseFigure() ' Close the figure to form the rounded rectangle
-
-        ' Set the form's region to the rounded rectangle path
-        Me.Region = New Region(path)
-    End Sub
-
-    ' Optionally, handle the resizing of the form
-    Protected Overrides Sub OnResize(e As EventArgs)
-        MyBase.OnResize(e)
-        ApplyRoundedCorners() ' Reapply the rounded corners when resizing
-    End Sub
-
-    Private appointmentDate As Date
-    Private appointmentTime As String
-    Private appointmentNote As String
-    Private doctor As String ' To store the doctor's name
-
-    ' Constructor to receive appointment details and doctor's name
     Public Sub New(doctor As String, appointmentDate As Date, appointmentTime As String, appointmentNote As String)
         InitializeComponent()
-        Me.doctor = doctor ' Store the doctor's name
-        Me.appointmentDate = appointmentDate
-        Me.appointmentTime = appointmentTime
-        Me.appointmentNote = appointmentNote
+        Me.savedDoctor = doctor
+        Me.savedAppointmentDate = appointmentDate
+        Me.savedAppointmentTime = appointmentTime
+        Me.savedAppointmentNote = appointmentNote
     End Sub
 
     ' Default constructor for design mode (required by Visual Studio Designer)
@@ -55,11 +27,12 @@ Public Class AppointmentTicket
 
     ' Form Load Event to display the appointment details
     Private Sub AppointmentTicket_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Display the appointment details using the received parameters
-        lbl_AppointmentDate.Text = appointmentDate.ToString("yyyy-MM-dd") ' Format the date
-        lbl_AppointmentTime.Text = appointmentTime ' Display the selected time
-        lbl_Doctor.Text = SymptomsPage.SelectedDoctor ' Display the doctor's name (Passed from SchedulePage)
-        Label6.Text = appointmentNote ' Display the entered note
+        ' Display the saved appointment details
+        lbl_AppointmentDate.Text = savedAppointmentDate.ToString("yyyy-MM-dd")
+        lbl_AppointmentTime.Text = savedAppointmentTime
+        lbl_Doctor.Text = SymptomsPage.SelectedDoctor ' Fetch the doctor's name from SymptomsPage
+        Label6.Text = savedAppointmentNote
+        lbl_LoggedInUser.Text = Convert.ToInt32(LoginPage.LoggedInUserID)
     End Sub
 
     ' Handle Cancel button click
@@ -70,8 +43,16 @@ Public Class AppointmentTicket
 
     ' Handle Save button click
     Private Sub SaveButton(sender As Object, e As EventArgs)
-        ' Implement save logic here (e.g., save to database or memory)
+        ' Store the current text values in the saved variables
+        savedAppointmentDate = DateTime.Parse(lbl_AppointmentDate.Text)
+        savedAppointmentTime = lbl_AppointmentTime.Text
+        savedAppointmentNote = Label6.Text
+        savedDoctor = lbl_Doctor.Text ' Store the doctor's name as well
+
+        ' Notify the user that the appointment has been saved
         MessageBox.Show("Appointment saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        PatientMenuPage.Show()
+        Me.Hide()
     End Sub
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
@@ -84,5 +65,20 @@ Public Class AppointmentTicket
         Hide()
     End Sub
 
+    Private Sub SaveAppointment(sender As Object, e As EventArgs) Handles RoundedButton1.Click
+        ' When save is pressed, hold the current values and prevent them from changing
+        savedAppointmentDate = DateTime.Parse(lbl_AppointmentDate.Text)
+        savedAppointmentTime = lbl_AppointmentTime.Text
+        savedAppointmentNote = Label6.Text
+        savedDoctor = lbl_Doctor.Text ' Store the doctor's name as well
 
+        ' Optionally, save data to a database or another storage here
+
+        MessageBox.Show("Appointment saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
+
+    Private Sub RoundedButton2_Click(sender As Object, e As EventArgs) Handles RoundedButton2.Click
+        AppointmentPage.Show()
+        Me.Hide()
+    End Sub
 End Class
