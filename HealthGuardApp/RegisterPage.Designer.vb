@@ -116,7 +116,6 @@
         RoundedTextBox6.Location = New Point(9, 14)
         RoundedTextBox6.Multiline = True
         RoundedTextBox6.Name = "RoundedTextBox6"
-        RoundedTextBox6.PasswordChar = "*"c
         RoundedTextBox6.PlaceholderText = "Last Name"
         RoundedTextBox6.Size = New Size(276, 22)
         RoundedTextBox6.TabIndex = 3
@@ -136,7 +135,6 @@
         RoundedTextBox4.Location = New Point(9, 14)
         RoundedTextBox4.Multiline = True
         RoundedTextBox4.Name = "RoundedTextBox4"
-        RoundedTextBox4.PasswordChar = "*"c
         RoundedTextBox4.PlaceholderText = "Middle Name"
         RoundedTextBox4.Size = New Size(276, 22)
         RoundedTextBox4.TabIndex = 3

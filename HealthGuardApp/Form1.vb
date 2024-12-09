@@ -7,38 +7,32 @@ Public Class Form1
     ' Define the radius for the rounded corners
     Private _cornerRadius As Integer = 50
 
+    Private DB As New DBConnection()
+    Private selectedRole As String
+
     Public Sub New()
         InitializeComponent()
-        ' Optionally, you can set the form's border style to None to get rid of the default border
         Me.FormBorderStyle = FormBorderStyle.None
-        ' Call this method to apply rounded corners to the form
         ApplyRoundedCorners()
     End Sub
 
-    ' This method applies the rounded corners to the form
+    ' Apply rounded corners to the form
     Private Sub ApplyRoundedCorners()
         Dim path As New GraphicsPath()
-        ' Create a rounded rectangle path
-        path.AddArc(0, 0, _cornerRadius, _cornerRadius, 180, 90) ' Top-left corner
-        path.AddArc(Me.Width - _cornerRadius, 0, _cornerRadius, _cornerRadius, 270, 90) ' Top-right corner
-        path.AddArc(Me.Width - _cornerRadius, Me.Height - _cornerRadius, _cornerRadius, _cornerRadius, 0, 90) ' Bottom-right corner
-        path.AddArc(0, Me.Height - _cornerRadius, _cornerRadius, _cornerRadius, 90, 90) ' Bottom-left corner
-        path.CloseFigure() ' Close the figure to form the rounded rectangle
-
-        ' Set the form's region to the rounded rectangle path
+        path.AddArc(0, 0, _cornerRadius, _cornerRadius, 180, 90)
+        path.AddArc(Me.Width - _cornerRadius, 0, _cornerRadius, _cornerRadius, 270, 90)
+        path.AddArc(Me.Width - _cornerRadius, Me.Height - _cornerRadius, _cornerRadius, _cornerRadius, 0, 90)
+        path.AddArc(0, Me.Height - _cornerRadius, _cornerRadius, _cornerRadius, 90, 90)
+        path.CloseFigure()
         Me.Region = New Region(path)
     End Sub
 
-    ' Optionally, handle the resizing of the form
     Protected Overrides Sub OnResize(e As EventArgs)
         MyBase.OnResize(e)
-        ApplyRoundedCorners() ' Reapply the rounded corners when resizing
+        ApplyRoundedCorners()
     End Sub
-    Private DB As New DBConnection()
 
-    ' Declare a variable to hold the role
-    Private selectedRole As String
-
+    ' Button click handlers to create accounts for different roles
     Private Sub RoundedButton1_Click(sender As Object, e As EventArgs) Handles RoundedButton1.Click
         selectedRole = "Patient"
         CreateEmptyAccount(selectedRole)
@@ -54,44 +48,74 @@ Public Class Form1
         CreateEmptyAccount(selectedRole)
     End Sub
 
-    ' Create empty account tuple
+    ' Create an empty account and optionally link it to a patient
     Private Sub CreateEmptyAccount(role As String)
+        Dim newUserId As Integer = 0
+        Dim newPatientId As Integer = 0
+
         Try
             Dim connection As MySqlConnection = DB.Open()
 
-            Dim query As String = "
+            ' Insert a new account into the `accounts` table
+            Dim insertAccountQuery As String = "
                 INSERT INTO accounts (Role, Status, CreationDate) 
                 VALUES (@Role, @Status, NOW());
                 SELECT LAST_INSERT_ID();"
 
-            ' Default status for "Patient" is Active, for "Nurse" and "Doctor" it is Pending
             Dim accountStatus As String = If(role.ToLower() = "patient", "Active", "Pending")
 
-            Dim newUserId As Integer
-
-            Using cmd As New MySqlCommand(query, connection)
+            Using cmd As New MySqlCommand(insertAccountQuery, connection)
                 cmd.Parameters.AddWithValue("@Role", role)
                 cmd.Parameters.AddWithValue("@Status", accountStatus)
                 newUserId = Convert.ToInt32(cmd.ExecuteScalar())
             End Using
 
-            MessageBox.Show($"Empty account created successfully with UserID {newUserId}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ' If the role is "Patient", create an entry in the `patients` table
+            If role.ToLower() = "patient" Then
+                Dim insertPatientQuery As String = "
+                    INSERT INTO patients (FirstName, LastName) 
+                    VALUES ('', '');
+                    SELECT LAST_INSERT_ID();"
 
-            ' Pass UserId and Role to RegisterPage
-            Dim registerForm As New RegisterPage()
-            registerForm.SetUserId(newUserId, role) ' Pass the role
-            registerForm.Show()
-            Me.Hide()
+                Using cmd As New MySqlCommand(insertPatientQuery, connection)
+                    newPatientId = Convert.ToInt32(cmd.ExecuteScalar())
+                End Using
+
+                ' Update the `PatientID` field in the `accounts` table
+                Dim updateAccountQuery As String = "
+                    UPDATE accounts 
+                    SET PatientID = @PatientID 
+                    WHERE UserID = @UserID;"
+
+                Using cmd As New MySqlCommand(updateAccountQuery, connection)
+                    cmd.Parameters.AddWithValue("@PatientID", newPatientId)
+                    cmd.Parameters.AddWithValue("@UserID", newUserId)
+                    cmd.ExecuteNonQuery()
+                End Using
+
+                MessageBox.Show($"Empty patient account created successfully. UserID: {newUserId}, PatientID: {newPatientId}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                MessageBox.Show($"Empty account created successfully with UserID {newUserId}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+
         Catch ex As Exception
             MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
             DB.Close()
         End Try
+
+        ' Open the RegisterPage and pass UserID and PatientID for further configuration
+        If newUserId > 0 Then
+            Dim registerForm As New RegisterPage()
+            registerForm.SetUserDetails(newUserId, newPatientId, selectedRole)
+            registerForm.Show()
+            Me.Hide()
+        End If
     End Sub
 
+    ' Navigate to LoginPage
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         LoginPage.Show()
         Hide()
     End Sub
-
 End Class
